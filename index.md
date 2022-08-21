@@ -1,37 +1,25 @@
-## Welcome to GitHub Pages
+# CS 120 (Intro to Algorithms and their Limitations)
 
-You can use the [editor on GitHub](https://github.com/Harvard-CS-120/cs120/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Overview
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+An introductory course in theoretical computer science, aimed at giving students the power of using mathematical abstraction and rigorous proof to understand computation. Thus equipped, students will be able to design and use algorithms that apply to a wide variety of computational problems, with confidence about their correctness and efficiency, as well as recognize when a problem may have no algorithmic solution. At the same time, they will gain an appreciation for the beautiful mathematical theory of computation that is independent of (indeed, predates) the technology on which it is implemented.
 
-### Markdown
+### Fall 2022
+- [Syllabus](https://docs.google.com/document/d/19mHJrpgEQTCzfjRHhyfktSoaDchgYhYd-mAlYjYu9LA/edit#)
+- [Schedule, Lecture Notes, and Assignments](https://docs.google.com/spreadsheets/d/1AHYfpodIJWrXx_U7rBDk-0y9nrWrnif7TDS7Xh7Obu8/edit#gid=0)
+- [Textbooks](https://docs.google.com/document/d/1Ss-E1PqM0pefb69hWRma_9X_ZzYT9jGw9JbC_77DF1U/edit)
+- [Ed](https://edstem.org/us/courses/24984/discussion/)
+- [Gradescope](https://www.gradescope.com/courses/417853)
+- [Canvas](https://canvas.harvard.edu/courses/105990)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Fall 2021
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Harvard-CS-120/cs120/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- [Syllabus](https://salil.seas.harvard.edu/files/salil/files/cs120-fall2021-syllabus.pdf)
+- [Content Plan](https://salil.seas.harvard.edu/files/salil/files/cs120-fall2021-contentplan.pdf)
+- [Textbooks](https://salil.seas.harvard.edu/files/salil/files/cs120-fall2021-textbooks.pdf)
+- [Schedule, Lecture Notes, and Assignments](https://opendp.github.io/cs208/spring2019](https://salil.seas.harvard.edu/classes/cs120-intro-algorithms-and-their-limitations/materials/schedule-lecture-notes-and )
+- [Ed](https://canvas.harvard.edu/courses/93367/external_tools/78506?display=borderless)
+- [Gradescope](https://www.gradescope.com/courses/292947)
+- [Canvas](https://canvas.harvard.edu/courses/93367)
+- Participation Portfolio [Guidelines](https://salil.seas.harvard.edu/files/salil/files/cs120-fall2021-participationportfolio-guidelines.pdf) and [Examples](https://salil.seas.harvard.edu/files/salil/files/cs120-fall2021-modelparticipationportfolios.pdf)
+- [Q Evaluation](https://salil.seas.harvard.edu/files/salil/files/cs120-fall21-Qevaluation.pdf)
