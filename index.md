@@ -12,7 +12,7 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Gradescope](https://www.gradescope.com/courses/417853)
 - [Canvas](https://canvas.harvard.edu/courses/105990)
 
-### Fall 2021
+### [Fall 2021](https://salil.seas.harvard.edu/classes/intro-algorithms-and-their-limitations-fall21)
 
 - [Syllabus](https://salil.seas.harvard.edu/files/salil/files/cs120-fall2021-syllabus.pdf)
 - [Content Plan](https://salil.seas.harvard.edu/files/salil/files/cs120-fall2021-contentplan.pdf)
