@@ -17,7 +17,7 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Syllabus](https://salil.seas.harvard.edu/files/salil/files/cs120-fall2021-syllabus.pdf)
 - [Content Plan](https://salil.seas.harvard.edu/files/salil/files/cs120-fall2021-contentplan.pdf)
 - [Textbooks](https://salil.seas.harvard.edu/files/salil/files/cs120-fall2021-textbooks.pdf)
-- [Schedule, Lecture Notes, and Assignments](https://opendp.github.io/cs208/spring2019](https://salil.seas.harvard.edu/classes/cs120-intro-algorithms-and-their-limitations/materials/schedule-lecture-notes-and )
+- [Schedule, Lecture Notes, and Assignments](https://salil.seas.harvard.edu/classes/cs120-intro-algorithms-and-their-limitations/materials/schedule-lecture-notes-and )
 - [Ed](https://canvas.harvard.edu/courses/93367/external_tools/78506?display=borderless)
 - [Gradescope](https://www.gradescope.com/courses/292947)
 - [Canvas](https://canvas.harvard.edu/courses/93367)
