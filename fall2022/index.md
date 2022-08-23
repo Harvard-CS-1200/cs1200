@@ -10,9 +10,8 @@
 
 ### Resources
 
-- [Syllabus](https://docs.google.com/document/d/19mHJrpgEQTCzfjRHhyfktSoaDchgYhYd-mAlYjYu9LA/edit#)
+- [Syllabus](./syllabus.pdf)
 - [Schedule, Lecture Notes, and Assignments](https://docs.google.com/spreadsheets/d/1AHYfpodIJWrXx_U7rBDk-0y9nrWrnif7TDS7Xh7Obu8/edit#gid=0)
-- [Textbooks](https://docs.google.com/document/d/1Ss-E1PqM0pefb69hWRma_9X_ZzYT9jGw9JbC_77DF1U/edit)
 - [Ed](https://edstem.org/us/courses/24984/discussion/)
 - [Gradescope](https://www.gradescope.com/courses/417853)
 - [Canvas](https://canvas.harvard.edu/courses/105990)
@@ -38,7 +37,7 @@
 | Tue 9/27                                 | Randomized Data Structures                     |                                                                 |                                                                                                                  |
 | **Graph Algorithms**                     |                                                |                                                                 |                                                                                                                  |
 | Thu 9/29                                 | Graph Search                                   |                                                                 |                                                                                                                  |
-| Tue 10/04                                | Midterm (Covering Storing and Searching)       |                                                                 |                                                                                                                  |
+| Tue 10/04                                | Midterm (Covering Sorting and Searching)       |                                                                 |                                                                                                                  |
 | Thu 10/06                                | Graph Coloring                                 |                                                                 |                                                                                                                  |
 | Thu 10/06                                | PSET 4 Released (Due Wed 10/12)                |                                                                 |                                                                                                                  |
 | Tue 10/11                                | Coloring and Independent Sets                  |                                                                 |                                                                                                                  |
