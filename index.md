@@ -22,5 +22,6 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Ed](https://canvas.harvard.edu/courses/93367/external_tools/78506?display=borderless)
 - [Gradescope](https://www.gradescope.com/courses/292947)
 - [Canvas](https://canvas.harvard.edu/courses/93367)
+- [Github](https://github.com/Harvard-CS-120/2021-Fall)
 - Participation Portfolio [Guidelines](https://salil.seas.harvard.edu/files/salil/files/cs120-fall2021-participationportfolio-guidelines.pdf) and [Examples](https://salil.seas.harvard.edu/files/salil/files/cs120-fall2021-modelparticipationportfolios.pdf)
 - [Q Evaluation](https://salil.seas.harvard.edu/files/salil/files/cs120-fall21-Qevaluation.pdf)
