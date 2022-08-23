@@ -6,7 +6,7 @@ An introductory course in theoretical computer science, aimed at giving students
 
 ### [Fall 2022](https://harvard-cs-120.github.io/fall2022)
 
-- [Syllabus](./fall2022/syllabus.pdf)
+- [Syllabus](./cs120/fall2022/syllabus.pdf)
 - [Schedule, Lecture Notes, and Assignments](https://docs.google.com/spreadsheets/d/1AHYfpodIJWrXx_U7rBDk-0y9nrWrnif7TDS7Xh7Obu8/edit#gid=0)
 - [Ed](https://edstem.org/us/courses/24984/discussion/)
 - [Gradescope](https://www.gradescope.com/courses/417853)
