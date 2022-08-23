@@ -1,5 +1,5 @@
 \documentclass[11pt]{article}
-\usepackage{Fall22/classTools}
+\usepackage{classTools}
 \usepackage{graphicx}
 \def\draft{1}
 
@@ -13,7 +13,7 @@ For those of you who are wondering whether you should wait and take CS20 before 
 Written answers must be submitted in pdf format on Gradescope. Although \LaTeX{} is not required, it is strongly encouraged. You may handwrite solutions so long as they are fully legible. The \texttt{ps0} directory, which contains your code for problems 1a and 1c, must be submitted separately to an autograder on Gradescope. Be sure to pull the starter code from the \href{https://github.com/Harvard-CS-120/cs120}{cs120 GitHub repository}.
 
  \newcommand{\children}{\mathit{children}}
- \renewcommand{\treeroot}{\mathit{treeroot}}
+ %\renewcommand{\treeroot}{\mathit{treeroot}}
  \newcommand{\parent}{\mathit{parent}}
  
 \begin{enumerate}
@@ -54,9 +54,9 @@ Recall the following properties of a (rooted) {\em tree}:
  For example, \texttt{v.left.key} is the key associated with \btv's left child.  
  Classes are more general than structs because they can also have private attributes and methods that operate on the attributes, allowing for object-oriented programming. However, you won't need that generality in this problem set.
 
- Here is an instance \treeeT\ of \texttt{BinaryTree}:
+ Here is an instance \treeT\ of \texttt{BinaryTree}:
  
- \includegraphics[scale=.175]{Fall22/Problem Sets and Exams/ps0/ps0_assets/p0_q1_BT_before.png}
+ \includegraphics[scale=.175]{ps0_assets/p0_q1_BT_before.png}
 
  A \texttt{BinaryTree} \treeT\  contains only a pointer to its root vertex, \texttt{T.root}, which is required to satisfy \texttt{T.root.parent==None}. In the above example, 
  the root is the vertex with key 1 (i.e. \texttt{T.root.key==1}).
@@ -92,7 +92,7 @@ Recall the following properties of a (rooted) {\em tree}:
 For example, if \treeT\  is the  tree shown above, 
 then calling \texttt{calculate\_sizes(T.root)} should modify  \treeT\ to be the following size-augmented tree:
 
- \includegraphics[scale=.175]{Fall22/Problem Sets and Exams/ps0/ps0_assets/p0_q1_BT_after.png}
+ \includegraphics[scale=.175]{ps0_assets/p0_q1_BT_after.png}
 
  Your program should run in time $O(n)$ when given the root of a tree with $n$ vertices. In a sentence or two, informally justify why your program has such a runtime. 
  
@@ -104,12 +104,12 @@ then calling \texttt{calculate\_sizes(T.root)} should modify  \treeT\ to be the 
 
  Before:
  
- \includegraphics[scale=.175]{Fall22/Problem Sets and Exams/ps0/ps0_assets/p0_q1b_before.png}
+ \includegraphics[scale=.175]{ps0_assets/p0_q1b_before.png}
  
  
  After:
  
-  \includegraphics[scale=.225]{Fall22/Problem Sets and Exams/ps0/ps0_assets/p0_q1b_after.png}
+  \includegraphics[scale=.225]{ps0_assets/p0_q1b_after.png}
 
   Prove that in every tree \treeT\ of size $n$, there exists a vertex \btv\ such that removing \btv\ from \treeT\ results in disjoint trees that all have size at most $n/2$.  \\
   
