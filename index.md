@@ -11,7 +11,7 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Ed](https://edstem.org/us/courses/24984/discussion/)
 - [Gradescope](https://www.gradescope.com/courses/417853)
 - [Canvas](https://canvas.harvard.edu/courses/105990)
-- [PSET 0 Starter Code](https://github.com/Harvard-CS-120/cs120/tree/main/fall2022/psets/ps0)
+- [Github](https://github.com/Harvard-CS-120/cs120)
 
 ### [Fall 2021](https://salil.seas.harvard.edu/classes/intro-algorithms-and-their-limitations-fall21)
 
