@@ -4,13 +4,14 @@
 
 An introductory course in theoretical computer science, aimed at giving students the power of using mathematical abstraction and rigorous proof to understand computation. Thus equipped, students will be able to design and use algorithms that apply to a wide variety of computational problems, with confidence about their correctness and efficiency, as well as recognize when a problem may have no algorithmic solution. At the same time, they will gain an appreciation for the beautiful mathematical theory of computation that is independent of (indeed, predates) the technology on which it is implemented.
 
-### [Fall 2022](https://harvard-cs-120.github.io/cs120/fall2022)
+### Fall 2022
 
 - [Syllabus](./fall2022/syllabus.pdf)
 - [Schedule, Lecture Notes, and Assignments](https://docs.google.com/spreadsheets/d/1AHYfpodIJWrXx_U7rBDk-0y9nrWrnif7TDS7Xh7Obu8/edit#gid=0)
 - [Ed](https://edstem.org/us/courses/24984/discussion/)
 - [Gradescope](https://www.gradescope.com/courses/417853)
 - [Canvas](https://canvas.harvard.edu/courses/105990)
+- [PSET 0 Starter Code](https://github.com/Harvard-CS-120/cs120/tree/main/fall2022/psets/ps0)
 
 ### [Fall 2021](https://salil.seas.harvard.edu/classes/intro-algorithms-and-their-limitations-fall21)
 
