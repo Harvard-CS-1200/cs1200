@@ -17,7 +17,7 @@ class BTvertex:
         self.parent: BTvertex = None
         self.left: BTvertex = None
         self.right: BTvertex = None
-        self.key: str = key
+        self.key: int = key
         self.size: int = None
 
 #
