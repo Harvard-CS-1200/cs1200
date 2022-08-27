@@ -40,18 +40,38 @@ Recall the following properties of a (rooted) {\em tree}:
  
  \begin{verbatim}
     class BinaryTree:
-        root : BTvertex
+        def __init__(self, root):
+            self.root: BTvertex = root
  
     class BTvertex:
-        parent: BTvertex
-        left: BTvertex
-        right: BTvertex
-        key: string
-        size: int
+        def __init__(self, key):
+            self.parent: BTvertex = None
+            self.left: BTvertex = None
+            self.right: BTvertex = None
+            self.key: int = key
+            self.size: int = None
  \end{verbatim}
 
- In CS50, the concept of a Python \texttt{class} was not covered. Here, with \texttt{BinaryTree}, we are using them in the same way as a \texttt{struct} in C. An instance \btv\  of the \texttt{BTvertex} class is a {\em pointer} to a structure containing the five attributes above. These attributes can be accessed as \texttt{v.parent}, \texttt{v.left}, \texttt{v.right}, \texttt{v.key}, and \texttt{v.size}. 
- For example, \texttt{v.left.key} is the key associated with \btv's left child.  
+
+ In CS50, the concept of a Python \texttt{class} was not covered. Here, with \texttt{BinaryTree} and \texttt{BTvertex}, we are using them in the same way as a \texttt{struct} in C. An object \btv\ of the \texttt{BTvertex} class contains five attributes, which we list with the type of the object we expect to be named by each attribute (using the Python type annotation syntax). These attributes can be accessed as \texttt{v.parent}, \texttt{v.left}, \texttt{v.right}, \texttt{v.key}, and \texttt{v.size}. 
+ For example, \texttt{v.left.key} is the key associated with \btv's left child. An object of the \texttt{BinaryTree} class contains only one attribute, which is the \texttt{BTvertex} object that is the root of our binary tree. You can create a \texttt{BinaryTree} object as follows:
+ 
+\begin{verbatim}
+root = BTvertex(120)
+tree = BinaryTree(root)
+tree.root.left = BTvertex(121)
+tree.root.right = BTvertex(124)
+\end{verbatim}
+
+You can then print attributes of the newly created \texttt{BinaryTree} object:
+\begin{verbatim}
+print(tree.root.key)
+>> 120
+print(tree.root.left.key)
+>> 121
+\end{verbatim}
+ 
+
  Classes are more general than structs because they can also have private attributes and methods that operate on the attributes, allowing for object-oriented programming. However, you won't need that generality in this problem set.
 
  Here is an instance \treeT\ of \texttt{BinaryTree}:
@@ -64,7 +84,7 @@ Recall the following properties of a (rooted) {\em tree}:
  \texttt{v.left==None} but \texttt{v.right} is the vertex with key 6.
  A {\em leaf} is a vertex with zero children, i.e. \texttt{v.left==v.right==None}. 
  
- A vertex \btw\ is {\em descendent} of a vertex \texttt{w} if there is a sequence of vertices $\btv_0,\btv_1,\ldots,\btv_k$, $k\in \mathbb{N}$ such that $\btv_0=\btv$, $\btv_k=\btw$, and 
+ A vertex \btw\ is {\em descendent} of a vertex \btv\ if there is a sequence of vertices $\btv_0,\btv_1,\ldots,\btv_k$, $k\in \mathbb{N}$ such that $\btv_0=\btv$, $\btv_k=\btw$, and 
  $\btv_i \in \{\btv_{i-1}.\texttt{left},\btv_{i-1}.\texttt{right}\}$ for $i=1,\ldots,k$.\footnote{$\mathbb{N}$ denotes the natural numbers $\{0,1,2,3,\ldots\}$.  Since we are computer scientists, we start counting at 0.}
  In the above example, the vertex with key 5 is a descendent of the root (with a path of length 2), but is not a descendent of the vertex with key 3.
  The sequence $\btv_0,\btv_1,\ldots,\btv_k$ is called a {\em path} from \btv\ to \btw\ and $k$ is the {\em distance} from \btv\ to \btw. Taking $k=0$, we see that \btv\ is a descendent of itself.
