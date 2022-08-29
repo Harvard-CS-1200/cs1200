@@ -31,7 +31,18 @@ class BTvertex:
 # Runtime: O(n)
 def calculate_sizes(v):
     # Your code goes here
-    pass
+    size = 1
+    
+    if v.left or v.right:
+        if v.left:
+            size += calculate_sizes(v.left)
+        if v.right:
+            size += calculate_sizes(v.right)
+    else:
+        return size
+    
+
+
 
 #
 # Problem 1c
