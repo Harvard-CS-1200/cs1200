@@ -4,7 +4,7 @@
 
 You can get started on problem set 0 by using the Git command line utility to clone the cs120 repo.
 
-`git clone git@github.com:Harvard-CS-120/cs120.git cs120`
+`git clone https://github.com/Harvard-CS-120/cs120.git cs120`
 
 You can then find problem set 0 in the directory `cs120/fall2022/psets/ps0`. For more information about downloading and installing Git see: https://git-scm.com/downloads
 
