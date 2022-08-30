@@ -8,25 +8,17 @@
 #
 # Setup
 #
-
-class BTvertex:
-    # parent: BTvertex (or None in the case of the root)
-    # left : BTvertex
-    # right : BTvertex
-    # key : string
-    # temp : int
-    def __init__(self, key):
-        self.parent = None
-        self.left = None
-        self.right = None
-        self.key = key
-        self.size = None
-
 class BinaryTree:
-    #root: BTvertex
     def __init__(self, root):
-        self.root = root
-
+        self.root: BTvertex = root
+ 
+class BTvertex:
+    def __init__(self, key):
+        self.parent: BTvertex = None
+        self.left: BTvertex = None
+        self.right: BTvertex = None
+        self.key: int = key
+        self.size: int = None
 
 #
 # Problem 1a
@@ -50,6 +42,6 @@ def calculate_sizes(v):
 # Output: A BTvertex that, if removed from the tree, would result
 # ... in disjoint trees that all have at most n/2 vertices
 # Runtime: O(h)
-def find_vertex(r):
+def find_vertex(r): 
     # Your code goes here
     pass
