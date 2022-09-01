@@ -10,6 +10,7 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Schedule, Lecture Notes, and Assignments](https://docs.google.com/spreadsheets/d/1AHYfpodIJWrXx_U7rBDk-0y9nrWrnif7TDS7Xh7Obu8/edit#gid=0)
 - [Ed](https://edstem.org/us/courses/24984/discussion/)
 - [Gradescope](https://www.gradescope.com/courses/417853)
+- [Google Calendar](https://calendar.google.com/calendar/u/0?cid=ZnRhb250c3FndnY3bW1pZHZsc2hkZG9hYWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
 - [Canvas](https://canvas.harvard.edu/courses/105990)
 - [Github](https://github.com/Harvard-CS-120/cs120)
 
