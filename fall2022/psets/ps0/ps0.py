@@ -30,6 +30,17 @@ class BTvertex:
 # ... tree rooted at vertex v to the size of that subtree
 # Runtime: O(n)
 def calculate_sizes(v):
+    ''' SOLUTION: The program has a runtime of O(n) because 
+    we visit each vertex once to calculate the size of 
+    the subtree rooted at that vertex. With the recursize 
+    structure, when we make a call to some vertex, a 
+    subsequent call is made on the child vertices, until 
+    no children remain, such function calls referring to 
+    vertices in earlier layers remain on the call stack 
+    while the sizes of trees rooted at lower level 
+    vertices are calculated first.
+    '''
+
     # Your code goes here
     size = 1
     
@@ -55,6 +66,19 @@ def calculate_sizes(v):
 # Runtime: O(h)
 def find_vertex(r): 
 
+    '''The program has a runtime of O(h) because at 
+    each vertex of the tree, it only checks at most 
+    two vertices in the subsequent layer, its left child, 
+    and right child. This is achieved within the bounds 
+    of the while loop. In this loop, the vertex being 
+    checks updates to one of these two children vertices 
+    for the next iteration unless the desired conditions 
+    are met. Thus, despite the size of the tree, at each 
+    layer we are essentially checking conditions for only 
+    2 vertices, and thus the runtime is constant with 
+    respect to the number of vertices in a given layer, 
+    resulting in a runtime of O(h).'''
+    
     vert = r
 
     while vert.left is not None or vert.right is not None:
