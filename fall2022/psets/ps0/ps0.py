@@ -31,19 +31,17 @@ class BTvertex:
 # ... tree rooted at vertex v to the size of that subtree
 # Runtime: O(n)
 def calculate_sizes(v):
-    # Top down approach (maybe bottom up?)
-    if (v.left == None) & (v.right == None):
+    # Top down approach 
+    if not v:
+        # if v is not a node that exists, return 0
+        return 0
+    elif (v.left == None) & (v.right == None):
+        # if v is a leaf, return 1 and set its size to 1
         v.size = 1;
         return 1;
-    elif (v.left != None) & (v.right == None):
-        v.size = 1 + calculate_sizes(v.left)
-    elif (v.left == None) & (v.right != None):
-        v.size = 1 + calculate_sizes(v.right)       
     else:
-        # print(calculate_sizes(v.left))
-        leftSize = int(calculate_sizes(v.left))
-        rightSize = int(calculate_sizes(v.right))
-        v.size = 1 + leftSize + rightSize
+        # in all other cases, sum the sizes of v's children to get the size of v
+        v.size = 1 + calculate_sizes(v.left) + calculate_sizes(v.right)
         return v.size
 
 
