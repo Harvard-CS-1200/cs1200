@@ -114,7 +114,9 @@ then calling \texttt{calculate\_sizes(T.root)} should modify  \treeT\ to be the 
 
  \includegraphics[scale=.175]{ps0_assets/p0_q1_BT_after.png}
 
- Your program should run in time $O(n)$ when given the root of a tree with $n$ vertices. In a sentence or two, informally justify why your program has such a runtime. 
+ Your program should run in time $O(n)$ when given the root of a tree with $n$ vertices. In a sentence or two, informally justify why your program has such a runtime. \\
+ 
+ SOLUTION: The program has a runtime of $O(n)$ because we visit each vertex once to calculate the size of the subtree rooted at that vertex. With the recursize structure, when we make a call to some vertex, a subsequent call is made on the child vertices, until no children remain, such function calls referring to vertices in earlier layers remain on the call stack while the sizes of trees rooted at lower level vertices are calculated first. 
  
  \item (proofs by contradiction) \label{part:contradiction}
  Removing a vertex \btv\ from a tree \treeT\ yields up to three disjoint trees: the subtree rooted at
@@ -133,9 +135,17 @@ then calling \texttt{calculate\_sizes(T.root)} should modify  \treeT\ to be the 
 
   Prove that in every tree \treeT\ of size $n$, there exists a vertex \btv\ such that removing \btv\ from \treeT\ results in disjoint trees that all have size at most $n/2$.  \\
   
-  You may prove this however you like, but a recommended approach is to define a ``potential function'' $\phi$ on the vertices of the tree, by setting $\phi(\btv)$ to equal the size of the largest tree created by removing \btv.  Let $\btv^*$ be a vertex that minimizes the value of $\phi$, i.e. $\btv^*$ is a vertex such that $\phi(\btv^*) \le \phi(\btv)$ for all other vertices $\btv$. Then we want to prove that $\phi(\btv^*)\leq n/2$.  Prove this by contradiction.  (Hint: try to show that either the parent or one of the children will have smaller potential. If you're feeling stuck, try drawing some pictures!)
+  You may prove this however you like, but a recommended approach is to define a ``potential function'' $\phi$ on the vertices of the tree, by setting $\phi(\btv)$ to equal the size of the largest tree created by removing \btv.  Let $\btv^*$ be a vertex that minimizes the value of $\phi$, i.e. $\btv^*$ is a vertex such that $\phi(\btv^*) \le \phi(\btv)$ for all other vertices $\btv$. Then we want to prove that $\phi(\btv^*)\leq n/2$.  Prove this by contradiction.  (Hint: try to show that either the parent or one of the children will have smaller potential. If you're feeling stuck, try drawing some pictures!) \\
+  
+  SOLUTION: We define as suggested a vertex $\btv^*$ that minimizes the value of $\phi$, i.e. $\btv^*$ is a vertex such that $\phi(\btv^*) \le \phi(\btv)$ for all other vertices $\btv$, where $\phi$ represents a ``potential function`` on the tree such that $\phi(\btv)$ is equal to the size of the largest tree created by removing \btv. We wish to prove that  $\phi(\btv^*)\leq n/2$. We prove this by contradiction. Suppose that $\phi(\btv^*) > n/2$, that is, the largest disjoint tree obtained by removing $\btv^*$ has size $ > n/2$. Given that there are a total $n$ vertices, and the vertex $\btv^*$ is one of them, this places a bound on the size of the remaining (at most) two disjoint trees obtained when we removed $\btv^*$, where the combined size is $ < \lfloor(n/2)\rfloor - 1$, again because we already had $\phi(\btv^*) > n/2$. \\
+  
+  Now, consider the vertex obtained by traveling one step in the direction of the largest disjoint tree obtained by removing $\btv^*$, regardless of whether this is the parent or a child. We denote this vertex $\btv^{**}$. Then, since this vertex is contained within the largest disjoint tree obtained by removing $\btv^*$ (the disjoint tree which $\phi(\btv^*)$ refers to), the potential in the same direction of this disjoint tree, obtained by removing $\btv^{**}$ will be $\phi(\btv^*) - 1 < \phi(\btv^*)$. Meanwhile, in the other direction, the total size of the other (at most) 2 disjoint subtrees would be $ < \lfloor(n/2)\rfloor - 1 + 1$, or $ < \lfloor(n/2)\rfloor$, which is still less than $\phi(\btv^*) > n/2$. Since , all disjoint trees of $\btv^{**}$ have size less than $\phi(\btv^*)$, we have that $\phi(\btv^{**}) < \phi(\btv^*)$, contradicting the initial assumption that $\phi(\btv^*) \le \phi(\btv)$ for all other vertices $\btv$. Thus, by contradiction, we have shown it must be true that $\phi(\btv^*)\leq n/2$, and there must be some vertex such that removing that vertex would result in disjoint trees with size at most $n/2$. \\
  
- \item (from proofs to algorithms)  Turn your proof from Part~\ref{part:contradiction} into a Python program that given a root vertex \texttt{r} of a {\em size-augmented} tree \treeT\ with $n$ vertices finds a vertex \btv\ with $\phi(\btv)\leq n/2$. Your program should run in time $O(h)$ on all size-augmented trees of height $h$; again informally justify why your program has such a runtime. (Hint: try to repeatedly reduce the potential function by moving to children. Why don't we need to try moving to parents as in the previous proof?)
+ \item (from proofs to algorithms)  Turn your proof from Part~\ref{part:contradiction} into a Python program that given a root vertex \texttt{r} of a {\em size-augmented} tree \treeT\ with $n$ vertices finds a vertex \btv\ with $\phi(\btv)\leq n/2$. Your program should run in time $O(h)$ on all size-augmented trees of height $h$; again informally justify why your program has such a runtime. (Hint: try to repeatedly reduce the potential function by moving to children. Why don't we need to try moving to parents as in the previous proof?) \\
+ 
+ EXLANATION: The program has a runtime of $O(h)$ because at each vertex of the tree, it only checks at most two vertices in the subsequent layer, its left child, and right child. This is achieved within the bounds of the while loop. In this loop, the vertex being checks updates to one of these two children vertices for the next iteration unless the desired conditions are met. Thus, despite the size of the tree, at each layer we are essentially checking conditions for only 2 vertices, and thus the runtime is constant with respect to the number of vertices in a given layer, resulting in a runtime of $O(h)$. \\
+ 
+ Furthermore, we don't have to check the parents because of the nature of iterating through the tree starting at the root vertex. This results in starting with the largest possible subtree, so subsequent subtree lengths would automatically be smaller and decrease in size as we travel through the tree at each iteration of the while loop. 
  \end{enumerate}
  
  \newcommand{\incomp}{\mathit{incomp}}
@@ -144,10 +154,84 @@ then calling \texttt{calculate\_sizes(T.root)} should modify  \treeT\ to be the 
  \begin{enumerate} 
 \item Show that $f(1)=0$, $f(2)=1$, and for all $n\geq 3$, we have
  $$ f(n) = (n-1)\cdot (f(n-1)+f(n-2)).$$
- (Hint: let $d$ be one of the donors, and consider all possible patients $p$ with whom $d$ could be matched.  Then consider cases according to whether $\incomp(p)$ is matched with $\incomp(d)$ or not.)
+ (Hint: let $d$ be one of the donors, and consider all possible patients $p$ with whom $d$ could be matched.  Then consider cases according to whether $\incomp(p)$ is matched with $\incomp(d)$ or not.) \\
+ 
+ SOLUTION: First we prove the statement when $n=1$ and $n=2$. When $n=1$, the only donor is incompatible with the only patient, so there are no ways to match them, meaning $f(1) = 0$. Additionally, when $n=2$, suppose we have pairs $(d_1, p_1)$ and $(d_2, p_2)$ where $p_i = incomp(d_i)$ and vice versa. Then the only way to match the donors and patients successfully is by assigning $d_1$ to $p_2$ and $d_2$ to $p_1$. Thus, we have proved $f(2) = 1$. 
+ 
+ We will mark each donor and patient by $d_1, d_2, \dots, d_n$ and $p_1, p_2, \dots, p_n$ where $d_i$ is incompatible with $p_i$, that is, $p_i = incomp(d_i)$ and vice versa. Suppose we first start assigning some donor $d_j$. We then have $(n-1)$ ways of doing this, since we can match $d_j$ with all $p_1 \dots p_n$ except $p_j$. Suppose $d_j$ ends up being assigned to some patient $p_k$. Then, we consider how the rest of the assignments will be done by splitting up which patient $incomp(p_k) = d_k$ is assigned to. \\
+ 
+ First, consider the case in which $d_k$ is assigned to $incomp(d_j) = p_j$. Then, we have essentially matched $d_j$ and $d_k$ to the other's patient, eliminating these two donor, patient pairs. There are then only $n-2$ donor, patient pairs remaining, which none of have been matched. Thus, we total number of ways to match these remaining $n-2$ donor, patient pairs is $f(n-2)$. \\
+ 
+ Now, for the second case. We must consider all the remaining ways in which $d_k$ is not matched with $incomp(d_j) = p_j$, since we already counted those. Thus, essentially, we can treat $p_j$ as $incomp(d_k)$!. Since the patient corresponding to $d_k$, $p_k$ has already been matched, $p_j$ essentially replaces $p_k$. In this case, we are treating the fact that we only want to count the ways of assigning where $d_k$ is not matched with $p_j$ as the same as $d_k$ being incompatible with $p_j$, since we already counted these ways in the previous case. Thus, we have matched one pair and still have $n-1$ remaining pairs to match, where each donor is incompatible with one patient (or can't be matched). The total number ways of matching in this case is $f(n-1)$. Thus, the total number of ways for matching $n$ donors and patients is as described, 
+ 
+  $$ f(n) = (n-1)\cdot (f(n-1)+f(n-2)).$$
+ 
 
  \item Prove by strong induction that for all $n\geq 2$, we have
  $$\frac{n!}{3} \leq f(n) \leq \frac{n!}{2}.$$
+ 
+ First we prove base cases. Suppose $n=2$. We already know from part $a$ that $f(2) = 1$. Then, by plugging into the inequality, we must check that 
+$$
+\frac{2!}{3} \leq f(2) \leq \frac{2!}{2}
+$$
+$$
+ = \frac{2}{3} \leq 1 \leq \frac{2}{2}
+$$
+$$
+ = \frac{2}{3} \leq 1 \leq 1
+$$
+
+which is indeed true. We now move on to check the next base case, which is when $n=3$. We must check
+
+$$
+\frac{3!}{3} \leq f(3) \leq \frac{3!}{2}
+$$
+
+Simplifying, we have 
+$$
+\frac{6}{3} \leq (3-1) \times \left( f(2) + f(1) \right) \leq \frac{6}{2}
+$$
+
+$$
+= 2 \leq 2 \times (1 + 0) \leq 3
+$$
+
+$$
+= 2 \leq 2 \leq 3
+$$
+
+which is indeed true. 
+
+We now move on to the inductive proof. Suppose the statement is true for both $k$ and $k+1$. That is, 
+
+ $$\frac{k!}{3} \leq f(k) \leq \frac{k!}{2}.$$
+ 
+ $$\frac{(k+1)!}{3} \leq f(k+1) \leq \frac{(k+1)!}{2}.$$
+ 
+ Then, by adding respective portions of the inequality, we have that 
+ 
+ $$
+= \frac{k!}{3} + \frac{(k+1)!}{3} \leq f(k) + f(k+1) \leq \frac{k!}{2} + \frac{(k+1)!}{2}
+ $$
+ $$
+= \frac{k! \times (1 + k + 1)}{3} \leq f(k) + f(k+1) \leq \frac{k! \times (1 + k + 1)}{2}
+ $$
+ $$
+= \frac{k! \times (k+2)}{3} \leq f(k) + f(k+1) \leq \frac{k! \times (k+2)}{2}
+ $$
+ Then, we multiply everything by a factor $(k+1)$. 
+ $$
+\frac{k! \times (k+1) \times (k+2)}{3} \leq (k+1) \times \left(f(k) + f(k+1)\right) \leq \frac{k! \times (k+1) \times (k+2)}{2}
+ $$
+ 
+$$
+ = \frac{(k+2)!}{3} \leq (k + 2 - 1) \times  \left(f(k) + f(k+1)\right) \leq \frac{(k+2)!}{2}
+$$
+
+Thus, we have proved this holds for $k+2$, and thus we statement is true for all $n \geq 2$.
+ 
+ 
+ 
  \end{enumerate}
 
 \end{enumerate}
