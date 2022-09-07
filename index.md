@@ -14,6 +14,7 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Canvas](https://canvas.harvard.edu/courses/105990)
 - [Github](https://github.com/Harvard-CS-120/cs120)
 - [Library Reserves](https://canvas.harvard.edu/courses/105990/external_tools/33436)
+- [Participation Guidelines](./fall2022/participation.pdf)
 
 ### [Fall 2021](https://salil.seas.harvard.edu/classes/intro-algorithms-and-their-limitations-fall21)
 
