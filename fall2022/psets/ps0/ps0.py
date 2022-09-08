@@ -60,31 +60,25 @@ def find_vertex(r):
     # print(target)
     if (r == None) | (r.size == target) | ((r.left == None) & (r.right == None)):
         return r
+
+
     # only traverse to children 
     # index vertex
     c = r
     while(True):
-        if (c.left != None) and (c.right != None):
-            if (c.left.size <= target) and (c.right.size <= target):
+        # Chris Barber showed me how to do one-line definitions
+        left_size = c.left.size if c.left else 0
+        right_size = c.right.size if c.right else 0
+
+        if (left_size <= target) and (right_size <= target):
                 ans = c
                 break
 
-            if c.left.size > c.right.size:
-                c = c.left
-            elif c.left.size < c.right.size: 
-                c = c.right
-        elif c.left == None and c.right != None:
-            c = c.right
-        elif c.left != None and c.right == None:
+        if left_size > right_size:
             c = c.left
-        elif c.size != None and c.size <= target:
-            ans = c
-            break
-
+        elif left_size < right_size:
+            c = c.right
+   
     return ans
-    # keep array of disjoint tree sizes for every potential node
-    # how to traverse tree? recursively? for loop?
 
-    # For parent disj tree, their new size is current size minus current vertex size
-    # for child disj tree, size is that size
     
