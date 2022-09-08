@@ -27,7 +27,7 @@ Please review the Syllabus for information on the collaboration policy, grading 
          $n^{\sqrt{n}}$ & $n^{\log n}$ & & & & & \\ \hline
          $(\log {n^{120}})^2\sqrt{n}$ & $n$ & & & & & \\ \hline
          $\log(2^n)$ & $\log(e^n)$ & & & & & \\ \hline
-         $2^\sqrt{n}$ & $n^{\log n}$ & & & & & \\ \hline
+         $2^{\sqrt{n}}$ & $n^{\log n}$ & & & & & \\ \hline
          $n^{(n \bmod 2)}$ & $n^{1/3}$ & & & & & \\ \hline
         \end{tabular}
         \egroup
@@ -58,7 +58,7 @@ Please review the Syllabus for information on the collaboration policy, grading 
 
     
 \begin{algorithm}[H]
-    \Fn{\BC{$n,b,k$}}\\
+    \BC{$n,b,k$}\\
     {
 
     \lIf{$b<2$}{\Return{$\bot$}}
@@ -91,7 +91,7 @@ Radix Sort is constructed by using Counting Sort as a subroutine several times, 
 Crucially, Radix Sort uses the fact that Counting Sort can be implemented in a way that is {\em stable} in the sense that it preserves the order in the input array when the same key appears multiple times.  Here is pseudocode for Radix Sort:
 
 \begin{algorithm}[H]
-\Fn{\RadixSort{$U,b,A$}}\\
+\RadixSort{$U,b,A$}\\
 \Input{A universe size $U\in \N$, a base $b\in \N$ with $b\geq 2$, and an array $A=((K_0,V_0),\ldots,(K_{n-1},V_{n-1}))$, where each $K_i\in [U]$}
 \Output{A valid sorting of $A$}
 
