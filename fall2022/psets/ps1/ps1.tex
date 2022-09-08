@@ -1,7 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage{classTools}
 
-
 \begin{document}
 
 % To include a problem set header, use the psHeader command
@@ -53,14 +52,15 @@ Please review the Syllabus for information on the collaboration policy, grading 
     \begin{itemize}                                
     \item $\Inputs = \N\times\N\times \N$ 
     \item $\Outputs = \{(c_0,c_1,\ldots,c_{k-1}) : k,c_0,\ldots,c_{k-1}\in \N\}$
-    \item $f(n,b,k) = \{ (c_0,c_1,\ldots,c_{k-1}) : n=c_0+c_1b+c_2b^2+\cdots+c_{k-1}b^{k-1}, \forall i\ 0\leq c_i< b-1\}.$ 
+    \item $f(n,b,k) = \{ (c_0,c_1,\ldots,c_{k-1}) : n=c_0+c_1b+c_2b^2+\cdots+c_{k-1}b^{k-1}, \forall i\ 0\leq c_i< b\}.$ 
     \end{itemize}
 
     
 \begin{algorithm}[H]
     \BC{$n,b,k$}\\
     {
-
+%    \Input{$(n,b)$}
+%    \Output{$(k,(c_0,c_1,\ldots,c_{k-1}))$}
     \lIf{$b<2$}{\Return{$\bot$}}
     \ForEach{$i=0,\ldots,k-1$}{
     $c_i = n \bmod b$\;
@@ -77,10 +77,11 @@ Please review the Syllabus for information on the collaboration policy, grading 
 
 
 \item This problem does not refer to $\Pi$ and instead refers to an abstract computational problem. A one- or two-sentence explanation for this the questions should suffice:
-
+%\begin{enumerate}
+%\item 
 
 Let $\Pi=(\Inputs,\Outputs,f)$ and $\Pi'=(\Inputs,\Outputs,f')$ be two computational problems.  Suppose that for all $x\in \Inputs$, we have $f(x)\subseteq f'(x)$.  Does it follow that every algorithm $A$ that solves $\Pi$ also solves $\Pi'$?    Does the answer change if we also require that $f(x)\neq \emptyset$ for every $x$? Justify your answers with a proof or a counterexample.
-
+%\end{enumerate}
 
 
 \end{enumerate}
@@ -94,7 +95,7 @@ Crucially, Radix Sort uses the fact that Counting Sort can be implemented in a w
 \RadixSort{$U,b,A$}\\
 \Input{A universe size $U\in \N$, a base $b\in \N$ with $b\geq 2$, and an array $A=((K_0,V_0),\ldots,(K_{n-1},V_{n-1}))$, where each $K_i\in [U]$}
 \Output{A valid sorting of $A$}
-
+%$b=\min\{n,U\}$\;
 $k=\lceil (\log U)/(\log b)\rceil$\;
 \ForEach{$i=0,\ldots,n-1$}{
     $V_i' = \BC(K_i,b,k)$}
