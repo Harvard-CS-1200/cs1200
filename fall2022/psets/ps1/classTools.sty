@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
-\ProvidesPackage{classTools}
+\ProvidesPackage{Fall21/classTools}
 
 %Package requiring
 \RequirePackage[linesnumbered,lined,boxed,commentsnumbered,noend]{algorithm2e}
@@ -20,6 +20,8 @@
 \RequirePackage{amssymb}
 \RequirePackage{multicol}
 \RequirePackage{enumitem}
+\RequirePackage{fancyhdr}
+\RequirePackage[shortlabels]{enumitem}
 
 %Various environments
 \newtheorem{theorem}{Theorem}[section]
@@ -53,8 +55,7 @@
   \begin{center}
   \framebox{
     \vbox{
-      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} 
-      \hfill Hesterberg \& Vadhan  }
+      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Hesterberg \& Vadhan }
       \vspace{4mm}
       \hbox to 5.78in { {\Large \hfill Problem Set #1  \hfill} }
       \vspace{2mm}
@@ -69,11 +70,26 @@
   \begin{center}
   \framebox{
     \vbox{
-      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Prof. Salil Vadhan }
+      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Hesterberg \& Vadhan}
       \vspace{4mm}
       \hbox to 5.78in { {\Large \hfill Lecture #1: #2  \hfill} }
       \vspace{2mm}
-      \hbox to 5.78in { {\em Harvard SEAS - Fall 2021 \hfill #3  }}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2022 \hfill #3  }}
+    }
+  }
+  \end{center}
+\vspace*{4mm}}
+
+\newcommand{\secHeader}[3]{ 
+\noindent
+  \begin{center}
+  \framebox{
+    \vbox{
+      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Hesterberg \& Vadhan}
+      \vspace{4mm}
+      \hbox to 5.78in { {\Large \hfill Section #1: #2  \hfill} }
+      \vspace{2mm}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2022 \hfill #3  }}
     }
   }
   \end{center}
@@ -85,11 +101,11 @@
   \begin{center}
   \framebox{
     \vbox{
-      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Prof. Salil Vadhan }
+      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Hesterberg \& Vadhan }
       \vspace{4mm}
-      \hbox to 5.78in { {\Large \hfill Active Learning Exercise #1: #2  \hfill} }
+      \hbox to 5.78in { {\Large \hfill Sender--Receiver Exercise #1: #2  \hfill} }
       \vspace{2mm}
-      \hbox to 5.78in { {\em Harvard SEAS - Fall 2021 \hfill #3  }}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2022 \hfill #3  }}
     }
   }
   \end{center}
@@ -100,11 +116,11 @@
   \begin{center}
   \framebox{
     \vbox{
-      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Prof. Salil Vadhan }
+      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Hesterberg \& Vadhan }
       \vspace{4mm}
       \hbox to 5.78in { {\Large \hfill Midterm #1  \hfill} }
       \vspace{2mm}
-      \hbox to 5.78in { {\em Harvard SEAS - Fall 2021 \hfill Date: #2  }}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2022 \hfill Date #2}}
     }
   }
   \end{center}
@@ -112,32 +128,101 @@
 
 \newcommand{\exampage}{\pagebreak \noindent \textbf{Name:} \hrulefill\ \  \textbf{HUID:} \hrulefill}
 
+\newcommand{\practiceFinalHeader}[2]{ 
+\noindent
+  \begin{center}
+  \framebox{
+    \vbox{
+      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Hesterberg \& Vadhan }
+      \vspace{4mm}
+      \hbox to 5.78in { {\Large \hfill Final Review Practice Problems  \hfill} }
+      \vspace{2mm}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2022 \hfill Final Exam: 9 a.m. #2  , Science Center D}}
+    }
+  }
+  \end{center}
+\vspace*{4mm}}
+
+
+\newcommand{\finalHeader}[2]{ 
+\noindent
+  \begin{center}
+  \framebox{
+    \vbox{
+      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Hesterberg \& Vadhan }
+      \vspace{4mm}
+      \hbox to 5.78in { {\Large \hfill Final Exam  \hfill} }
+      \vspace{2mm}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2022 \hfill #2}}
+    }
+  }
+  \end{center}
+\vspace*{4mm}}
+
+
+
+\newcommand{\makeupfinalHeader}[2]{ 
+\noindent
+  \begin{center}
+  \framebox{
+    \vbox{
+      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Hesterberg \& Vadhan }
+      \vspace{4mm}
+      \hbox to 5.78in { {\Large \hfill Make-Up Final Exam  \hfill} }
+      \vspace{2mm}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2022 \hfill #2}}
+    }
+  }
+  \end{center}
+  
+\vspace*{4mm}}
 %Draft comment features
 \newif\ifdraft
 \drafttrue
 \newcommand{\ted}[1]{\ifdraft{\todo[inline,color=red!20!white]{\textbf{Ted:} #1}}\fi}
 \newcommand{\salil}[1]{\ifdraft{\todo[inline,color=purple!20!white]{\textbf{Salil:} #1}}\fi}
+\newcommand{\anurag}[1]{\ifdraft{\todo[inline,color=green!20!white]{\textbf{Anurag:} #1}}\fi}
+\newcommand{\adam}[1]{\ifdraft{\todo[inline,color=orange!20!white]{\textbf{Adam:} #1}}\fi}
 \newcommand{\jennifer}[1]{\ifdraft{\todo[inline,color=blue!20!white]{\textbf{Jennifer:} #1}}\fi}
 \newcommand{\silvia}[1]{\ifdraft{\todo[inline,color=olive!20!white]{\textbf{Silvia:} #1}}\fi}
 \newcommand{\sanket}[1]{\ifdraft{\todo[inline,color=green!20!white]{\textbf{Sanket:} #1}}\fi}
 \newcommand{\andrew}[1]{\ifdraft{\todo[inline,color=violet!20!white]{\textbf{Andrew:} #1}}\fi}
 \newcommand{\melissa}[1]{\ifdraft{\todo[inline,color=orange!20!white]{\textbf{Melissa:} #1}}\fi}
-\newcommand{\Ben}[1]{\ifdraft{\todo[inline,color=green!20!white]{\textbf{Ben:} #1}}\fi}
-\newcommand{\zach}[1]{\ifdraft{\todo[inline,color=blue!20!white]{\textbf{Zach:} #1}}\fi}
-\newcommand{\adam}[1]{\ifdraft{\todo[inline,color=orange!20!white]{\textbf{Adam:} #1}}\fi}
-\newcommand{\olivia}[1]{\ifdraft{\todo[inline,color=pink!20!white]{\textbf{Olivia:} #1}}\fi}
+\newcommand{\ben}[1]{\ifdraft{\todo[inline,color=green!20!white]{\textbf{Ben:} #1}}\fi}
+\newcommand{\noa}[1]{\ifdraft{\todo[inline,color=green!20!white]{\textbf{Noa:} #1}}\fi}
+\newcommand{\phevos}[1]{\ifdraft{\todo[inline,color=orange!20!white]{\textbf{Phevos:} #1}}\fi}
+\newcommand{\michelle}[1]{\ifdraft{\todo[inline,color=violet!20!white]{\textbf{Michelle:} #1}}\fi}
+
+\newcommand{\patrick}[1]{\ifdraft{\todo[inline,color=pink!20!white]{\textbf{Patrick:} #1}}\fi}
+\newcommand{\kathy}[1]{\ifdraft{\todo[inline,color=yellow!20!white]{\textbf{Kathy:} #1}}\fi}
+\newcommand{\benji}[1]{\ifdraft{\todo[inline,color=cyan!20!white]{\textbf{Benji:} #1}}\fi}
+\newcommand{\olivia}[1]{\ifdraft{\todo[inline,color=violet!20!white]{\textbf{Olivia:} #1}}\fi}
+
 
 \newif\ifdetails % fill in details that are omitted in lecture handout version
 
 % stuff for algorithm environment
+\SetNoFillComment
+
 \SetKwInOut{Input}{Input}
 \SetKwInOut{Output}{Output}
 \SetKwInOut{Queries}{Queries}
 \SetKwInOut{Updates}{Updates}
 \SetKwInOut{Variables}{Variables}
 
+\newlength\myindent
+\setlength\myindent{2em}
+\newcommand\bindent{%
+  \begingroup
+  \setlength{\itemindent}{\myindent}
+  \addtolength{\algorithmicindent}{\myindent}
+}
+\newcommand\eindent{\endgroup}
+
 \SetAlgoProcName{Computational Problem}{Computational Problem}
 \SetAlgoFuncName{Data-Structure Problem}{Data-Structure Problem}
+\SetKwFunction{BC}{BC}
+\SetKwFunction{RadixSort}{RadixSort}
 \SetKwFunction{MergeSort}{MergeSort}
 \SetKwFunction{Merge}{Merge}
 \SetKwFunction{CountingSort}{CountingSort}
@@ -158,13 +243,19 @@
 \SetKwFunction{LongPathViaSAT}{LongPathViaSAT}
 \SetKwFunction{TrimmedMean}{TrimmedMean}
 \SetKwFunction{BinarySearch}{BinarySearch}
+\SetKwFunction{ExhaustiveSearch}{ExhaustiveSearch}
+\SetKwFunction{ImbalancedSearch}{ImbalancedSearch}
+\SetKwFunction{RecursiveSearch}{RecursiveSearch}
+\SetKwFunction{StoogeSort}{StoogeSort}
 
 \newcommand{\compprob}[3]{
-\begin{procedure}
-\Input{#2}
-\Output{#3}
-\caption{#1}
-\end{procedure}
+\begin{minipage}{\linewidth}   
+    \begin{procedure}[H]
+        \Input{#2}
+        \Output{#3}
+        \caption{#1}
+    \end{procedure}
+\end{minipage}
 }
 
 \newcommand{\staticdsprob}[3]{
@@ -193,6 +284,7 @@
 \fi
 
 \newcommand{\details}[2]{\ifdetails #1 \else \vspace{#2ex}\fi}
+%\newcommand{\details}[2]{\ifdetails #1 \else \phantom{#1}\fi}
 \newif\ifsolutions
 \newcommand{\solution}[2]{\ifsolutions{\color{blue} #1} \else \vspace{#2}\fi}
 
@@ -202,7 +294,9 @@
 
 \newcommand{\size}{\mathrm{size}}
 \newcommand{\Inputs}{\mathcal{I}}
+\newcommand{\Outputs}{\mathcal{O}}
 \newcommand{\Jinputs}{\mathcal{J}}
+\newcommand{\Joutputs}{\mathcal{Q}}
 \newcommand{\QuerySet}{\mathcal{Q}}
 \newcommand{\UpdateSet}{\mathcal{U}}
 \newcommand{\Preprocess}{\mathrm{Preprocess}}
@@ -218,7 +312,7 @@
 \newcommand{\outputlen}{\texttt{output\_len}}
 \newcommand{\inputlen}{\texttt{input\_len}}
 \newcommand{\Z}{\mathbb{Z}}
-
+\newcommand{\keytype}{\texttt{key}}
 
 
 \newcommand{\outerkeyptr}{\texttt{outer\_key\_ptr}}
@@ -293,6 +387,45 @@
 \newcommand{\reject}{\texttt{reject}}
 
 \newcommand{\eps}{\varepsilon}
+
+\newcommand{\memptr}{\texttt{mem\_ptr}}
+
+\newcommand{\TIME}{\mathsf{TIME}}
+\newcommand{\TIMEsearch}{\mathsf{TIME_{search}}}
+\newcommand{\Psearch}{\mathsf{P_{search}}}
+\newcommand{\Ptime}{\mathsf{P}}
+\newcommand{\EXPsearch}{\mathsf{EXP_{search}}}
+\newcommand{\EXPtime}{\mathsf{EXP}}
+\newcommand{\EXP}{\mathsf{EXP}}
+\newcommand{\NP}{\mathsf{NP}}
+\newcommand{\NPsearch}{\mathsf{NP_{search}}}
+
+\newcommand{\decision}[1]{#1\text{-decision}}
+
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cS}{\mathcal{S}}
+
+\newcommand{\Timb}{T_{\mathit{imb}}}
+\newcommand{\Trec}{T_{\mathit{rec}}}
+\newcommand{\Tbin}{T_{\mathit{bin}}}
+
+
+%truefalse
+%\documentclass{exam}
+
+\newcommand*\TrueFalse{\bfseries T\hspace*{10pt}F\hspace*{10pt}CU\hspace*{10pt}}
+\newlength\mylena
+\newlength\mylenb
+\settowidth\mylena{\TrueFalse}
+\newcommand\MyQ[1]{%
+  \setlength\mylenb{\linewidth}
+  \addtolength\mylenb{-\mylena}
+  \parbox[t]{\mylena}{\TrueFalse}\parbox[t]{\mylenb}{#1}}
+
+
 \newcommand{\treeT}{\texttt{T}}
 \newcommand{\btv}{\texttt{v}}
 \newcommand{\btw}{\texttt{w}}
+
+\newcommand{\true}{\texttt{true}}
+\newcommand{\false}{\texttt{false}}
