@@ -1,7 +1,10 @@
 from asyncio import base_tasks
+from cmath import log
+from itertools import count
 import math
 import time
 import random
+import numpy as np
 
 """
 See below for mergeSort and countSort functions, and for a useful helper function.
@@ -76,3 +79,20 @@ def BC(n, b, k):
         raise ValueError()
     return digits
 
+def radixSort(U, b, arr):
+    n = len(arr)
+    k = math.ceil((log(U)/log(b)).real)
+    V_prime = []
+    for elt in arr:
+        V_prime.append(BC(elt[0], b, k))
+    new_arr = [[x, [y, v]] for [x, y], v in zip(arr, V_prime)]
+    for i in range(k):
+        for j in range(n):
+            new_arr[j][0] = new_arr[j][1][1][i]
+        new_arr = countSort(U, new_arr)
+    for i in range(n):
+        k_i = 0
+        for j in range(k):
+            k_i += new_arr[i][1][1][j] * (b ** j)
+        new_arr[i] = [k_i, new_arr[i][1][0]]
+    return new_arr
