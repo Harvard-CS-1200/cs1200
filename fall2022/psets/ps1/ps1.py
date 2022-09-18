@@ -5,6 +5,8 @@ import math
 import time
 import random
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 
 """
 See below for mergeSort and countSort functions, and for a useful helper function.
@@ -89,12 +91,71 @@ def radixSort(U, b, arr):
     for i in range(k):
         for j in range(n):
             new_arr[j][0] = new_arr[j][1][1][i]
-        new_arr = countSort(U, new_arr)
+        new_arr = countSort(b, new_arr)
     for i in range(n):
         k_i = 0
         for j in range(k):
             k_i += new_arr[i][1][1][j] * (b ** j)
         new_arr[i] = [k_i, new_arr[i][1][0]]
     return new_arr
-    
-    #help
+
+
+count_sort = []
+merge_sort = []
+radix_sort = []
+# print(radixSort(80, 10, [[50, 1], [60, 7], [10, 2], [20, 4], [30, 3], [80, 9], [70, 8], [90, 4], [10, 1], [10, 0]]))
+# n_values = [2 ** i for i in range(17)]
+# U_values = [2 ** i for i in range(21)]
+
+for i in range(17):
+    n = 2 ** i
+    for j in range(21):
+        U_value = 2 ** j
+        array = [[random.randint(0, U_value - 1), 0] for _ in range(n)]
+        start_one = time.time()
+        countSort(U_value, array)
+        end_one = time.time()
+        count_sort.append([i, j, end_one - start_one])
+
+        start_two = time.time()
+        mergeSort(array)
+        end_two = time.time()
+        merge_sort.append([i, j, end_two - start_two])
+
+        
+        length = 2 if n < 2 else n
+        start_three = time.time()
+        radixSort(U_value, length, array)
+        end_three = time.time()
+        radix_sort.append([i, j, end_three - start_three])
+
+count_win_x = []
+count_win_y = []
+merge_win_x = []
+merge_win_y = []
+radix_win_x = []
+radix_win_y = []
+
+for i in range(len(count_sort)):
+    if min(count_sort[i][2], merge_sort[i][2], radix_sort[i][2]) == count_sort[i][2]:
+        # plt.scatter(count_sort[i][1], count_sort[i][0], label='countSort', color='red')
+        count_win_x.append(count_sort[i][1])
+        count_win_y.append(count_sort[i][0])
+    elif min(count_sort[i][2], merge_sort[i][2], radix_sort[i][2]) == merge_sort[i][2]:
+        # plt.scatter(merge_sort[i][1], merge_sort[i][0], label='mergeSort', color='blue')
+        merge_win_x.append(merge_sort[i][1])
+        merge_win_y.append(merge_sort[i][0])
+    else:
+        # plt.scatter(radix_sort[i][1], radix_sort[i][0], label='radixSort', color='green')
+        radix_win_x.append(radix_sort[i][1])
+        radix_win_y.append(radix_sort[i][0])
+
+plt.scatter(count_win_x, count_win_y, color='red', label='countSort')
+plt.scatter(merge_win_x, merge_win_y, color='blue', label='mergeSort')
+plt.scatter(radix_win_x, radix_win_y, color='green', label='radixSort')
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.xlabel('log_U')
+plt.ylabel('log_n')
+plt.title('Fastest Algorithm for Arrays of size n + universe U')
+plt.tight_layout()
+plt.show()
