@@ -11,6 +11,8 @@ class BinarySearchTree:
         self._size = 1
         self.debugger = debugger
 
+        # add parent attribute?? 
+
     @property
     def size(self):
          return self._size
@@ -59,8 +61,8 @@ class BinarySearchTree:
             return self
         if left_size > ind and self.left is not None:
             return self.left.select(ind)
-        if left_size < ind and self.right is not None:
-            return self.right.select(ind)
+        elif left_size < ind and self.right is not None:
+            return self.right.select(ind-left_size-1)
         return None
 
 
@@ -90,6 +92,7 @@ class BinarySearchTree:
     def insert(self, key):
         if self.key is None:
             self.key = key
+        # should be greater than or equal to, next elif should be an else
         elif self.key > key: 
             if self.left is None:
                 self.left = BinarySearchTree(self.debugger)
@@ -127,7 +130,32 @@ class BinarySearchTree:
     '''
     def rotate(self, direction, child_side):
         # Your code goes here
-        return self
+        if child_side == "R" and self.right:
+            if direction == "R":
+                # self.calculate_sizes()
+                return self
+            else:
+                # like example
+
+                old_r = self.right 
+                new_r = self.right.right 
+                old_r.right = new_r.left 
+                new_r.left = old_r
+
+                self.right = new_r
+
+                # self.calculate_sizes()
+                return self
+
+        elif child_side == "L" and self.left:
+            if direction == "R":
+                # self.calculate_sizes()
+                return self
+            else:
+                # self.calculate_sizes()
+                return self
+        return None
+        
 
     def print_bst(self):
         if self.left is not None:
