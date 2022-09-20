@@ -61,7 +61,7 @@ class BinarySearchTree:
         if left_size > ind and self.left is not None:
             return self.left.select(ind)
         if left_size < ind and self.right is not None:
-            return self.right.select(ind)
+            return self.right.select(ind - left_size - 1)
         return None
 
 
@@ -80,7 +80,6 @@ class BinarySearchTree:
             return self.left.search(key)
         return None
     
-
     '''
     Inserts a key into the tree
     key: the key for the new node; 
@@ -94,12 +93,14 @@ class BinarySearchTree:
         elif self.key > key: 
             if self.left is None:
                 self.left = BinarySearchTree(self.debugger)
+            self.size += 1
             self.left.insert(key)
         elif self.key < key:
             if self.right is None:
                 self.right = BinarySearchTree(self.debugger)
+            self.size += 1
             self.right.insert(key)
-        self.calculate_sizes()
+        # self.calculate_sizes()
         return self
 
     
@@ -128,6 +129,85 @@ class BinarySearchTree:
     '''
     def rotate(self, direction, child_side):
         # Your code goes here
+        if self == None:
+            return self
+        
+        parent_chunk_size = 0
+        child_size = 0
+        child_child_size = 0
+
+        if direction == 'L' and child_side == 'R':
+
+            if self.right.left:
+                parent_chunk_size = self.right.left.size
+            if self.right.right:  
+                child_size = self.right.right.size
+            if self.right.right.left:
+                child_child_size = self.right.right.left.size
+
+            keep = self.right
+            keep_child_child = self.right.right.left
+            self.right = self.right.right
+            self.right.size = self.right.size - child_child_size + parent_chunk_size + 1
+            
+            self.right.left = keep
+            self.right.left.right = keep_child_child
+            self.right.left.size = self.right.left.size + child_child_size - child_size
+
+        elif direction == 'R' and child_side == 'L':
+
+            if self.left.right:
+                parent_chunk_size = self.left.right.size
+            if self.left.left:  
+                child_size = self.left.left.size
+            if self.left.left.right:
+                child_child_size = self.left.left.right.size
+
+            keep = self.left
+            keep_child_child = self.left.left.right
+            self.left = self.left.left
+            self.left.size = self.left.size - child_child_size + parent_chunk_size + 1
+
+            self.left.right = keep
+            self.left.right.left = keep_child_child
+            self.left.right.size = self.left.right.size + child_child_size - child_size
+
+        elif direction == 'L' and child_side == 'L':
+
+            if self.left.left:
+                parent_chunk_size = self.left.left.size
+            if self.left.right:  
+                child_size = self.left.right.size
+            if self.left.right.left:
+                child_child_size = self.left.right.left.size
+
+            keep = self.left
+            keep_child_child = self.left.right.left
+            self.left = self.left.right
+            self.left.size = self.left.size - child_child_size + parent_chunk_size + 1
+
+            self.left.left = keep
+            self.left.left.right = keep_child_child
+            self.left.left.size = self.left.left.size + child_child_size - child_side
+
+        elif direction == 'R' and child_side == 'R':
+
+            if self.right.right:
+                parent_chunk_size = self.right.right.size
+            if self.right.left:  
+                child_size = self.right.left.size
+            if self.right.left.right:
+                child_child_size = self.right.left.right.size
+
+            keep = self.right
+            keep_child_child = self.right.left.right
+            self.right = self.right.left
+            self.right.size = self.right.size - child_child_size + parent_chunk_size + 1
+
+            self.right.right = keep
+            self.right.right.left = keep_child_child
+            self.right.right.size = self.right.right.size + child_child_size - child_size
+        
         return self
 
     def print_bst(self):
