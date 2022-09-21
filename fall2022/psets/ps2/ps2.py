@@ -96,12 +96,22 @@ class BinarySearchTree:
         elif self.key > key: 
             if self.left is None:
                 self.left = BinarySearchTree(self.debugger)
+                self.left.size = 1
+            self.size +=1
             self.left.insert(key)
         elif self.key < key:
             if self.right is None:
                 self.right = BinarySearchTree(self.debugger)
+                self.right.size = 1
+            self.size +=1
             self.right.insert(key)
-        self.calculate_sizes()
+
+        # self.calculate_sizes()
+
+        # change: commented out self.calculate_sizes() and replaced with
+        # lines that simply increment the size of nodes on path to new
+        # node by 1
+
         return self
 
     
@@ -133,14 +143,26 @@ class BinarySearchTree:
         if child_side == "R" and self.right:
             if direction == "R":
                 # self.calculate_sizes()
+                old_r = self.right
+                new_r = self.right.left
+                old_r.left = new_r.right
+
+                new_r.right = old_r
+
+                self.right = new_r
+
                 return self
             else:
-                # like example
-
-                old_r = self.right 
-                new_r = self.right.right 
+                # like example, recalculate size x first then y based on x
+                old_r = self.right #x size a+y+1
+                new_r = self.right.right #y size b+c+1
                 old_r.right = new_r.left 
+                # old_r.size = old_r.right.size + old_r.left.size + 1
+
+                # old_r.left.size if old_r.left else 0
+
                 new_r.left = old_r
+                # new_r.size = old_r.size + new_r.right.size + 1
 
                 self.right = new_r
 
@@ -149,9 +171,27 @@ class BinarySearchTree:
 
         elif child_side == "L" and self.left:
             if direction == "R":
+
+                old_l = self.left 
+                new_l = self.left.left 
+                old_l.left = new_l.right 
+                # old_l.size = old_l.left.size + old_l.right.size+1
+
+                new_l.right = old_l
+                # new_l.size = new_l.size + new_l.left.size +1
+
+                self.left = new_l
                 # self.calculate_sizes()
                 return self
             else:
+                old_l = self.left
+                new_l = self.left.right
+                old_l.right = new_l.left
+
+                new_l.left = old_l
+                self.left = new_l
+
+                return self
                 # self.calculate_sizes()
                 return self
         return None
