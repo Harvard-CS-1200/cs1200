@@ -63,6 +63,7 @@ def executeProgram(programArr, inputArr):
         if cmd == "/":
             #  ['/', i, j, k]: compute (var_j // var_k) and store in var_i.
             # Note that this is integer division. You should return an integer, not a float.
+            # Remember division by 0 results in 0.
             # TODO: Implement division.
             pass
             
