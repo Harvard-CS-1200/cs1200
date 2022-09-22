@@ -16,7 +16,7 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Library Reserves](https://canvas.harvard.edu/courses/105990/external_tools/33436)
 - [Participation Guidelines](./fall2022/participation.pdf)
 - [Instructions for Sender/Receiver Exercises](./fall2022/sre/sre-instructions.pdf)
-- [Guidelines for Revision videos](./fall2022/revision-guidelines.pdf)
+- [Guidelines for Revision Videos](./fall2022/revision-guidelines.pdf)
 
 ### [Fall 2021](https://salil.seas.harvard.edu/classes/intro-algorithms-and-their-limitations-fall21)
 
