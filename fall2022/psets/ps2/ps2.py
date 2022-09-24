@@ -1,7 +1,8 @@
 class BinarySearchTree:
     # left: BinarySearchTree
     # right: BinarySearchTree
-    # key: string
+    # key: int
+    # item: int
     # size: int
     def __init__(self, debugger = None):
         self.left = None
