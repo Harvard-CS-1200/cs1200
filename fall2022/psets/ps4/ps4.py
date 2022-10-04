@@ -21,12 +21,12 @@ random.seed(120)
 
 
 '''
-A Las Vegas Algorithm to find an item-key pair (Ij, Kj) such that Kj is an i’th smallest key.
-arr: a list of item-key pair tuples
-    e.g. [(I0, K0), (I1, K1), ..., (Ii, Ki), ..., (In, Kn)] 
-    ... in this problem set, the items are irrelevant
+A Las Vegas Algorithm to find a key-value pair (Ij, Kj) such that Kj is an i’th smallest key.
+arr: a list of key-value pair tuples
+    e.g. [(K0, V0), (K1, V1), ..., (Ki, Vi), ..., (Kn, Vn)] 
+    ... in this problem set, the values are irrelevant
 i: an integer [0, n-1] 
-returns: An item-key pair (Ij, Kj) such that Kj is an i’th smallest key.
+returns: An key-value pair (Kj, Vj) such that Kj is an i’th smallest key.
 '''
 
 
