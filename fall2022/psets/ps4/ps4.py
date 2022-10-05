@@ -57,11 +57,6 @@ def MergeSortSelect(arr, query_list):
     pass
     return [(0, -1)] * len(query_list)  # replace this line with your return
 
-def MergeSortSelect(arr, query_list):
-    # Only call MergeSort once
-    # ... MergeSort has already been implemented for you (see below)
-    sorted_array = MergeSort(arr)
-    return [sorted_array[i] for i in query_list]
 
 ##################################
 #                                #

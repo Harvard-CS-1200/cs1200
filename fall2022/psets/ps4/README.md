@@ -6,6 +6,13 @@ This problem set explores randomized algorithms and graphs. The programming port
 
 *Make sure to pull from the course source often or check Ed for updates. We hope to release a perfect problem set but sometimes we add to the problem set to make things easier or fix obscure bugs.*
 
+## Downloading Starter Code
+Run the following command to download the necessary libraries for graphing:
+
+```bash
+pip install requirements.txt
+```
+
 ## Instructions
 
 **Problem 1a**: For this part of the problem, you must fill in the implementation for QuickSelect. We have provided some local tests to help you check that your implementation returns the right answer. You can run the included tests with `python3 -m ps4_tests` (as explained below). **If you pass the local tests you should be in good shape to move on. The focus of this problem is to implement a specific randomized algorithm.** It also sets up for the next parts of the problem.
