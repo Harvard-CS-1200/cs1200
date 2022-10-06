@@ -10,7 +10,7 @@ This problem set explores randomized algorithms and graphs. The programming port
 Run the following command to download the necessary libraries for graphing:
 
 ```bash
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Instructions
