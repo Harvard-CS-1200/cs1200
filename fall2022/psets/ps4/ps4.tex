@@ -51,7 +51,7 @@
         Analyze the running time of your reduction and deduce that the Shortest Rotating Walk can be found in time $O(kn+m_0+\cdots+m_{k-1})$.
         \label{part:ReduceToOrdinary}  To test your reduction and algorithm, try running through the example in Part~\ref{part:BFS}.
         
-        \item \label{part:BFS} Run your algorithm from Part~\ref{part:ReduceToOrdinary} on the following pair of graphs $G_0$ and $G_1$ to find the Shortest Rotating Walk from $s=(a,0)$ to $t=(c,0)$; this will involve solving Single-Source Shortest Walks on a digraph $G'$ with $2\cdot 8=16$ vertices. Fill out the table provided below with the BFS frontier in $G'$ at each iteration, labelling the vertices of $G'$ as $(a, 0),(b, 0),\ldots,(g,0),(a,1),(b,1),\ldots,(g,1)$, and for each vertex $v$ in the table, drawing an arrow in the table from $v$'s BFS predecessor to $v$. 
+        \item \label{part:BFS} Run your algorithm from Part~\ref{part:ReduceToOrdinary} on the following pair of graphs $G_0$ and $G_1$ to find the Shortest Rotating Walk from $s=a$ to $t=c$; this will involve solving Single-Source Shortest Walks on a digraph $G'$ with $2\cdot 8=16$ vertices. Fill out the table provided below with the BFS frontier in $G'$ at each iteration, labelling the vertices of $G'$ as $(a, 0),(b, 0),\ldots,(g,0),(a,1),(b,1),\ldots,(g,1)$, and for each vertex $v$ in the table, drawing an arrow in the graph from $v$'s BFS predecessor to $v$. 
 %        \salil{is this the same example as from last year?  May be good to change it.} \salil{where's the table?}
 
             \includegraphics[width=14cm]{ps4_graphs_new.png}
