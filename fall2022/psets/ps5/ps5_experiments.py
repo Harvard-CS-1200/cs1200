@@ -1,7 +1,7 @@
 import numpy as np
 import random
 from ps5_helpers import timeout, color, generate_line_of_ring_subgraphs, generate_random_linked_cluster, COLORS
-from ps5_solution import Graph, exhaustive_search_coloring, bfs_2_coloring, iset_bfs_3_coloring
+from ps5 import Graph, exhaustive_search_coloring, bfs_2_coloring, iset_bfs_3_coloring
 random.seed(120)
 
 ##################################
