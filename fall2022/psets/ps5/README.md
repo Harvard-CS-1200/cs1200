@@ -18,9 +18,9 @@ We have implemented exhaustive search for you as a benchmark. You will implement
 
 **Problem 1c**: Implement the O(1.89^n)-time algorithm for 3-coloring that you studied in the Sender Receiver Exercise, also verifying its correctness by running `python3 -m ps5_tests 3`.
 
-**Problem 1d**: Run the experiments we provided in `ps5_experiments.py`.
+**Problem 1d**: Run the experiments we provided in `ps5_experiments.py` and compare the efficiency of the two coloring algorithms in your writeup.
 
-**Conclusion**: If your work passes the local tests, includes the figure for your generated chart, and answers 1b, you should be in good shape to get full marks for this problem.
+**Conclusion**: If your work passes the local tests and you answer 1d, you should be in good shape to get full marks for this problem.
 You can check that you pass all tests by running `python3 -m ps5_tests`.
 
 ## Running the Code
