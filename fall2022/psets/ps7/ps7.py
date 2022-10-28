@@ -204,6 +204,8 @@ def sat_3_coloring(G):
 
     return G.colors
 
+
+
 # Feel free to add miscellaneous tests below!
 if __name__ == "__main__":
     G0 = Graph(2).add_edge(0, 1)
