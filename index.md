@@ -10,7 +10,10 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Schedule, Lecture Notes, and Assignments](https://docs.google.com/spreadsheets/d/1fHL9VZ0t58UtEUrXScsUj2Vyh40ePVluM9tqluR8Jj0/edit?usp=sharing)
 - [Ed](https://edstem.org/us/courses/41845/discussion/)
 - [Canvas](https://canvas.harvard.edu/courses/122050)
+- [Library Reserves](https://canvas.harvard.edu/courses/122050/external_tools/33436)
 - [Github](https://github.com/Harvard-CS-120/cs120)
+- [Instructions for Sender/Receiver Exercises](./fall2023/sre/sre-instructions.pdf)
+- [Instructions for Sender/Receiver Exercises (Extension School)](./fall2023/sre/sre-instructions-ext.pdf)
 
 ### Fall 2022
 
