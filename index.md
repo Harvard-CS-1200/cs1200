@@ -14,6 +14,7 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Github](https://github.com/Harvard-CS-120/cs120)
 - [Instructions for Sender/Receiver Exercises](./fall2023/sre/sre-instructions.pdf)
 - [Instructions for Sender/Receiver Exercises (Extension School)](./fall2023/sre/sre-instructions-ext.pdf)
+- [Guidelines for Revision Videos](./fall2023/revision-guidelines.pdf)
 
 ### Fall 2022
 
