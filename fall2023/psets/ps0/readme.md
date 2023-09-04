@@ -48,4 +48,4 @@ Test 13:  Failed
 Test 14:  Failed
 ```
 
-Once you are satisfied with your solution you can submit your `ps0.py` code to [gradescope](https://www.gradescope.com/courses/417853). 
+Once you are satisfied with your solution you can submit your `ps0.py` code to [gradescope](https://www.gradescope.com/courses/567245). 
