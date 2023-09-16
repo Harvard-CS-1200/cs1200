@@ -1,5 +1,5 @@
 \documentclass[11pt]{article}
-\usepackage{Fall23/classTools}
+\usepackage{classTools}
 \usepackage{graphicx}
 \def\draft{1}
 
@@ -57,7 +57,7 @@ print(tree.root.left.key)
 
  Here is an instance \treeT\ of \texttt{BinaryTree}:
  
- \includegraphics[scale=.175]{Fall23/Problem Sets and Exams/ps0/ps0_assets/p0_q1_BT_before.png}
+ \includegraphics[scale=.175]{ps0_assets/p0_q1_BT_before.png}
 
  A \texttt{BinaryTree} \treeT\  contains only a pointer to its root vertex, \texttt{T.root}, which is required to satisfy \texttt{T.root.parent==None}. In the above example, 
  the root is the vertex with key 1 (i.e. \texttt{T.root.key==1}).
@@ -65,7 +65,7 @@ print(tree.root.left.key)
  \texttt{v.left==None} but \texttt{v.right} is the vertex with key 6.
  A {\em leaf} is a vertex with zero children, i.e. \texttt{v.left==v.right==None}. 
  
- A vertex \btw\ is {\em descendent} of a vertex \texttt{w} if there is a sequence of vertices $\btv_0,\btv_1,\ldots,\btv_k$, $k\in \mathbb{N}$ such that $\btv_0=\btv$, $\btv_k=\btw$, and 
+ A vertex \btw\ is {\em descendent} of a vertex \texttt{v} if there is a sequence of vertices $\btv_0,\btv_1,\ldots,\btv_k$, $k\in \mathbb{N}$ such that $\btv_0=\btv$, $\btv_k=\btw$, and 
  $\btv_i \in \{\btv_{i-1}.\texttt{left},\btv_{i-1}.\texttt{right}\}$ for $i=1,\ldots,k$.\footnote{$\mathbb{N}$ denotes the natural numbers $\{0,1,2,3,\ldots\}$.  Since we are computer scientists, we start counting at 0.}
  In the above example, the vertex with key 5 is a descendent of the root (with a path of length 2), but is not a descendent of the vertex with key 3.
  The sequence $\btv_0,\btv_1,\ldots,\btv_k$ is called a {\em path} from \btv\ to \btw\ and $k$ is the {\em distance} from \btv\ to \btw. Taking $k=0$, we see that \btv\ is a descendent of itself.
@@ -93,7 +93,7 @@ print(tree.root.left.key)
 For example, if \treeT\  is the  tree shown above, 
 then calling \texttt{calculate\_sizes(T.root)} should modify  \treeT\ to be the following size-augmented tree:
 
- \includegraphics[scale=.175]{Fall23/Problem Sets and Exams/ps0/ps0_assets/p0_q1_BT_after.png}
+ \includegraphics[scale=.175]{ps0_assets/p0_q1_BT_after.png}
 
  Your program should run in time $O(n)$ when given the root of a tree with $n$ vertices. In a sentence or two, informally justify why your program has such a runtime. 
  
@@ -105,12 +105,12 @@ then calling \texttt{calculate\_sizes(T.root)} should modify  \treeT\ to be the 
 
  Before:
  
- \includegraphics[scale=.175]{Fall23/Problem Sets and Exams/ps0/ps0_assets/p0_q1b_before.png}
+ \includegraphics[scale=.175]{ps0_assets/p0_q1b_before.png}
  
  
  After:
  
-  \includegraphics[scale=.225]{Fall23/Problem Sets and Exams/ps0/ps0_assets/p0_q1b_after.png}
+  \includegraphics[scale=.225]{ps0_assets/p0_q1b_after.png}
 
   Suppose that for a vertex \btv, the largest subtree created by removing \btv\ contains a neighbor (i.e. child or parent) \btv$^*$\ of \btv\ and a total of $\phi(\btv)$ vertices (including \btv$^*$).
   If we remove \btv$^*$ and not \btv, we create at most two subtrees which don't contain \btv: prove that these subtrees each contain fewer than $\phi(\btv)$ vertices.
