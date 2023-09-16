@@ -1,0 +1,49 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.17)  6 SEP 2023 21:24
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"c:/Users/soagb/Documents/Harvard Coursework (Local)/7 Senior Fall/CS 120/cs120/fall2023/psets/ps0/ps0.tex"
+(c:/Users/soagb/Documents/Harvard Coursework (Local)/7 Senior Fall/CS 120/cs120/fall2023/psets/ps0/ps0.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-04-10> (C:\Users\soagb\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(C:\Users\soagb\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
+File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+
+! LaTeX Error: File `Fall23/classTools.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+c:/Users/soagb/Documents/Harvard Coursework (Local)/7 Senior Fall/CS 120/cs120/fall2023/psets/ps0/ps0.tex:3: Emergency stop.
+<read *> 
+         
+l.3 \usepackage
+               {graphicx}^^M
+*** (cannot \read from terminal in nonstop modes)
+
+ 
+Here is how much of TeX's memory you used:
+ 238 strings out of 478552
+ 3384 string characters out of 2841938
+ 292264 words of memory out of 3000000
+ 18543 multiletter control sequences out of 15000+600000
+ 469559 words of font info for 29 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 32i,0n,38p,250b,36s stack positions out of 10000i,1000n,20000p,200000b,80000s
+c:/Users/soagb/Documents/Harvard Coursework (Local)/7 Senior Fall/CS 120/cs120/fall2023/psets/ps0/ps0.tex:3:  ==> Fatal error occurred, no output PDF file produced!
