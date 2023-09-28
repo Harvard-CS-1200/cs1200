@@ -23,7 +23,7 @@ zero_id = 3
 one_id = 4
 counter_id = 5
 result_id = 6
-eleven_id = 7
+seventeen_id = 7
 temp_id = 8   # Used only in prog2
 W_id = 9       # Used only in prog2
 
@@ -31,13 +31,13 @@ W_id = 9       # Used only in prog2
 prog1 = [8, 
     ['assign', zero_id, 0],
     ['assign', one_id, 1], 
-    ['assign', eleven_id, 11],
+    ['assign', seventeen_id, 17],
     ['assign', output_len_id, 1], 
     ['assign', output_ptr_id, 0],
     # TODO: lines 5-8 from pseudocode
     ['-', counter_id, counter_id, one_id],
     ['goto', zero_id, 7],
-    ['*', result_id, result_id, eleven_id],
+    ['*', result_id, result_id, seventeen_id],
     ['write', output_ptr_id, result_id]
 ]
 
@@ -45,10 +45,10 @@ prog1 = [8,
 prog2 = [10, 
     ['assign', zero_id, 0],
     ['assign', one_id, 1], 
-    ['assign', eleven_id, 11], 
+    ['assign', seventeen_id, 17], 
     ['assign', output_len_id, 1], 
     ['assign', output_ptr_id, 0],
-    ['assign', result_id, 11],
+    ['assign', result_id, 17],
     ['assign', W_id, 2**32],
     ['read', counter_id, zero_id],
     ['goto', counter_id, 15],
