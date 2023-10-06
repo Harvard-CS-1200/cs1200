@@ -29,12 +29,15 @@ W_id = 9       # Used only in prog2
 
 # TODO: Fill in prog1 with the first RAM program provided in the homework.
 prog1 = [8, 
-    ['assign', zero_id, 0],
+    ['assign', zero_id, 0], 
     ['assign', one_id, 1], 
     ['assign', seventeen_id, 17],
     ['assign', output_len_id, 1], 
     ['assign', output_ptr_id, 0],
-    # TODO: lines 5-8 from pseudocode
+    ['assign', result_id, 17],
+    ['read', counter_id, zero_id],
+    ['goto', counter_id, 11],
+    ['*', result_id, result_id, result_id],
     ['-', counter_id, counter_id, one_id],
     ['goto', zero_id, 7],
     ['*', result_id, result_id, seventeen_id],
@@ -42,6 +45,7 @@ prog1 = [8,
 ]
 
 # TODO: Fill in prog2 with the second RAM program provided in the homework.
+
 prog2 = [10, 
     ['assign', zero_id, 0],
     ['assign', one_id, 1], 
@@ -57,7 +61,12 @@ prog2 = [10,
     ['*', temp_id, temp_id, W_id],
     ['-', result_id, result_id, temp_id],
     ['-', counter_id, counter_id, one_id],
-    # TODO: lines 14-19 from pseudocode
+    ['goto', zero_id, 8],
+    ['*', result_id, result_id, seventeen_id],
+    ['/', temp_id, result_id, W_id],
+    ['*', temp_id, temp_id, W_id],
+    ['-', result_id, result_id, temp_id],
+    ['write', output_ptr_id, result_id]
 ]
 
 
@@ -79,7 +88,7 @@ def run_prog2 (n):
 
 # Plot both RAM programs' running times and save as `running_times.png`
 def graph ():
-    input_range = range(0, 15)
+    input_range = range(0, 29)
     prog1_time = [time_fun(run_prog1, i) for i in input_range]
     prog2_time = [time_fun(run_prog2, i) for i in input_range]
     plt.plot(input_range, prog1_time, label="Program 1")

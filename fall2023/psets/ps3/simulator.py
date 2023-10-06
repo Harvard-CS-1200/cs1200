@@ -3,6 +3,7 @@
 # You can use `tests.py` to run your simulator on some prewritten RAM programs.
 
 from collections import defaultdict
+import time #to be removed
 
 variableList = []
 # Note: defaultdict works exactly the same as a normal Python dictionary except it returns a default 
@@ -31,6 +32,7 @@ def executeProgram(programArr, inputArr):
     programArr = programArr[1:]
     programCounter = 0
     while programCounter < len(programArr):
+        # time.sleep(.0001)
         # Store the command and the list of operands.
         cmd = programArr[programCounter][0]
         ops = programArr[programCounter][1:]
@@ -42,38 +44,46 @@ def executeProgram(programArr, inputArr):
         if cmd == "write":
             # ['write', i, j]: store the value of var_j in memory at the location var_i 
             memory[variableList[ops[0]]] = variableList[ops[1]]
+            # print(memory[variableList[ops[0]]])
         if cmd == "assign":
             # ['assign', i, j]: assign var_i to the value j
             # TODO: Implement assign.
-            pass
+            variableList[ops[0]] = ops[1]
+            # print("assigned ", ops[1], "to", variableList[ops[0]])
             
         # Arithmetic commands
         if cmd == "+":
             # ['+', i, j, k]: compute (var_j + var_k) and store in var_i
             # TODO: Implement addition.
-            pass
+            variableList[ops[0]] = variableList[ops[1]] + variableList[ops[2]]
         if cmd == "-":
             # ['-', i, j, k]: compute max((var_j - var_k), 0) and store in var_i.
             # TODO: Implement subtraction.
-            pass
+            variableList[ops[0]] = max(variableList[ops[1]] - variableList[ops[2]],0)
         if cmd == "*":
             # ['*', i, j, k]: compute (var_j * var_k) and store in var_i.
             # TODO: Implement multiplication.
-            pass
+            variableList[ops[0]] = variableList[ops[1]] * variableList[ops[2]]
         if cmd == "/":
             #  ['/', i, j, k]: compute (var_j // var_k) and store in var_i.
             # Note that this is integer division. You should return an integer, not a float.
             # Remember division by 0 results in 0.
             # TODO: Implement division.
-            pass
+            if variableList[ops[2]] == 0:
+                variableList[ops[0]] = 0
+            else:
+                variableList[ops[0]] = int(variableList[ops[1]]) // int(variableList[ops[2]])
+                # print(int(variableList[ops[1]]) , "/", int(variableList[ops[2]]), "=", int(variableList[ops[1]]) / int(variableList[ops[2]]))
             
         # Control commands
         if cmd == "goto":
             # ['goto', i, j]: if var_i is equal to 0, go to line j
             # TODO: Implement goto.
-            pass
+            if variableList[ops[0]] == 0:
+                programCounter = ops[1] - 1
         
         programCounter += 1
     
     # Return the memory starting at output_ptr with length of output_len
     return [memory[i] for i in range(variableList[1], variableList[1]+variableList[2])]
+

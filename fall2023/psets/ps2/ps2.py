@@ -52,6 +52,7 @@ class BinarySearchTree:
     ind: a number between 0 and n-1 (the number of nodes/objects)
     returns BinarySearchTree/Node or None
     '''
+    #this is wrong - need to change index as we move downwards to the right (there is still stuff on the left)
     def select(self, ind):
         left_size = 0
         if self.left is not None:
@@ -61,7 +62,8 @@ class BinarySearchTree:
         if left_size > ind and self.left is not None:
             return self.left.select(ind)
         if left_size < ind and self.right is not None:
-            return self.right.select(ind)
+            return self.right.select(ind-left_size-1)
+            # return self.right.select(ind)
         return None
 
 
@@ -69,6 +71,7 @@ class BinarySearchTree:
     Searches for a given key
     returns a pointer to the object with target key or None (Roughgarden)
     '''
+    # this seems right to me
     def search(self, key):
         if self is None:
             return None
@@ -88,18 +91,24 @@ class BinarySearchTree:
     
     returns the original (top level) tree - allows for easy chaining in tests
     '''
+    #calculate sizes runs in O(n) time, we can do better
+    # just add the nodes 
     def insert(self, key):
         if self.key is None:
             self.key = key
+            # self.size = 1
         elif self.key > key: 
+            #increment sizes before we travel down the tree (and after we know there is a node)
+            self.size += 1
             if self.left is None:
                 self.left = BinarySearchTree(self.debugger)
             self.left.insert(key)
         elif self.key < key:
+            self.size += 1
             if self.right is None:
                 self.right = BinarySearchTree(self.debugger)
             self.right.insert(key)
-        self.calculate_sizes()
+        # self.calculate_sizes()
         return self
 
     
@@ -127,7 +136,46 @@ class BinarySearchTree:
        11 
     '''
     def rotate(self, direction, child_side):
-        # Your code goes here
+        if self is None:
+            return self
+
+        # define top level node that is moving
+        if child_side == 'L':
+            node = self.left
+        else:
+            node = self.right
+
+        if node is None:
+            return self
+
+        if direction == 'L':
+            swap_node = node.right # node we'll swap with child
+            middle_node = swap_node.left # child of swap_node in same direction as swap
+            node.right = middle_node # update new parent of (middle_node = child of swap_node)
+            swap_node.left = node # make swap_node the parent of original node
+        else:
+            swap_node = node.left
+            middle_node = swap_node.right
+            node.left = middle_node
+            swap_node.right = node
+        
+        if child_side == 'L': # put swap node into original node's place
+            self.left = swap_node
+        else:
+            self.right = swap_node
+
+        # get size of node, swap_node, and middle_node
+        temp_size = node.size
+        if middle_node is None:
+            middle_node_size = 0
+        else:
+            middle_node_size = middle_node.size
+
+        # node has lost right children (size of swap_node) but gained swap_node's left children
+        node.size = node.size - swap_node.size + middle_node_size
+        # the swap node is now the original node's size (only switching places) 
+        swap_node.size = temp_size
+        
         return self
 
     def print_bst(self):

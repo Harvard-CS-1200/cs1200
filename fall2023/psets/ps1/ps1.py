@@ -76,6 +76,80 @@ def BC(n, b, k):
         raise ValueError()
     return digits
 
+# def radixSort(univsize, base, arr):
+#     """TODO: Implement Radix Sort using BC and countSort"""
+#     k = math.ceil(math.log(univsize)/math.log(base))
+#     n = len(arr)
+#     v = [0] * n
+#     temp = [0] * n
+
+#     for i in range(n):
+#         v[i] = BC(arr[i][0], base, k)
+
+    
+#     # temporary sorted array
+#     for i in range(n):
+#         temp[i] = (0, (arr[i][1], v[i]))
+
+#     for j in range(k):
+#         for i in range(n):
+#             temp[i] = (temp[i][1][1][j], temp[i][1])
+#         temp = countSort(univsize, temp)
+#         # copy back to original array
+
+#     # add it back up and reconstruct
+#     for i in range(n):
+#         # what K_i will be again
+#         x = 0
+#         for j in range(k):
+#             x = x + temp[i][1][1][j] * int(math.pow(base,j))
+#         arr[i] = (x, temp[i][1][0])
+
+#     return arr
+
 def radixSort(univsize, base, arr):
     """TODO: Implement Radix Sort using BC and countSort"""
-    return [] 
+    k = math.ceil(math.log(univsize)/math.log(base))
+    n = len(arr)
+    # v = [0] * n
+
+    for i in range(n):
+        arr[i] = (0, (arr[i][1], BC(arr[i][0], base, k)))
+        # v[i] = BC(arr[i][0], base, k)
+
+    
+    for j in range(k):
+        for i in range(n):
+            arr[i] = (arr[i][1][1][j], arr[i][1])
+        arr = countSort(univsize, arr)
+        # copy back to original array
+
+    # add it back up and reconstruct
+    for i in range(n):
+        # what K_i will be again
+        x = 0
+        for j in range(k):
+            x = x + arr[i][1][1][j] * int(math.pow(base,j))
+        arr[i] = (x, arr[i][1][0])
+
+    return arr
+
+def gen_random_arr(n, U):
+    """generates random array given n and universe U"""
+    arr = [(random.randint(0, U - 1), "foo") for _ in range(n)]
+    return (arr, U, n)
+
+n = 500000
+u = 10000
+b = 17
+array = gen_random_arr(n, u)[0]
+# for i in range(n):
+#     print(array[i][0], end = " ")
+
+print("")
+
+array = radixSort(u, b, array)
+
+for i in range(n):
+    print(array[i][0], end = " ")
+            

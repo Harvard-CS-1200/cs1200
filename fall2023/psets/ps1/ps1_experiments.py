@@ -17,7 +17,7 @@ fastest algorithm with an associated color.
 """
 
 # sets the number of trials to run when timing each algorithm (feel free to change this!)
-N = 2
+N = 15
 
 # generates set of (n, U) combinations within the given constraints 
 n_U_set = list(itertools.product([int(math.pow(2, x)) for x in range(1, 17)], [int(math.pow(2, x)) for x in range(0, 21, 1)]))
