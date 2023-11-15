@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\usepackage{classTools}
+\usepackage[normalem]{ulem}
+\sloppy
+
+\begin{document}
+
+% To include a problems set header, use the psHeader command
+\psHeader{8}{Wed Nov. 29, 2023 (11:59pm)}
+
+
+\textbf{Your name: }
+
+\textbf{Collaborators: }
+
+\textbf{No. of late days used on previous psets: }
+
+\textbf{No. of late days used after including this pset: }
+
+\textbf{Please fill out feedback form:} \href{https://forms.gle/K4Z1b1EhsT8dRY2T6}{https://forms.gle/K4Z1b1EhsT8dRY2T6}.
+
+\vspace{1em}
+
+\noindent The purpose of this problem set is to to reinforce the definitions of $\Psearch$, $\EXPsearch$, $\NPsearch$, and $\NPsearch$-completeness and practice $\NP$-completeness proofs. 
+
+\begin{enumerate}
+    \item (Positive Monotone SAT)
+    A boolean formula is {\em positive monotone} if there are no negations in it.  Restricting SAT to positive monotone formulas makes it a trivial problem: setting all variables to 1 is always a satisfying assignment.
+    
+    However, the following variant of Positive Monotone SAT is more interesting:
+    
+        \compprob{$k$-False PositiveMonotoneSAT()}
+        {A positive monotone CNF formula $\varphi(x_0,\ldots,x_{n-1})$ and a number $k\in \N$}
+        {A satisfying assignment $\alpha\in\zo^n$ in which at least $k$ variables are set to 0 (if one exists)}
+    
+    \begin{enumerate}
+        \item Prove that $k$-False PositiveMonotoneSAT is $\NPsearch$-complete, even when $k=n/2$.  (Hint: reduce from SAT, replacing negated variables with new ones and adding additional clauses.)
+        \item Prove that if we fix $k=3$, then $k$-False PositiveMonotoneSAT is in $\Psearch$. (Hint: show that it suffices to consider assignments in which exactly 3 variables are set to 0.)
+        \item (optional\footnote{This problem is meant to be done based on your enjoyment/interest and only if you have time. It won't make a difference between N, L, R-, and R grades, and course staff will deprioritize questions about this problem at office hours and on Ed.}) Show that $k$-False PositiveMonotone 2-SAT is $\NPsearch$-complete.  (Hint: reduce from Independent Set.)
+    \end{enumerate}
+
+
+    \item (Reductions and complexity classes)  
+    \begin{enumerate}
+        \item Prove that if a problem $\Pi$ is in $\Psearch$, then $\Pi\leq_p \Gamma$ for all computational problems $\Gamma$.
+        \item Show that if $\NPsearch\subseteq \Psearch$, then all problems in $\NPsearch$ are $\NPsearch$-complete.  (The converse of this statement was proved in section, so it is actually an iff.)  
+        \item  Prove that if 
+$\Pi\leq_p \Gamma$ and $\Gamma\in \EXPsearch$, then $\Pi\in \EXPsearch$. (In other words, $\EXPsearch$ is closed under polynomial-time reductions.) 
+    \end{enumerate}
+
+\newpage
+
+\item (Variant of VectorSubsetSum)  
+In the Sender--Receiver Exercise on November 16, you will see that the following problem is $\NPsearch$-complete.
+
+\compprob{VectorSubsetSum()}
+{Vectors $\vec{v}_0,\vec{v}_1,\ldots,\vec{v}_{n-1}\in \zo^d$, $\vec{t}\in \N^d$}
+{A subset $S\subseteq [n]$ such that $\sum_{i\in S}\vec{v}_i = \vec{t}$, if such a subset $S$ exists.}
+
+We will use the notation $\vec{v}[j]$ to denote the $j$'th entry of vector $\vec{v}$, so the condition 
+$\sum_{i\in S}\vec{v}_i = \vec{t}$ means that for every $j=0,1,\ldots,d-1$, we have $\sum_{i\in S}\vec{v}_i[j] = \vec{t}[j]$.
+
+Assuming that result, prove that the following variant is also $\NPsearch$-complete.
+    
+    \compprob{VectorSubsetSumVariant()}
+{Vectors $\vec{v}_0,\vec{v}_1,\ldots,\vec{v}_{n-1}\in \N^d$, $t_0\in \N$}
+{A subset $S\subseteq [n]$ such that $\sum_{i\in S}\vec{v}_i = (t_0,t_0,\ldots,t_0)$, if such a subset $S$ exists.}
+
+    The two differences from the VectorSubsetSum problem is that the vectors are no longer restricted to have $\zo$ entries, but now all entries of the target vector are required to be equal. (Hint: reduce from the standard VectorSubsetSum problem.  Add an additional vector and an additional coordinate.)
+
+    \end{enumerate}
+    
+
+\end{document}
