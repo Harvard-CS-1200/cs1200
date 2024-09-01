@@ -7,10 +7,12 @@ An introductory course in theoretical computer science, aimed at giving students
 ### Fall 2024
 
 - [Syllabus](./fall2024/2024_syllabus.pdf)
+- [Course Schedule](https://docs.google.com/spreadsheets/d/1j99GgZE1HGQKaYaIsFYgFWH7Jl9a9aI4oCXrQSDJb6c/edit?gid=0#gid=0)
 - [Ed](https://edstem.org/us/courses/57495/discussion/)
 - [Canvas](https://canvas.harvard.edu/courses/136155)
 - [Github](https://github.com/Harvard-CS-120/cs120)
 - [Course Preview Video](https://harvard.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=cd2ec5c8-5f47-45a8-927a-b149008cd981)
+
 
 ### Fall 2023
 
