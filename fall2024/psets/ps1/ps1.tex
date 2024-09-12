@@ -1,0 +1,140 @@
+\documentclass[11pt]{article}
+\usepackage{classTools}
+
+\begin{document}
+
+\psHeader{1}{Wed 2024-09-18 (11:59pm)}
+
+Please review the Syllabus for information on the collaboration policy, grading scale, revisions, and late days.
+
+Unfortunately, we made a few mistakes in our previous iteration of trying to use GitHub Classroom--this time, we have (hopefully) figured out those wrinkles and have a \href{https://classroom.github.com/a/hCzdB8ze}{new GitHub Classroom assignment} for you all to accept. If you were initially using a fork of the public repo, we recommend using Classroom, since we'll be able to post things like practice materials, section notes, and problem set solutions which we usually don't want to display on the public repository. This time you should be able to easily access updates by viewing your repo on the website, clicking on the pull request and accepting it (more details on Ed to come).
+
+
+\begin{enumerate}
+    \item (Asymptotic Notation) 
+    \begin{enumerate}
+    \item (practice using asymptotic notation)
+        Fill in the table below with ``T'' (for True) or ``F'' (for False) to indicate the relationship between $f$ and $g$. For example, if $f$ is $\Omega(g)$, the first cell of the row should be ``T.''   No justification necessary.  Notice that some of the functions are the same as in Problem Set 0.\\
+        \begin{table}[h!]
+        \centering
+        \bgroup
+        \def\arraystretch{1.3}
+        \begin{tabular}{||c | c || c | c | c | c | c ||}
+         \hline
+         $f$ & $g$ & $\Omega$ & $\omega$ & $\Theta$ \\
+         \hline\hline
+         $3\log ^3 n$ & $n^2+1$ & & & \\ \hline
+         $4n^3$ & $\left| \{S \subseteq [n] : |S|\leq 3\}\right|$ & & &  \\ \hline
+         $n!$ & $5^n$ & & & \\ \hline
+         $3^n$ & $\left(2+(-1)^n\right)^n$ & & & \\ \hline
+        \end{tabular}
+        \egroup
+        \end{table}
+        Recall that, throughout CS1200, all logarithms are base 2 unless otherwise specified. 
+        
+    \item  (runtimes: $T^=$ vs. $T$)  
+    Let $g : \R^{\geq 0}\rightarrow \R^{\geq 0}$ be a nondecreasing function, i.e. if $x\geq y$, then $g(x)\geq g(y)$. (For example $g(n)=n^2$, $g(n)=n\log n$, or $g(n)=2^n$.) Let $T^{=} : \N\rightarrow \N$ and $T : \R^{\geq 0}\rightarrow \N$ be the runtimes of an algorithm $A$, as defined in Lecture 2. 
+    \begin{enumerate}   
+    \item Prove that $T^{=}=O(g)$ iff $T=O(g)$. Thus the distinction between $T$ and $T^{=}$ does not matter when we are interested in natural runtime bounds, which are nondecreasing. 
+
+    \item The same equivalence does not hold in general if we replace $O(\cdot)$ with $\Omega(\cdot)$.  Which direction ($T^{=}=\Omega(g) \Rightarrow T=\Omega(g)$ or $T=\Omega(g) \Rightarrow T^{=}=\Omega(g)$) fails? Give an example of a potential runtime $T^{=}$ and a function $g$ to demonstrate.  (Hint: one of the pairs of functions in the table above may be helpful.)
+    \end{enumerate}
+
+ 
+    \end{enumerate}
+    
+    \newpage
+    \item (Understanding computational problems and mathematical notation)\\\\
+    Recall the definition of a {\em computational problem} from Lecture Notes 1.  \label{prob:BC}
+
+ 
+    Consider the following computational problem $\Pi=(\Inputs,\Outputs,f)$: 
+    \begin{itemize}                                
+    \item $\Inputs = \N\times\N^{\geq 2}\times \N$, where $\N^{\geq 2} = \{2,3,4,\ldots\}$.  
+    \item $\Outputs = \{(c_0,c_1,\ldots,c_{k-1}) : k,c_0,\ldots,c_{k-1}\in \N\}$
+    \item $f(n,b,k) = \{ (c_0,c_1,\ldots,c_{k-1}) : n=c_0+c_1b+c_2b^2+\cdots+c_{k-1}b^{k-1}, \forall i\ 0\leq c_i< b\}.$ 
+    \end{itemize}
+Here is an algorithm $\BC$ to solve $\Pi$: 
+    
+\begin{algorithm}[H]
+    \BC{$n,b,k$}\\
+    {
+    \ForEach{$i=0,\ldots,k-1$}{
+    $c_i = n \bmod b$\;
+    $n = (n-c_i)/b$\;
+    }
+    \lIf{$n==0$}{\Return{$(c_0,c_1,\ldots,c_{k-1})$}}
+    \lElse{\Return{$\bot$}}}
+\end{algorithm}
+
+
+\begin{enumerate}
+\item If the input is $(n,b,k) = (35,10,4)$, what does the algorithm $\BC$ return? 
+Is $\BC$'s output a valid answer for $\Pi$ with input $(35,10,4)$?
+\item Describe the computational problem $\Pi$ in words.  (You may find it useful to try some more examples with $b=10$.) 
+\item Is there any $x\in \Inputs$ for which $f(x)=\emptyset$? If so, give an example; if not, explain why.
+\item For each possible input $x\in \Inputs$, what is $|f(x)|$? ($|A|$ is the size of a set $A$.) Justify your answer(s) in one or two sentences.
+\item Let $\Pi'=(\Inputs,\Outputs,f')$ be the problem with the same $\Inputs$ and $\Outputs$ as $\Pi$, but $f'(n,b,k) = f(n,b,k) \cup \{(0,1, \ldots,k-1)\}$. Does every algorithm $A$ that solves $\Pi$ also solve $\Pi'$? (Hint: any differences between inputs that were relevant in the previous subproblem are worth considering here.) Justify your answer with a proof or a counterexample.
+
+\end{enumerate}
+\newpage
+
+\item (Radix Sort) In the Sender--Receiver Exercise associated with lecture 3, you studied the sorting algorithm \SingletonBucketSort, generalized to arrays of key--value pairs, and proved that it has running time $O(n+U)$ when the keys are drawn from a universe of size $U$. In this problem you'll study {\em \RadixSort}, which improves the dependence on the universe size $U$ from linear to logarithmic.  Specifically, \RadixSort\ can achieve runtime $O(n+n\cdot (\log U)/(\log n))$, so it achieves runtime $O(n)$ whenever $U = n^{O(1)}$.  
+
+\RadixSort\ is constructed by using \SingletonBucketSort\ as a subroutine several times, but on a smaller universe size $b$.  Specifically, it turns each key from $[U]$ into an array of $k$ subkeys from $[b]$ using the algorithm \BC\ from Problem~\ref{prob:BC} above as a subroutine, and then iteratively sorts on each of the $k$ subkeys,
+Crucially, \RadixSort\ uses the fact that \SingletonBucketSort\ can be implemented in a way that is {\em stable} in the sense that it preserves the order in the input array when the same key appears multiple times.  (See the ``Food for Thought'' section in the SRE notes.)  Here is pseudocode for \RadixSort:
+
+
+\begin{algorithm}[H]
+\RadixSort{$U,b,A$}\\
+\Input{A universe size $U\in \N$, a base $b\in \N$ with $b\geq 2$, and an array $A=((K_0,V_0),\ldots,(K_{n-1},V_{n-1}))$, where each $K_i\in [U]$}
+\Output{A valid sorting of $A$}
+%$b=\min\{n,U\}$\;
+$k=\lceil \log_b U\rceil$\;
+%$k=\lceil (\log U)/(\log b)\rceil$\;
+\ForEach{$i=0,\ldots,n-1$}{
+    $V_i' = \BC(K_i,b,k)$ \tcc*{$V_i'$ is an array of length $k$}}
+\ForEach{$j=0,\ldots,k-1$}{
+    \ForEach{$i=0,\ldots,n-1$}{
+    $K'_i = V'_i[j]$
+    }
+    $((K_0',(V_0,V'_0)),\ldots,(K_{n-1}',(V_{n-1},V'_{n-1}))) = \SingletonBucketSort(b,((K'_0,(V_0,V_0')),\ldots,(K'_{n-1},(V_{n-1},V'_{n-1})))$\;
+}
+\ForEach{$i=0,\ldots,n-1$}{
+    $K_i = V'_i[0]+V'_i[1]\cdot b + V'_i[2]\cdot b^2+\cdots+V'_i[k-1]\cdot b^{k-1}$}
+\Return{$((K_0,V_0),\ldots,(K_{n-1},V_{n-1}))$}
+\caption{Radix Sort}
+\end{algorithm}
+
+(You can also read a description of Radix Sort in CLRS Section 8.3 for the case of sorting arrays of keys (without attached items) when $U$ and $b$ are powers of 2, albeit using different notation than us.)
+
+        \begin{enumerate}
+        
+            \item (proving correctness of algorithms) Prove the correctness of \RadixSort\ (i.e. that it correctly solves the SortingOnFiniteUniverse problem defined in SRE 1). 
+            
+            Hint: You will need to use the stability of \SingletonBucketSort in your argument. If it were replaced with an instable implementation (or any other unstable sorting algorithm, such as \ExhaustiveSearchSort\ with an unfortunate ordering on permutations), then the resulting algorithm would not be a correct sorting algorithm.   For intuition, you may want to think about what happens when you sort a spreadsheet by one column at a time. 
+            
+            \item (analyzing runtime) Show that \RadixSort\ has runtime $O((n+b)\cdot \lceil \log_b U\rceil)$.  Set $b=\min\{n,U\}$ to obtain our desired runtime of $O(n+n\cdot (\log U)/(\log n))$.  (This runtime analysis is outlined in CLRS, but you'd need to adapt it to our notation and slightly more general setting.) 
+            
+            \item (implementing algorithms)
+            Implement \RadixSort\ using the implementations of \SingletonBucketSort\ and \BC\ that we provide you in the GitHub repository. 
+  
+            \item (experimentally evaluating algorithms) \label{part:graphs}
+            In $\texttt{ps1\_experiments.py}$, we've provided code for running experiments to evaluate the runtime of sorting algorithms on random arrays (with $b=\min\{n,U\}$ in the case of \RadixSort) and for graphing the results. Run this code and attach the resulting graph (you should see that each sorting algorithm dominates in some region of the graph -- if you want better results you can try increasing the number of trials in the experiments file).
+                
+            \textit{Note: Your implementation of RadixSort, as well as any code you write for experimentation and graphing need not be submitted. Depending on your implementation, running the experiments could take anywhere from 15 minutes to a couple of hours, so don't leave them to the last minute!}   
+            
+            \item Do the shapes of the transition curves found in Part~\ref{part:graphs} match what we'd expect from the asymptotic runtime formulas we have for the algorithms?  Explain.
+            For a most thorough answer, try setting the asymptotic runtimes of \SingletonBucketSort\ and \RadixSort\ to be equal to each other (ignoring the hidden constant in $O(\cdot)$) and see what $\log U$ vs. $\log n$ relationship follows, and similarly for comparing \RadixSort\ and \MergeSort.
+
+          
+        \end{enumerate}
+
+\item (Reflection Question)  There are a number of resources to support your learning in CS1200, such as Lecture, Ed, Office Hours, Section, Detailed Lecture Notes (posted after class), Recommended Readings, Collaboration with Classmates, the Patel Fellow, the Academic Resource Center (ARC), Sender-Receiver Exercises.  Which of these (or any others that come to mind) have you found most helpful so far and why?  Are there ones that you should take more advantage of going forward?  Do you have suggestions for how the course can make these more helpful to you?
+
+\textit{Note: As with the previous pset, you may include your answer in your PDF submission, but the answer should ultimately go into a separate Gradescope submission form.}
+
+\item Once you're done with this problem set, please fill out \href{https://forms.gle/Skby2L5TszNpSYDB6}{this survey} so that we can gather students' thoughts on the problem set, and the class in general. It's not required, but we really appreciate all responses!
+\end{enumerate}
+
+\end{document}
