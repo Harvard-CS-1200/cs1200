@@ -44,7 +44,7 @@ def compute_average_time(algo, A, u, n, N):
             total_runtime += (t - s)
         else: 
             s = time.time() 
-            radixSort(u, min(n,u), A)
+            radixSort(u, max(2, min(n,u)), A)
             t = time.time() 
             total_runtime += (t - s)
 
