@@ -21,6 +21,7 @@
 \RequirePackage{multicol}
 \RequirePackage{enumitem}
 \RequirePackage{fancyhdr}
+\RequirePackage{wrapfig}
 %\RequirePackage[shortlabels]{enumitem}
 
 %Various environments
@@ -32,7 +33,7 @@
 \newtheorem{claim}[theorem]{Claim}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
-\newtheorem{informal-definition}[theorem]{Informal Definition}
+\newtheorem{informaldefinition}[theorem]{Informal Definition}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{fact}[theorem]{Fact}
 \newtheorem{assumption}[theorem]{Assumption}
@@ -101,11 +102,11 @@
   \begin{center}
   \framebox{
     \vbox{
-      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Anshu \& Hesterberg }
+      \hbox to 5.78in { {\bf CS1200: Intro. to Algorithms and their Limitations} \hfill Anshu \& Vadhan}
       \vspace{4mm}
       \hbox to 5.78in { {\Large \hfill Sender--Receiver Exercise #1: #2  \hfill} }
       \vspace{2mm}
-      \hbox to 5.78in { {\em Harvard SEAS - Fall 2023 \hfill #3  }}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2024 \hfill #3  }}
     }
   }
   \end{center}
@@ -116,11 +117,11 @@
   \begin{center}
   \framebox{
     \vbox{
-      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Anshu \& Hesterberg }
+      \hbox to 5.78in { {\bf CS1200: Intro. to Algorithms and their Limitations} \hfill Anshu \& Vadhan}
       \vspace{4mm}
       \hbox to 5.78in { {\Large \hfill Midterm #1  \hfill} }
       \vspace{2mm}
-      \hbox to 5.78in { {\em Harvard SEAS - Fall 2023 \hfill Date #2}}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2024 \hfill Date #2}}
     }
   }
   \end{center}
@@ -133,11 +134,11 @@
   \begin{center}
   \framebox{
     \vbox{
-      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Anshu \& Hesterberg }
+      \hbox to 5.78in { {\bf CS1200: Intro. to Algorithms and their Limitations} \hfill Anshu \& Vadhan}
       \vspace{4mm}
       \hbox to 5.78in { {\Large \hfill Practice Final Exam  \hfill} }
       \vspace{2mm}
-      \hbox to 5.78in { {\em Harvard SEAS - Fall 2023 \hfill}}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2024 \hfill}}
     }
   }
   \end{center}
@@ -149,7 +150,7 @@
   \begin{center}
   \framebox{
     \vbox{
-      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Anshu \& Hesterberg }
+      \hbox to 5.78in { {\bf CS1200: Intro. to Algorithms and their Limitations} \hfill Anshu \& Vadhan}
       \vspace{4mm}
       \hbox to 5.78in { {\Large \hfill Final Exam  \hfill} }
       \vspace{2mm}
@@ -166,11 +167,11 @@
   \begin{center}
   \framebox{
     \vbox{
-      \hbox to 5.78in { {\bf CS120: Intro. to Algorithms and their Limitations} \hfill Anshu \& Hesterberg }
+      \hbox to 5.78in { {\bf CS1200: Intro. to Algorithms and their Limitations} \hfill Anshu \& Vadhan}
       \vspace{4mm}
       \hbox to 5.78in { {\Large \hfill Make-Up Final Exam  \hfill} }
       \vspace{2mm}
-      \hbox to 5.78in { {\em Harvard SEAS - Fall 2023 \hfill #2}}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2024 \hfill #2}}
     }
   }
   \end{center}
@@ -239,9 +240,13 @@
 \SetKwFunction{BC}{BC}
 \SetKwFunction{RadixSort}{RadixSort}
 \SetKwFunction{MergeSort}{MergeSort}
+\SetKwFunction{SingletonBucketSort}{SingletonBucketSort}
+\SetKwFunction{InsertionSort}{InsertionSort}
+\SetKwFunction{ExhaustiveSearchSort}{ExhaustiveSearchSort}
 \SetKwFunction{Merge}{Merge}
 \SetKwFunction{CountingSort}{CountingSort}
 \SetKwFunction{QuickSelect}{QuickSelect}
+\SetKwFunction{IntSchedule}{IntervalSchedule}
 \SetKwFunction{BFSone}{BFSv0}
 \SetKwFunction{BFStwo}{BFS}
 \SetKwFunction{BFSlabel}{BFSlabel}
@@ -264,6 +269,8 @@
 \SetKwFunction{StoogeSort}{StoogeSort}
 \SetKwFunction{TwoSATSolve}{TwoSATSolve}
 \SetKwFunction{TwoSATDecSolve}{TwoSATDecSolve}
+\SetKwFunction{Search}{Search}
+
 
 \newcommand{\compprob}[3]{
 \begin{minipage}{\linewidth}   
@@ -309,11 +316,11 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
 
-\newcommand{\size}{\mathrm{size}}
+\newcommand{\size}{\mathsf{size}}
 \newcommand{\Inputs}{\mathcal{I}}
 \newcommand{\Outputs}{\mathcal{O}}
 \newcommand{\Jinputs}{\mathcal{J}}
-\newcommand{\Joutputs}{\mathcal{Q}}
+\newcommand{\Joutputs}{\mathcal{P}}
 \newcommand{\QuerySet}{\mathcal{Q}}
 \newcommand{\UpdateSet}{\mathcal{U}}
 \newcommand{\Preprocess}{\mathrm{Preprocess}}
@@ -450,6 +457,13 @@
 \newcommand{\Trec}{T_{\mathit{rec}}}
 \newcommand{\Tbin}{T_{\mathit{bin}}}
 
+\newcommand{\searchq}{\texttt{search}}
+\newcommand{\nextsmallerq}{\texttt{next-smaller}}
+\newcommand{\nextlargerq}{\texttt{next-larger}}
+\newcommand{\insertq}{\texttt{insert}}
+\newcommand{\deleteq}{\texttt{delete}}
+\newcommand{\rankq}{\texttt{rank}}
+\newcommand{\minq}{\texttt{min}}
 
 %truefalse
 %\documentclass{exam}
@@ -493,3 +507,14 @@
 
 \newcommand{\qeq}{\overset{?}{=}}
 \newcommand{\qleq}{\overset{?}{\leq}}
+
+\newcommand{\Tmerge}{T_{\mathit{merge}}}
+\newcommand{\Tmergesort}{T_{\mathit{mergesort}}}
+\newcommand{\Tinsert}{T_{\mathit{insertsort}}}
+\newcommand{\Texhaust}{T_{\mathit{exhaustsort}}}
+
+
+\newcommand{\URL}{\mathit{url}}
+\newcommand{\PR}{\mathrm{PR}}
+\newcommand{\WWW}{\mathrm{WWW}}
+\newcommand{\key}{\mathit{key}}
