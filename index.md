@@ -14,6 +14,7 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Gradescope](https://www.gradescope.com/courses/846790)
 - [Instructions for Sender/Receiver Exercises](./fall2024/sre/sre-instructions.pdf)
 - [Instructions for Sender/Receiver Exercises (Extension School](./fall2024/sre/sre-instructions-ext.pdf)
+- [Guidelines for Revision Videos](./fall2024/revision-guidelines.pdf)
 - [Course Preview Video](https://harvard.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=cd2ec5c8-5f47-45a8-927a-b149008cd981)
 
 
