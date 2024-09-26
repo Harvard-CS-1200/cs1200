@@ -16,7 +16,7 @@
 
 The purpose of this problem set is to solidify your understanding of the RAM model (and variants), and the relations between the RAM model, the Word-RAM model, Python programs, and variants. In particular, you will build skills in simulating one computational model by another and in evaluating the runtime of the simulations (both in theory and in practice).
 
-\textit{Note: We STRONGLY recommend typing this problem set (in LaTeX, if possible) -- question 3 will probably be the longest proof we've had you write in the course so far, and unless you have typewriter handwriting, it is much easier for us to grade submissions when they are typed up.}
+\textit{Note: We STRONGLY recommend typing this problem set (in LaTeX, if possible) -- question 3 will probably be the longest proof we've had you write in the course so far, and unless you have typewriter handwriting, it is much easier for us to grade typed submissions. If we can't read your handwriting, chances are it will lose points.}
 
 \begin{enumerate}
  
@@ -97,7 +97,7 @@ $M[\outputpointer]=\result$\;
     \item If $P[w]$ crashes, then $P'$ halts with $\outputpointer=\outputlen=0$. (We are using this output setting to indicate \crash, since the RAM model does not have any crashing in its semantics.)
     \item If $P[w](x)$ halts without crashing, then the output of $P'(x,w)$ equals the output of $P[w](x)$.
      Furthermore,   
-       $$\Time_{P'}(x) = O\left(\Time_{P[w]}(x)+n+w\right),$$
+       $$\Time_{P'}(x) = O\left(\Time_{P[w]}(x)+w\right),$$
 where $n$ is the length of $x$.
 
 (This was stated without proof in Lecture Notes 8.) 
