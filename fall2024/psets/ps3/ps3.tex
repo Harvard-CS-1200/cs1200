@@ -1,5 +1,5 @@
 \documentclass[11pt]{article}
-\usepackage{classTools}
+\usepackage{Fall24/classTools}
 
 \begin{document}
 
@@ -97,7 +97,7 @@ $M[\outputpointer]=\result$\;
     \item If $P[w]$ crashes, then $P'$ halts with $\outputpointer=\outputlen=0$. (We are using this output setting to indicate \crash, since the RAM model does not have any crashing in its semantics.)
     \item If $P[w](x)$ halts without crashing, then the output of $P'(x,w)$ equals the output of $P[w](x)$.
      Furthermore,   
-       $$\Time_{P'}(x) = O\left(\Time_{P[w]}(x)+w\right),$$
+       $$\Time_{P'}(x) = O\left(\Time_{P[w]}(x)+n+w\right),$$
 where $n$ is the length of $x$.
 
 (This was stated without proof in Lecture Notes 8.) 
