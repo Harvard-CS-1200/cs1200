@@ -11,7 +11,7 @@ random.seed(120)
 ##################################
 
 '''
-    Part D: Run some tests to figure out the relative performance of the 3-coloring algorithms!
+    Part C: Run some tests to figure out the relative performance of the 3-coloring algorithms!
     We're comparing exhaustive search and ISET + BFS.
 
     There are two types of graphs we generate.
@@ -40,7 +40,7 @@ TIMEOUT_LENGTH = 1
 def benchmark():
     # You may experiment with these parameters if you wish!
     # Each of these ranges is formatted with a minimum, maximum, and step size.
-    subgraph_line_parameter_range = (3, 12, 3)
+    subgraph_line_parameter_range = (100, 300, 100)
     cluster_graph_p_parameter_range = (0.2, 0.95, 0.15)
     cluster_graph_cluster_size_parameter_range = (2, 26, 8)
     cluster_graph_cluster_quantity_parameter_range = (2, 5, 1)

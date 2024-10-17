@@ -98,27 +98,44 @@ def exhaustive_search_coloring(G, k=3):
     G.reset_colors()
     return None
 
-# Given an instance of the Graph class G, returns all maximal independent sets in G
+'''
+IMPORTANT: get_max_indep_sets(G) returns a *generator* of the maximal independent sets, not a list
+           This means that instead of calculating all maximal isets at once, it spits them out one
+           by one. One thing you could do is just turn that into a regular list, ie:
+
+               isets = list(get_max_indep_sets(G))
+
+           And this will let the helper function generate all isets and toss them into a list.
+           However, that might be inefficient in special cases where the first iset is enough to
+           give you a solution (can you think of a graph where this is the case?). Therefore, it
+           might be better to consider something like the following:
+
+               for iset in get_max_indep_sets(G):
+                   do_something_with_iset(iset)
+
+           Keep this in mind if you see that your code is timing out on the test cases - it might
+           mean you need to use this helper function more intelligently.
+'''
+
+# Given an instance of the Graph class G, returns a generator of all maximal independent sets in G
 # Uses helper function impelementing Bron-Kerbosch algorithm
 def get_max_indep_sets(G):
-    max_indep_sets = []
-    bron_kerbosch_max_indep_set(G, set(), set(range(G.N)), set(), max_indep_sets)
-    return max_indep_sets
+    yield from bron_kerbosch_max_indep_set(G, set(), set(range(G.N)), set())
 
 #Bron-Kerbosch algorithm for finding all maximal independent sets in a graph
-def bron_kerbosch_max_indep_set(G, R, P, X, max_indep_sets):
+def bron_kerbosch_max_indep_set(G, R, P, X):
     if len(P)==0 and len(X)==0:
-        max_indep_sets.append(R.copy())
-        return
+        yield R.copy()
     
     for vertex in P.copy():
         neighbors = set(G.edges[vertex]).union({vertex})
         new_P = P.intersection(set(range(G.N)).difference(neighbors))
         new_X = X.intersection(set(range(G.N)).difference(neighbors))
-        bron_kerbosch_max_indep_set(G, R.union({vertex}), new_P, new_X, max_indep_sets)
+        yield from bron_kerbosch_max_indep_set(G, R.union({vertex}), new_P, new_X)
         
         P.remove(vertex)
         X.add(vertex)
+
 
 '''
     Part A: Implement two coloring via breadth-first search.
