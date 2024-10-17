@@ -99,18 +99,18 @@ def exhaustive_search_coloring(G, k=3):
     return None
 
 '''
-IMPORTANT: get_max_indep_sets(G) returns a *generator* of the maximal independent sets, not a list
+IMPORTANT: get_maximal_isets(G) returns a *generator* of the maximal independent sets, not a list
            This means that instead of calculating all maximal isets at once, it spits them out one
            by one. One thing you could do is just turn that into a regular list, ie:
 
-               isets = list(get_max_indep_sets(G))
+               isets = list(get_maximal_isets(G))
 
            And this will let the helper function generate all isets and toss them into a list.
            However, that might be inefficient in special cases where the first iset is enough to
            give you a solution (can you think of a graph where this is the case?). Therefore, it
            might be better to consider something like the following:
 
-               for iset in get_max_indep_sets(G):
+               for iset in get_maximal_isets(G):
                    do_something_with_iset(iset)
 
            Keep this in mind if you see that your code is timing out on the test cases - it might
@@ -119,7 +119,7 @@ IMPORTANT: get_max_indep_sets(G) returns a *generator* of the maximal independen
 
 # Given an instance of the Graph class G, returns a generator of all maximal independent sets in G
 # Uses helper function impelementing Bron-Kerbosch algorithm
-def get_max_indep_sets(G):
+def get_maximal_isets(G):
     yield from bron_kerbosch_max_indep_set(G, set(), set(range(G.N)), set())
 
 #Bron-Kerbosch algorithm for finding all maximal independent sets in a graph
