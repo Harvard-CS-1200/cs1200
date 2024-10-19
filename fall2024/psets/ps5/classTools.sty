@@ -1,0 +1,584 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{Fall23/classTools}
+
+%Package requiring
+\RequirePackage[linesnumbered,lined,boxed,commentsnumbered,noend]{algorithm2e}
+\RequirePackage{todonotes}
+\RequirePackage{fullpage}
+\RequirePackage{dirtytalk}
+\RequirePackage{graphicx}
+\RequirePackage{hyperref,url}
+\RequirePackage{enumitem}
+\setlistdepth{6}
+\RequirePackage{amsfonts}
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{listings}
+\RequirePackage{float}
+\usepackage{mathtools}
+\RequirePackage{stmaryrd}
+\RequirePackage{amssymb}
+\RequirePackage{multicol}
+\RequirePackage{enumitem}
+\RequirePackage{fancyhdr}
+\RequirePackage{wrapfig}
+\RequirePackage{pdfpages}
+\RequirePackage[export]{adjustbox}
+%\RequirePackage[shortlabels]{enumitem}
+
+%Various environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{informaldefinition}[theorem]{Informal Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{question}[theorem]{Question}
+
+%Configuring links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+}
+    
+%Header for problem sets. 1st argument is the ps number, 2nd is due date
+\newcommand{\psHeader}[2]{ 
+\noindent
+  \begin{center}
+  \framebox{
+    \vbox{
+      \hbox to 5.78in { {\bf CS1200: Intro. to Algorithms and their Limitations} \hfill Anshu \& Vadhan }
+      \vspace{4mm}
+      \hbox to 5.78in { {\Large \hfill Problem Set #1  \hfill} }
+      \vspace{2mm}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2024 \hfill Due: #2  }}
+    }
+  }
+  \end{center}
+\vspace*{4mm}}
+
+\newcommand{\lecHeader}[3]{ 
+\noindent
+  \begin{center}
+  \framebox{
+    \vbox{
+      \hbox to 5.78in { {\bf CS1200: Intro. to Algorithms and their Limitations} \hfill Anshu \& Vadhan}
+      \vspace{4mm}
+      \hbox to 5.78in { {\Large \hfill Lecture #1: #2  \hfill} }
+      \vspace{2mm}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2024 \hfill #3  }}
+    }
+  }
+  \end{center}
+\vspace*{4mm}}
+
+\newcommand{\secHeader}[3]{ 
+\noindent
+  \begin{center}
+  \framebox{
+    \vbox{
+      \hbox to 5.78in { {\bf CS1200: Intro. to Algorithms and their Limitations} \hfill Anshu \& Vadhan}
+      \vspace{4mm}
+      \hbox to 5.78in { {\Large \hfill Section #1: #2  \hfill} }
+      \vspace{2mm}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2024 \hfill #3  }}
+    }
+  }
+  \end{center}
+\vspace*{4mm}}
+
+
+\newcommand{\activeHeader}[3]{ 
+\noindent
+  \begin{center}
+  \framebox{
+    \vbox{
+      \hbox to 5.78in { {\bf CS1200: Intro. to Algorithms and their Limitations} \hfill Anshu \& Vadhan}
+      \vspace{4mm}
+      \hbox to 5.78in { {\Large \hfill Sender--Receiver Exercise #1: #2  \hfill} }
+      \vspace{2mm}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2024 \hfill #3  }}
+    }
+  }
+  \end{center}
+\vspace*{4mm}}
+
+\newcommand{\midtermHeader}[2]{ 
+\noindent
+  \begin{center}
+  \framebox{
+    \vbox{
+      \hbox to 5.78in { {\bf CS1200: Intro. to Algorithms and their Limitations} \hfill Anshu \& Vadhan}
+      \vspace{4mm}
+      \hbox to 5.78in { {\Large \hfill Midterm #1  \hfill} }
+      \vspace{2mm}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2024 \hfill Date #2}}
+    }
+  }
+  \end{center}
+\vspace*{4mm}}
+
+\newcommand{\practiceMidtermHeader}[1]{ 
+\noindent
+  \begin{center}
+  \framebox{
+    \vbox{
+      \hbox to 5.78in { {\bf CS1200: Intro. to Algorithms and their Limitations} \hfill Anshu \& Vadhan}
+      \vspace{4mm}
+      \hbox to 5.78in { {\Large \hfill #1  \hfill} }
+      \vspace{4mm}
+    }
+  }
+  \end{center}
+\vspace*{4mm}}
+
+
+\newcommand{\exampage}{\pagebreak \noindent \textbf{Name:} \hrulefill\ \  \textbf{HUID:} \hrulefill}
+
+\newcommand{\practiceFinalHeader}[2]{ 
+\noindent
+  \begin{center}
+  \framebox{
+    \vbox{
+      \hbox to 5.78in { {\bf CS1200: Intro. to Algorithms and their Limitations} \hfill Anshu \& Vadhan}
+      \vspace{4mm}
+      \hbox to 5.78in { {\Large \hfill Practice Final Exam  \hfill} }
+      \vspace{2mm}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2024 \hfill}}
+    }
+  }
+  \end{center}
+\vspace*{4mm}}
+
+
+\newcommand{\finalHeader}[2]{ 
+\noindent
+  \begin{center}
+  \framebox{
+    \vbox{
+      \hbox to 5.78in { {\bf CS1200: Intro. to Algorithms and their Limitations} \hfill Anshu \& Vadhan}
+      \vspace{4mm}
+      \hbox to 5.78in { {\Large \hfill Final Exam  \hfill} }
+      \vspace{2mm}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2023 \hfill #2}}
+    }
+  }
+  \end{center}
+\vspace*{4mm}}
+
+
+
+\newcommand{\makeupfinalHeader}[2]{ 
+\noindent
+  \begin{center}
+  \framebox{
+    \vbox{
+      \hbox to 5.78in { {\bf CS1200: Intro. to Algorithms and their Limitations} \hfill Anshu \& Vadhan}
+      \vspace{4mm}
+      \hbox to 5.78in { {\Large \hfill Make-Up Final Exam  \hfill} }
+      \vspace{2mm}
+      \hbox to 5.78in { {\em Harvard SEAS - Fall 2024 \hfill #2}}
+    }
+  }
+  \end{center}
+  
+\vspace*{4mm}}
+%Draft comment features
+\newif\ifdraft
+\drafttrue
+\newcommand{\ted}[1]{\ifdraft{\todo[inline,color=red!20!white]{\textbf{Ted:} #1}}\fi}
+\newcommand{\zach}[1]{\ifdraft{\todo[inline,color=blue!20!white]{\textbf{Zach:} #1}}\fi}
+\newcommand{\salil}[1]{\ifdraft{\todo[inline,color=purple!20!white]{\textbf{Salil:} #1}}\fi}
+\newcommand{\anurag}[1]{\ifdraft{\todo[inline,color=green!20!white]{\textbf{Anurag Anshu:} #1}}\fi}
+
+\newcommand{\anuragg}[1]{\textcolor{green}{\textbf{Anurag Anshu:} #1}}
+\newcommand{\adam}[1]{\ifdraft{\todo[inline,color=orange!20!white]{\textbf{Adam:} #1}}\fi}
+\newcommand{\jennifer}[1]{\ifdraft{\todo[inline,color=blue!20!white]{\textbf{Jennifer:} #1}}\fi}
+\newcommand{\silvia}[1]{\ifdraft{\todo[inline,color=olive!20!white]{\textbf{Silvia:} #1}}\fi}
+\newcommand{\sanket}[1]{\ifdraft{\todo[inline,color=green!20!white]{\textbf{Sanket:} #1}}\fi}
+\newcommand{\andrew}[1]{\ifdraft{\todo[inline,color=violet!20!white]{\textbf{Andrew:} #1}}\fi}
+\newcommand{\melissa}[1]{\ifdraft{\todo[inline,color=orange!20!white]{\textbf{Melissa:} #1}}\fi}
+\newcommand{\ben}[1]{\ifdraft{\todo[inline,color=green!20!white]{\textbf{Ben:} #1}}\fi}
+\newcommand{\noa}[1]{\ifdraft{\todo[inline,color=green!20!white]{\textbf{Noa:} #1}}\fi}
+\newcommand{\michael}[1]{\ifdraft{\todo[inline,color=orange!20!white]{\textbf{Michael:} #1}}\fi}
+\newcommand{\michelle}[1]{\ifdraft{\todo[inline,color=violet!20!white]{\textbf{Michelle:} #1}}\fi}
+\newcommand{\anuragm}[1]{\ifdraft{\todo[inline,color=pink!20!white]{\textbf{Anurag M:} #1}}\fi}
+\newcommand{\Eric}[1]{\ifdraft{\todo[inline,color=orange!20!white]{\textbf{Eric:} #1}}\fi}
+
+\newcommand{\patrick}[1]{\ifdraft{\todo[inline,color=pink!20!white]{\textbf{Patrick:} #1}}\fi}
+\newcommand{\kathy}[1]{\ifdraft{\todo[inline,color=yellow!20!white]{\textbf{Kathy:} #1}}\fi}
+\newcommand{\benji}[1]{\ifdraft{\todo[inline,color=cyan!20!white]{\textbf{Benji:} #1}}\fi}
+\newcommand{\olivia}[1]{\ifdraft{\todo[inline,color=violet!20!white]{\textbf{Olivia:} #1}}\fi}
+\newcommand{\ayana}[1]{\ifdraft{\todo[inline,color=violet!20!white]{\textbf{Ayana:} #1}}\fi}
+\newcommand{\iris}[1]{\ifdraft{\todo[inline,color=blue!20!white]{\textbf{Iris:} #1}}\fi}
+\newcommand{\jenn}[1]{\ifdraft{\todo[inline,color=violet!20!white]{\textbf{Jenn G:} #1}}\fi}
+\newcommand{\maxwell}[1]{\ifdraft{\todo[inline,color=cyan!20!white]{\textbf{Maxwell:} #1}}\fi}
+\newcommand{\elizabeth}[1]{\ifdraft{\todo[inline,color=pink!20!white]{\textbf{Elizabeth:} #1}}\fi}
+\newcommand{\tarun}[1]{\ifdraft{\todo[inline,color=lime!20!white]{\textbf{Tarun:} #1}}\fi}
+\newcommand{\teresa}[1]{\ifdraft{\todo[inline,color=cyan!20!white]{\textbf{Teresa:} #1}}\fi}
+\newcommand{\prin}[1]{\ifdraft{\todo[inline,color=cyan!20!white]{\textbf{Prin:} #1}}\fi}
+\newcommand{\jayden}[1]{\ifdraft{\todo[inline,color=pink!20!white]{\textbf{Jayden:} #1}}\fi}
+\newcommand{\katherine}[1]{\ifdraft{\todo[inline,color=lime!20!white]{\textbf{Katherine:} #1}}\fi}
+\newcommand{\rhea}[1]{\ifdraft{\todo[inline,color=pink!20!white]{\textbf{Rhea:} #1}}\fi}
+\newcommand{\ashley}[1]{\ifdraft{\todo[inline,color=cyan!20!white]{\textbf{Ashley:} #1}}\fi}
+\newcommand{\staffNote}[1]
+{\ifdraft{\todo[inline,color=orange!20!white]{\textbf{Note:} #1}}\fi}
+
+\newif\ifdetails % fill in details that are omitted in lecture handout version
+\newif\ifsender % for sender notes rather than receiver notes
+
+% stuff for algorithm environment
+\SetNoFillComment
+
+\SetKwInOut{Input}{Input}
+\SetKwInOut{Output}{Output}
+\SetKwInOut{Instances}{Instances}
+\SetKwInOut{Answers}{Valid Answers}
+\SetKwInOut{Queries}{Queries}
+\SetKwInOut{Updates}{Updates}
+\SetKwInOut{Variables}{Variables}
+
+\newlength\myindent
+\setlength\myindent{2em}
+\newcommand\bindent{%
+  \begingroup
+  \setlength{\itemindent}{\myindent}
+  \addtolength{\algorithmicindent}{\myindent}
+}
+\newcommand\eindent{\endgroup}
+
+\SetAlgoProcName{Computational Problem}{Computational Problem}
+\SetAlgoFuncName{Data-Structure Problem}{Data-Structure Problem}
+\SetKwFunction{BC}{BC}
+\SetKwFunction{RadixSort}{RadixSort}
+\SetKwFunction{MergeSort}{MergeSort}
+\SetKwFunction{SingletonBucketSort}{SingletonBucketSort}
+\SetKwFunction{InsertionSort}{InsertionSort}
+\SetKwFunction{ExhaustiveSearchSort}{ExhaustiveSearchSort}
+\SetKwFunction{Merge}{Merge}
+\SetKwFunction{CountingSort}{CountingSort}
+\SetKwFunction{QuickSelect}{QuickSelect}
+\SetKwFunction{IntSchedule}{IntervalSchedule}
+%\SetKwFunction{BFSone}{BFSv0}
+\SetKwFunction{BFS}{BFS}
+\SetKwFunction{BFSlabel}{BFSlabel}
+\SetKwFunction{BFSCC}{BFS-CC}
+\SetKwFunction{RW}{RandomWalk}
+\SetKwFunction{GreedyColoring}{GreedyColoring}
+\SetKwFunction{BFSColoring}{BFSColoring}
+\SetKwFunction{TbTColoring}{3by2Coloring}
+\SetKwFunction{GreedyIndSet}{GreedyIndSet}
+\SetKwFunction{GreedyIntSch}{GreedyIntervalScheduling}
+\SetKwFunction{MaxMatchAugPaths}{MaxMatchingAugPaths}
+\SetKwFunction{ResolutionInOrder}{ResolutionInOrder}
+\SetKwFunction{ExtractAssignment}{ExtractAssignment}
+\SetKwFunction{LongPathViaSAT}{LongPathViaSAT}
+\SetKwFunction{TrimmedMean}{TrimmedMean}
+\SetKwFunction{BinarySearch}{BinarySearch}
+\SetKwFunction{ExhaustiveSearch}{ExhaustiveSearch}
+\SetKwFunction{ImbalancedSearch}{ImbalancedSearch}
+\SetKwFunction{RecursiveSearch}{RecursiveSearch}
+\SetKwFunction{StoogeSort}{StoogeSort}
+\SetKwFunction{TwoSATSolve}{TwoSATSolve}
+\SetKwFunction{TwoSATDecSolve}{TwoSATDecSolve}
+\SetKwFunction{Search}{Search}
+\SetKwFunction{MinT}{MinT}
+\SetKwFunction{NextSmaller}{NextSmaller}
+\SetKwFunction{RandomSubsampling}{RandomSubsampling}
+\SetKwFunction{MergeSortSelect}{MergeSortSelect}
+\SetKwFunction{MedianQuickSelect}{Median-of-3 QuickSelect}
+
+\newcommand{\compprob}[3]{
+\begin{minipage}{\linewidth}   
+    \begin{procedure}[H]
+        \Input{#2}
+        \Output{#3}
+        \caption{#1}
+    \end{procedure}
+\end{minipage}
+}
+
+\newcommand{\staticdsprob}[3]{
+\begin{function}
+\Input{#2}
+\Queries{#3}
+\caption{#1}
+\end{function}
+}
+
+\newcommand{\dynamdsprob}[3]{
+\begin{function}
+\Updates{#2}
+\Queries{#3}
+\caption{#1}
+\end{function}
+}
+\iffalse
+\newcommand{\compprob}[3]{
+\fbox{\parbox{\textwidth}{\noindent \underline{\textbf{#1}}:
+\begin{itemize}
+\item \textbf{Instances:} #2
+\item \textbf{Valid Answers:} #3
+\end{itemize}}
+}}
+\fi
+
+\newcommand{\details}[2]{\ifdetails #1 \else \ \\\vspace{#2ex}\fi}
+%\newcommand{\details}[2]{\ifdetails #1 \else \phantom{#1}\fi}
+\newif\ifsolutions
+\newcommand{\solution}[2]{\ifsolutions{\color{blue} #1} \else \vspace{#2}\fi}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\newcommand{\size}{\mathsf{size}}
+\newcommand{\Inputs}{\mathcal{I}}
+\newcommand{\Outputs}{\mathcal{O}}
+\newcommand{\Jinputs}{\mathcal{J}}
+\newcommand{\Joutputs}{\mathcal{P}}
+\newcommand{\QuerySet}{\mathcal{Q}}
+\newcommand{\UpdateSet}{\mathcal{U}}
+\newcommand{\Preprocess}{\mathrm{Preprocess}}
+\newcommand{\Eval}{\mathrm{Eval}}
+\newcommand{\EvalQ}{\mathrm{EvalQ}}
+\newcommand{\EvalU}{\mathrm{EvalU}}
+\newcommand{\Time}{T}
+\newcommand{\pivot}{\mathrm{Pivot}}
+\newcommand{\smallerpivot}{\mathrm{smaller}}
+\newcommand{\largerpivot}{\mathrm{larger}}
+\newcommand{\equalpivot}{\mathrm{equal}}
+
+\newcommand{\var}{\texttt{var}}
+\newcommand{\op}{\texttt{op}}
+\newcommand{\Var}{V}
+\newcommand{\outputpointer}{\texttt{output\_ptr}}
+\newcommand{\outputlen}{\texttt{output\_len}}
+\newcommand{\inputlen}{\texttt{input\_len}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\keytype}{\texttt{key}}
+\newcommand{\outputvar}{\texttt{output}}
+
+\newcommand{\outerkeyptr}{\texttt{outer\_key\_ptr}}
+\newcommand{\outerremaining}{\texttt{outer\_rem}}
+\newcommand{\innerremaining}{\texttt{inner\_rem}}
+\newcommand{\innerkeyptr}{\texttt{inner\_key\_ptr}}
+\newcommand{\outerkey}{\texttt{outer\_key}}
+\newcommand{\innerkey}{\texttt{inner\_key}}
+\newcommand{\keydiff}{\texttt{key\_diff}}
+\newcommand{\insertkey}{\texttt{insert\_key}}
+\newcommand{\insertvalue}{\texttt{insert\_value}}
+\newcommand{\tempptr}{\texttt{temp\_ptr}}
+\newcommand{\tempkey}{\texttt{temp\_key}}
+\newcommand{\tempvalue}{\texttt{temp\_value}}
+\newcommand{\two}{\texttt{two}}
+\newcommand{\one}{\texttt{one}}
+\newcommand{\zero}{\texttt{zero}}
+\newcommand{\three}{\texttt{three}}
+\newcommand{\eleven}{\texttt{eleven}}
+\newcommand{\seventeen}{\texttt{seventeen}}
+\newcommand{\thirteen}{\texttt{thirteen}}
+\newcommand{\reg}{\texttt{reg}}
+
+\newcommand{\stackptr}{\texttt{stack\_ptr}}
+\newcommand{\nodeptr}{\texttt{node\_ptr}}
+\newcommand{\childptr}{\texttt{child\_ptr}}
+\newcommand{\leftheight}{\texttt{left\_height}}
+\newcommand{\rightheight}{\texttt{right\_height}}
+\newcommand{\diffheights}{\texttt{diff\_heights}}
+\newcommand{\height}{\texttt{height}}
+\newcommand{\branch}{\texttt{branch}}
+\newcommand{\temp}{\texttt{temp}}
+\newcommand{\inputlencopy}{\texttt{input\_len\_copy}}
+\newcommand{\tempzero}{\temp_0}
+\newcommand{\tempone}{\temp_1}
+\newcommand{\temptwo}{\temp_2}
+\newcommand{\tempthree}{\temp_3}
+\newcommand{\tempfour}{\temp_4}
+\newcommand{\wordlen}{\texttt{word\_len}}
+\newcommand{\memsize}{\texttt{mem\_size}}
+
+\newcommand{\remaining}{\texttt{remaining}}
+\newcommand{\startnext}{\texttt{start\_next}}
+\newcommand{\random}{\texttt{random}}
+\newcommand{\oracle}{\text{ORACLE}}
+\newcommand{\ecurr}{\texttt{end\_curr}}
+\newcommand{\CNFof}{\mathrm{CNFof}}
+
+
+\newcommand{\cmd}{\texttt{cmd}}
+\newcommand{\READ}{``\texttt{read}"}
+\newcommand{\W}{\texttt{W}}
+\newcommand{\result}{\texttt{result}}
+\newcommand{\counter}{\texttt{counter}}
+
+
+
+
+\newcommand{\Exp}{\mathrm{E}}
+\newcommand{\poly}{\mathrm{poly}}
+
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\dist}{\mathrm{dist}}
+\newcommand{\length}{\mathrm{length}}
+
+\newcommand{\dout}{\mathrm{deg}_{\mathit{out}}}
+\newcommand{\din}{\mathrm{deg}_{\mathit{in}}}
+\newcommand{\dmax}{\mathrm{deg}_{\mathit{max}}}
+%\newcommand{\deg}{\mathrm{deg}}
+\newcommand{\Nout}{\mathrm{N}_{\mathit{out}}}
+\newcommand{\Nin}{\mathrm{N}_{\mathit{in}}}
+\newcommand{\Nbrout}{\texttt{Nbr}_{\texttt{out}}}
+\newcommand{\Nbrin}{\texttt{Nbr}_{\texttt{in}}}
+\newcommand{\distarr}{\texttt{dist}}
+
+\newcommand{\Sin}{S_{\mathit{in}}}
+\newcommand{\Sout}{S_{\mathit{out}}}
+\newcommand{\nMIS}{\#\mathrm{MIS}}
+
+\newcommand{\zo}{\{0,1\}}
+\newcommand{\Clauses}{\mathcal{C}}
+\newcommand{\Frontier}{\mathcal{F}}
+\newcommand{\Resolvents}{\mathcal{R}}
+\newcommand{\res}{\diamond}
+\newcommand{\sat}{\normalfont{\texttt{satisfiable}}}
+\newcommand{\unsat}{\normalfont{\texttt{unsatisfiable}}}
+
+\newcommand{\phimaj}{\varphi_{\mathit{maj}}}
+\newcommand{\phipal}{\varphi_{\mathit{pal}}}
+\newcommand{\Simplify}{\mathrm{Simplify}}
+\newcommand{\Cfin}{\mathcal{C}_{\mathit{fin}}}
+\newcommand{\kfin}{k_{\mathit{fin}}}
+
+\newcommand{\xfail}{x_f}
+\newcommand{\Spec}{\mathrm{Spec}}
+\newcommand{\accept}{\texttt{accept}}
+\newcommand{\reject}{\texttt{reject}}
+\newcommand{\yes}{\texttt{yes}}
+\newcommand{\no}{\texttt{no}}
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\Ind}{\mathrm{Ind}}
+
+\newcommand{\memptr}{\texttt{mem\_ptr}}
+
+\newcommand{\TIME}{\mathsf{TIME}}
+\newcommand{\TIMEsearch}{\mathsf{TIME_{search}}}
+\newcommand{\Psearch}{\mathsf{P_{search}}}
+\newcommand{\Ptime}{\mathsf{P}}
+\newcommand{\EXPsearch}{\mathsf{EXP_{search}}}
+\newcommand{\EXPtime}{\mathsf{EXP}}
+\newcommand{\EXP}{\mathsf{EXP}}
+\newcommand{\NP}{\mathsf{NP}}
+\newcommand{\NPsearch}{\mathsf{NP_{search}}}
+
+\newcommand{\decision}[1]{#1\text{-decision}}
+
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cP}{\mathcal{P}}
+
+\newcommand{\Timb}{T_{\mathit{imb}}}
+\newcommand{\Trec}{T_{\mathit{rec}}}
+\newcommand{\Tbin}{T_{\mathit{bin}}}
+
+\newcommand{\searchq}{\texttt{search}}
+\newcommand{\nextsmallerq}{\texttt{next-smaller}}
+\newcommand{\nextlargerq}{\texttt{next-larger}}
+\newcommand{\insertq}{\texttt{insert}}
+\newcommand{\deleteq}{\texttt{delete}}
+\newcommand{\rankq}{\texttt{rank}}
+\newcommand{\minq}{\texttt{min}}
+\newcommand{\maxq}{\texttt{max}}
+
+%truefalse
+%\documentclass{exam}
+
+\newcommand*\TrueFalse{\bfseries T\hspace*{10pt}F\hspace*{10pt}}
+\newcommand*\TrueFalseUnknown{\bfseries T\hspace*{10pt}F\hspace*{10pt}U\hspace*{10pt}}
+\newlength\mylena
+\newlength\mylenaa
+\newlength\mylenb
+\newlength\mylenbb
+\settowidth\mylena{\TrueFalse}
+\settowidth\mylenaa{\TrueFalseUnknown}
+\newcommand\MyQ[1]{%
+  \setlength\mylenb{\linewidth}
+  \addtolength\mylenb{-\mylena}
+  \parbox[t]{\mylena}{\TrueFalse}\parbox[t]{\mylenb}{#1 \makeemptybox{2in}}}
+
+\newcommand\TFQ[1]{%
+  \setlength\mylenb{\linewidth}
+  \addtolength\mylenb{-\mylena}
+  \parbox[t]{\mylena}{\TrueFalse}\parbox[t]{\mylenb}{#1}}
+
+\newcommand\TFUQuestion[1]{%
+  \setlength\mylenbb{6.5in}
+  \addtolength\mylenbb{-\mylena}
+  \parbox[t]{\mylenaa}{\TrueFalseUnknown}\parbox[t]{\mylenbb}{#1}
+  \vfill}
+
+\newcommand\makeemptybox[1]{
+  \par
+  \begingroup
+    \setlength{\fboxsep}{0pt}%
+    \framebox[\linewidth]{%
+      \vrule height 0pt depth #1 width 0pt
+    }%
+  \endgroup
+}
+
+
+\newcommand{\treeT}{\texttt{T}}
+\newcommand{\btv}{\texttt{v}}
+\newcommand{\btw}{\texttt{w}}
+\newcommand{\btr}{\texttt{r}}
+\newcommand{\None}{\texttt{None}}
+\newcommand{\Key}{\texttt{K}}
+\newcommand{\Value}{\texttt{V}}
+\newcommand{\leftT}{\texttt{left}}
+\newcommand{\rightT}{\texttt{right}}
+
+\newcommand{\true}{\texttt{true}}
+\newcommand{\false}{\texttt{false}}
+
+\newcommand{\qeq}{\overset{?}{=}}
+\newcommand{\qleq}{\overset{?}{\leq}}
+
+\newcommand{\Tmerge}{T_{\mathit{merge}}}
+\newcommand{\Tmergesort}{T_{\mathit{mergesort}}}
+\newcommand{\Tinsert}{T_{\mathit{insertsort}}}
+\newcommand{\Texhaust}{T_{\mathit{exhaustsort}}}
+
+
+\newcommand{\URL}{\mathit{url}}
+\newcommand{\PR}{\mathrm{PR}}
+\newcommand{\WWW}{\mathrm{WWW}}
+\newcommand{\key}{\mathit{key}}
+
+\newcommand{\enc}{\mathrm{enc}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+
+\newcommand{\crash}{\texttt{crash}}
+
+\newcommand{\select}{\texttt{select}}
+    \newcommand{\bday}{\texttt{bday}}
+\newcommand{\id}{\texttt{id}}
+
+\newcommand{\Apred}{A_{\mathit{pred}}}
