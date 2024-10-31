@@ -1,0 +1,3 @@
+python-sat
+tqdm
+networkx
