@@ -69,9 +69,12 @@ Unfortunately, unlike matching in graphs, there is no polynomial-time algorithm 
 {A set $M$ of hyperedges such that every vertex is in at most one hyperedge in $M$, and every vertex in $V_0$ is in a hyperedge in $M$ (if one exists).
 }
 \begin{enumerate}
-\item Show that there is a polynomial-time reduction of 3dCompleteMatching to SAT that, on hypergraphs with $n=|V_0|+|V_1|+|V_2|$ vertices and $m=|E|$ hyperedges, makes one oracle query on a formula with $m$ variables and $O(m^2)$ and runs in time $O(m^2)$.  Be sure to prove the correctness of your algorithm and analyze its runtime.  
+\item Show that there is a polynomial-time reduction of 3dCompleteMatching to SAT that, on hypergraphs with $n=|V_0|+|V_1|+|V_2|$ vertices and $m=|E|$ hyperedges, makes one oracle query on a formula with $m$ variables and $O(n + m^2)$ clauses, and runs in time $O(n + m^2)$.  Be sure to prove the correctness of your algorithm and analyze its runtime. 
+
+Optionally, justify why the reduction can be implemented in time $O(m^2)$ (this can be part of an attempt at an R+ on this problem, but is not required for full credit).
 
 Thus, even though the fastest known algorithms for 3dCompleteMatching run in exponential time, we can use SAT Solvers to solve it much more efficiently on many instances that arise in practice. 
+
 
 \item (optional) Come up with a polynomial-time reduction for the version of 3dMatching where we are also given a number $k\in \N$ as part of the input and want to find a matching of size $k$ (rather than one of size $|V_0|$).  (Hint: you will probably want to use more than $m$ boolean variables, at least $k\cdot m$, possibly more, depending on how you approach the problem.)
 
