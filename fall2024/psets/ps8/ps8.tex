@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+\usepackage{classTools}
+\usepackage[normalem]{ulem}
+
+\begin{document}
+
+% To include a problems set header, use the psHeader command
+\psHeader{8}{Wed Nov. 20, 2024 (11:59pm)}
+
+
+\textbf{Your name: }
+
+\textbf{Collaborators and External Resources (please cite all collaborators, and any resources or tools that you used outside of the core course resources, which are lectures, sections, SREs, office hours, earlier problem sets and their solutions):}
+
+\vspace{0.1in}
+
+
+\textbf{No. of late days used on previous psets: }
+
+\textbf{No. of late days used after including this pset: }
+
+
+\vspace{0.2in}
+
+\noindent The purpose of this problem set is to to reinforce the definitions and basic theory of our complexity classes and practice $\NP$-completeness proofs and related reductions. 
+
+\begin{enumerate}
+    \item (Complexity Classes and Reductions)  
+    \begin{enumerate}
+        \item Consider the computational problem $\Pi = (\Inputs,\Outputs,f)$ where $\Inputs=\Outputs=\N$ and $f(x)=\N$ for all $x\in \N$.  Show that $\Pi\in \Psearch$ but $\Pi\notin \NPsearch$.  Thus, $\Psearch\nsubseteq\NPsearch$.
+        
+        \item  Prove that if 
+$\Pi\leq_p \Gamma$ and $\Gamma\in \EXPsearch$, then $\Pi\in \EXPsearch$. (In other words, $\EXPsearch$ is closed under polynomial-time reductions.) 
+
+    \end{enumerate}
+
+    \item ($\NPsearch$-completeness) Consider the following variant of $k$-SAT.
+    
+       \compprob{Flip-$k$-SAT()}
+        {A $k$-CNF formula $\varphi(x_0,\ldots,x_{n-1})$}
+        {An assignment $\alpha\in\zo^n$ such that $\varphi(\alpha)=1$ and $\varphi(\neg \alpha)=1$ (if one exists), where $\neg \alpha$ is the bitwise negation of $\alpha$}
+%\anurag{Add `if exists'?}
+        \begin{enumerate}
+        \item Prove that Flip-4-SAT is $\NPsearch$-complete by reduction from 3-SAT.  (Hint: Add one new variable $y$ and replace each 3-SAT clause $(\ell_0 \vee \ell_1 \vee \ell_2)$ by $(\ell_0 \vee \ell_1 \vee \ell_2 \vee y)$.)
+
+        \item Flip 4-SAT can be reduced to Flip-3-SAT by the same method we used to reduce SAT to 3-SAT, and thus Flip 3-SAT is also $\NPsearch$-complete.  Using this fact, 
+        prove that Graph 3-Coloring is $\NPsearch$-complete. (Hint: use the same construction as we used in the reduction from 3-SAT to IndependentSet, except add one extra vertex that's connected to all of the variable-gadget-vertices.)
+
+        \item (optional) Fill in the omitted details of the reduction from Flip-4-SAT to Flip-3-SAT, with its proof of correctness.
+        \end{enumerate}
+        
+ \item (Reductions between variants of LongPath) 
+ Consider the following three variants of the LongPath problem (corresponding to ``optimization,'' ``search,'' and ``decision'' variants):
+ \begin{itemize}
+     \item LongestPath: given a digraph $G=(V,E)$ and $s,t\in V$, find the longest path from $s$ to $t$ in $G$ (if any such path exists). 
+     \item LongPath: given a digraph $G=(V,E)$, $s,t\in V$, and a number $k\in \N$, find a path of length at least $k$ from $s$ to $t$ in $G$ (if one exists).
+     \item LongPath-Decision: given a digraph $G=(V,E)$, $s,t\in V$, and a number $k\in \N$, decide (by outputting $\yes$ or $\no$) whether or not there is a path of length at least $k$ from $s$ to $t$ in $G$.
+ \end{itemize}
+
+\begin{enumerate}
+\item In the Sipser text, it is proven that LongPath-Decision is $\NP$-complete.  Using this and other theorems from lecture, show that LongPath $\leq_p$ LongPath-Decision. 
+
+\item Prove that LongestPath $\leq_p$ LongPath.  Be sure to prove correctness and analyze the correctness of the reduction you provide.  (Hint: do not limit yourself to mapping reductions.)
+
+\item Explain briefly why we also have LongPath-Decision $\leq_p$ LongestPath. Thus, all three problems are reducible to each other in polynomial time, and if any one is in $\Psearch$, they all are in $\Psearch$.
+
+\item (optional) Without using $\NP$-completeness, give a direct proof that LongPath $\leq_p$ LongPath-Decision.
+(Hint: Try to use the LongPath-Decision oracle to figure out the first edge to follow from the start vertex $s$.)
+\end{enumerate}
+
+\item (reflection) Describe one theoretical idea from this course that you have found beautiful, and explain why it is beautiful to you.  Your answer should: (1) explain the idea in a way that could be understood by a classmate who has taken classes cs20 and cs50 but has not yet taken this class and (2) address how this beauty is similar to or different from other kinds of beauty that human beings encounter.
+
+ \textit{Note: As with the previous psets, you may include your answer in your PDF submission, but the answer should ultimately go into a separate Gradescope submission form.}
+
+ \textit{Quick note on grading: Good responses are usually about a paragraph, with something like 7 or 8 sentences. Most importantly, please make sure your answer is specific to this class and your experiences in it. If your answer could have been edited lightly to apply to another class at Harvard, points will be taken off.}
+
+ \item Once you're done with this problem set, please fill out \href{https://forms.gle/K4Z1b1EhsT8dRY2T6}{this survey} so that we can gather students' thoughts on the problem set, and the class in general. It's not required, but we really appreciate all responses!
+ 
+\end{enumerate}
+
+
+\end{document}
