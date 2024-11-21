@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage{classTools}
+\usepackage[normalem]{ulem}
+\drafttrue
+\solutionstrue 
+
+\begin{document}
+
+% To include a problems set header, use the psHeader command
+\psHeader{9}{Wed. Dec. 4, 2024 (11:59pm)}
+
+\textbf{Your name: }
+
+\textbf{Collaborators and External Resources (please cite all collaborators, and any resources or tools that you used outside of the core course resources, which are lectures, sections, SREs, office hours, earlier problem sets and their solutions):}
+
+\textbf{No. of late days used on previous psets: }
+
+\textbf{No. of late days used after including this pset: }
+
+\vspace{1em}
+
+\noindent The purpose of this problem set is to practice proving that problems are unsolvable via reduction, and gain more intuition for the kinds of problems about programs that are unsolvable (through examples). Throughout this problem set, you may use some pseudocode in describing RAM and Word-RAM programs (like for loops), but be sure that the pseudocode can be implemented using actual RAM/Word-RAM commands that satisfy the constraints of the given problem (e.g. having no arithmetic overflows or being write-free).
+
+\begin{enumerate}
+\item (recognizing solvability and unsolvability) 
+Which of the following computational problems about programs are solvable?  Justify your answers, for example by giving an algorithm to solve the problem or using a reduction to prove unsolvability.
+\begin{enumerate}
+\item
+\compprob{RAMvsTM()}
+{A RAM program $P$}
+{$\yes$ if there is a Turing machine $M$ that solves the same computational problem as $P$, $\no$ otherwise}
+
+    \item 
+    \compprob{AgreeableTM()}
+{A Turing Machine $M$}
+{$\yes$ if $M$ halts and outputs $\yes$ on every input, $\no$ otherwise}   
+
+\item 
+\compprob{WhichGraphIsEasier()}
+{A Word-RAM program $P$ that solves the 3-coloring problem, a word-length $w$, and two graphs $G$ and $G'$}
+{$\yes$ if the running time of $P[w]$ on $G$ is smaller than the running time of $P[w]$ on $G'$, $\no$ otherwise}    
+
+    
+    
+\end{enumerate}
+
+
+  \item (undecidability of arithmetic overflows)
+  An {\em arithmetic overflow} in the execution of a Word-RAM program $P[w]$ is when the result of an arithmetic operation (addition or multiplication) results in a value at least $2^w$, where $w$ is the word size, so the result has to be capped at $2^w-1$. 
+  In Lecture 24, you will see how SMT Solvers are able to find a bug due to arithmetic overflow in Binary Search truncated to two levels of recursion. 
+
+  
+  In this problem, you will see that finding arithmetic overflow errors in general programs is an unsolvable problem.
+
+  \begin{enumerate}
+      \item Give an algorithm that converts any RAM program $P$ into an equivalent Word-RAM program $P'$ that never has arithmetic overflow.  That is, for all inputs $x$, 
+      \begin{itemize}
+          \item There exists a word length $w$ such that $P'[w]$ halts on $x$ without crashing if and only if $P$ halts on $x$, 
+          \item For all word lengths $w$ such that $P'[w]$ halts on $x$, its output $P'[w](x)$ equals the output $P(x)$, and
+          \item For all word lengths $w$, whenever $P'[w](x)$ carries out an operation $\var_i = \var_j\ \op\ \var_k$, the result is always smaller than $2^w$.  
+      \end{itemize}
+      Do not worry about the efficiency of your simulation (in contrast to Theorem 7.1.1 of Lecture 7, which does a fairly involved simulation in order to obtain the runtime as described; something much simpler suffices here).  (Hint: Try to make $P'[w]$ crash or go into an infinite loop if an overflow would happen.)
+      \label{part:simulate}
+
+      \item Using Part~\ref{part:simulate} and the undecidability of HaltOnEmpty for RAM programs, prove that the following computational problem is unsolvable:
+
+    \compprob{ArithmeticOverflow()}
+    {A Word-RAM program $P$}
+    {$\yes$ if there is a word length $w$ such that $P[w]$ has an arithmetic overflow when run on input $\eps$, $\no$ otherwise}
+
+    \item 
+    \label{itm:AOsolvable}
+    Show that the ArithmeticOverflow problem is solvable if we fix the word length $w$:
+    \compprob{ArithmeticOverflowFixedWordLength()}
+    {A Word-RAM program $P$ and a word length $w$}
+    {$\yes$ if $P[w]$ has an arithmetic overflow when run on input $\eps$, $\no$ otherwise}
+    (Hint: consider the {\em state} of the computation of $P[w]$ when run on input $\eps$, namely the current size and contents of memory, the values of all the variables, and the current line number.  Note that if the state is ever repeated prior to halting, then $P$ will never halt.) 
+
+    \item Discuss why your algorithm from Item~\ref{itm:AOsolvable} is not practical for real-world programs with word length $w=64$. This (and the following item) motivate the use of SMT Solvers to find bugs like arithmetic overflows.
+
+    \item (optional) Show that ArithmeticOverflowFixedWordLength is $\NP$-hard.  (In fact, it is much harder than $\NP$-hard and is provably not in $\Ptime$, but this fact is beyond the scope of this course.)  
+  \end{enumerate}
+
+
+\item (reflection)  How have the ideas of this course enlarged your sense of what it means to do computer science?  Be specific, pointing to the particular course content that made this change for you.
+
+ \textit{Note: As with the previous psets, you may include your answer in your PDF submission, but the answer should ultimately go into a separate Gradescope submission form.}
+
+ \textit{Quick note on grading: Good responses are usually about a paragraph, with something like 7 or 8 sentences. Most importantly, please make sure your answer is specific to this class and your experiences in it. If your answer could have been edited lightly to apply to another class at Harvard, points will be taken off.}
+
+ \item Once you're done with this problem set, please fill out \href{https://forms.gle/nMnuwZxw9nYNT7AE7}{this survey} so that we can gather students' thoughts on the problem set, and the class in general. It's not required, but we really appreciate all responses!
+ 
+\end{enumerate}
+
+
+
+
+\end{document}
