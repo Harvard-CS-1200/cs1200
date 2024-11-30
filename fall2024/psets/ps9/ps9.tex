@@ -56,7 +56,7 @@ Which of the following computational problems about programs are solvable?  Just
       \item Give an algorithm that converts any RAM program $P$ into an equivalent Word-RAM program $P'$ that never has arithmetic overflow.  That is, for all inputs $x$, 
       \begin{itemize}
           \item There exists a word length $w$ such that $P'[w]$ halts on $x$ without crashing if and only if $P$ halts on $x$, 
-          \item For all word lengths $w$ such that $P'[w]$ halts on $x$, its output $P'[w](x)$ equals the output $P(x)$, and
+          \item For all word lengths $w$ such that $P'[w]$ halts without crashing on $x$, its output $P'[w](x)$ equals the output $P(x)$, and
           \item For all word lengths $w$, whenever $P'[w](x)$ carries out an operation $\var_i = \var_j\ \op\ \var_k$, the result is always smaller than $2^w$.  
       \end{itemize}
       Do not worry about the efficiency of your simulation (in contrast to Theorem 7.1.1 of Lecture 7, which does a fairly involved simulation in order to obtain the runtime as described; something much simpler suffices here).  (Hint: Try to make $P'[w]$ crash or go into an infinite loop if an overflow would happen.)
