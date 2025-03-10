@@ -210,18 +210,44 @@ def iset_bfs_3_coloring(G):
 # If no coloring is possible, resets all of G's colors to None and returns None.
 def sat_3_coloring(G):
     solver = Glucose3()
+    
+    #Define SAT variables for each node and color
+    # For each node i, create three variables
+    n_vars = G.N * 3  # Each node has 3 color variables
+    for i in range(G.N):
+        # Ensure each node has at least one color
+        solver.add_clause([(i * 3 + 1), (i * 3 + 2), (i * 3 + 3)])
+        
+        # Ensure  each node has at most one color (pairwise exclusion)
+        solver.add_clause([-(i * 3 + 1), -(i * 3 + 2)])
+        solver.add_clause([-(i * 3 + 1), -(i * 3 + 3)])
+        solver.add_clause([-(i * 3 + 2), -(i * 3 + 3)])
+    
+    # Ensure adjacent nodes have different colors
+    for u in range(G.N):
+        for v in G.edges[u]:
+            if u < v:  # Avoid duplicate constraints for undirected edges
+                # For each color, add clause saying u and v cannot both have that color
+                solver.add_clause([-(u * 3 + 1), -(v * 3 + 1)])  # Both u and v cannot be color 1
+                solver.add_clause([-(u * 3 + 2), -(v * 3 + 2)])  # Both u and v cannot be color 2
+                solver.add_clause([-(u * 3 + 3), -(v * 3 + 3)])  # Both u and v cannot be color 3
 
-    # TODO: Add the clauses to the solver
-
-    # Attempt to solve, return None if no solution possible
+    # Solve the SAT instance and interpret the result
     if not solver.solve():
         G.reset_colors()
         return None
 
-    # Accesses the model in form [-v1, v2, -v3 ...], which denotes v1 = False, v2 = True, v3 = False, etc.
     solution = solver.get_model()
 
-    # TODO: If a solution is found, convert it into a coloring and update G.colors
+    # Update G.colors based on SAT solution
+    G.colors = [None] * G.N
+    for i in range(G.N):
+        if solution[i * 3 + 1 - 1] > 0:  
+            G.colors[i] = 1
+        elif solution[i * 3 + 2 - 1] > 0:  
+            G.colors[i] = 2
+        elif solution[i * 3 + 3 - 1] > 0:  
+            G.colors[i] = 3
 
     return G.colors
 
