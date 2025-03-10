@@ -38,6 +38,15 @@ class BTvertex:
 # Runtime: O(n)
 def calculate_sizes(v):
     # Your code goes here
+    if v.left == None and v.right == None:
+        v.size = 1
+    elif v.left == None:
+        v.size = 1 + calculate_sizes(v.right)
+    elif v.right == None:
+        v.size = 1 + calculate_sizes(v.left)
+    else:
+        v.size = 1 + calculate_sizes(v.left) + calculate_sizes(v.right)
+    return v.size
     pass 
 
 
@@ -53,4 +62,13 @@ def calculate_sizes(v):
 
 def FindDescendantOfSize(t, v):
     # Your code goes here 
+    if v.size >= t and v.size <= (2*t):
+        return v
+    if v.right == None:
+        return FindDescendantOfSize(t, v.left)
+    if v.left == None:
+        return FindDescendantOfSize(t, v.right)
+    if v.left.size > v.right.size:
+       return FindDescendantOfSize(t,v.left)
+    return FindDescendantOfSize(t,v.right)
     pass 
