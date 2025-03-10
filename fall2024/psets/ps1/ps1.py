@@ -67,5 +67,22 @@ def BC(n, b, k):
     return digits
 
 def radixSort(univsize, base, arr):
-    """TODO: Implement Radix Sort using BC and singletonBucketSort"""
-    return [] 
+    # Find number of digits needed
+    k = math.ceil(math.log(univsize) / math.log(base)) 
+
+    # Break each key into subkeys using BC
+    for i in range(len(arr)):
+        key, value = arr[i]
+        arr[i] = (BC(key, base, k), value) 
+    
+    # Sort by each digit, starting from LSD
+    for digit_index in range(k):
+        arr = singletonBucketSort(base, [(elt[0][digit_index], elt[1]) for elt in arr])
+
+    # Reconstruct original keys from the sorted digit arrays
+    for i in range(len(arr)):
+        digits, value = arr[i]
+        key = sum(d * (base ** idx) for idx, d in enumerate(digits))  
+        arr[i] = (key, value)
+    
+    return arr
