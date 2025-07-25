@@ -4,6 +4,14 @@
 
 An introductory course in theoretical computer science, aimed at giving students the power of using mathematical abstraction and rigorous proof to understand computation. Thus equipped, students will be able to design and use algorithms that apply to a wide variety of computational problems, with confidence about their correctness and efficiency, as well as recognize when a problem may have no algorithmic solution. At the same time, they will gain an appreciation for the beautiful mathematical theory of computation that is independent of (indeed, predates) the technology on which it is implemented.
 
+### Fall 2025
+
+- [Syllabus](./fall2025/2025_syllabus.pdf)
+- [Course Schedule and Lectures](https://docs.google.com/spreadsheets/d/1fMZUBlLU4lsLBjgYERpDDlbC3BQyKv4x6XtN4tjgrfQ/edit?usp=sharing)
+- [Ed](https://edstem.org/us/courses/79589/discussion/)
+- [Canvas](https://canvas.harvard.edu/courses/153943)
+- [Github](https://github.com/Harvard-CS-1200/cs1200)
+
 ### Fall 2024
 
 - [Syllabus](./fall2024/2024_syllabus.pdf)
