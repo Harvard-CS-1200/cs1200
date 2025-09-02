@@ -11,7 +11,7 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Ed](https://edstem.org/us/courses/79589/discussion/)
 - [Canvas](https://canvas.harvard.edu/courses/153943)
 - [Github set up instructions](./fall2025/2025_github.pdf)
-- [Github](https://github.com/Harvard-CS-1200/cs1200)
+- [Github](https://github.com/Harvard-CS-1200/2025-Fall)
 - [Gradescope](https://www.gradescope.com/courses/1071520)
 
 ### Fall 2024
