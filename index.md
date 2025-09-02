@@ -10,6 +10,7 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Course Schedule and Lectures](https://docs.google.com/spreadsheets/d/1fMZUBlLU4lsLBjgYERpDDlbC3BQyKv4x6XtN4tjgrfQ/edit?usp=sharing)
 - [Ed](https://edstem.org/us/courses/79589/discussion/)
 - [Canvas](https://canvas.harvard.edu/courses/153943)
+- [Github set up instructions](./fall2025/2025_github.pdf)
 - [Github](https://github.com/Harvard-CS-1200/cs1200)
 - [Gradescope](https://www.gradescope.com/courses/1071520)
 
@@ -22,7 +23,7 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Github](https://github.com/Harvard-CS-1200/cs1200)
 - [Gradescope](https://www.gradescope.com/courses/846790)
 - [Instructions for Sender/Receiver Exercises](./fall2024/sre/sre-instructions.pdf)
-- [Instructions for Sender/Receiver Exercises (Extension School](./fall2024/sre/sre-instructions-ext.pdf)
+- [Instructions for Sender/Receiver Exercises (Extension School)](./fall2024/sre/sre-instructions-ext.pdf)
 - [Guidelines for Revision Videos](./fall2024/revision-guidelines.pdf)
 - [Course Preview Video](https://harvard.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=cd2ec5c8-5f47-45a8-927a-b149008cd981)
 
