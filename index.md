@@ -1,4 +1,4 @@
-# CS 120(0) (Intro to Algorithms and their Limitations)
+# CS 1200 (Intro to Algorithms and their Limitations)
 
 ## Overview
 
@@ -15,6 +15,7 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Gradescope](https://www.gradescope.com/courses/1071520)
 - [Textbook Part 1](https://drive.google.com/file/d/1Ye4KuaEKeSJDhJQzizLByeShYVJCMDAt/view?usp=sharing)
 - [Guidelines for Revision Videos](./fall2025/revision-guidelines.pdf)
+- [FAQ](./fall2025/faq.md)
 
 ### Fall 2024
 
