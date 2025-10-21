@@ -13,7 +13,7 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Github set up instructions](./fall2025/2025_github.pdf)
 - [Github](https://github.com/Harvard-CS-1200/2025-Fall)
 - [Gradescope](https://www.gradescope.com/courses/1071520)
-- [Textbook Part 1](https://drive.google.com/file/d/1Ye4KuaEKeSJDhJQzizLByeShYVJCMDAt/view?usp=sharing)
+- Textbook: [Ch 1-4](https://drive.google.com/file/d/1Ye4KuaEKeSJDhJQzizLByeShYVJCMDAt/view?usp=sharing), [Ch 5-6](https://drive.google.com/file/d/1ZE-BGuPFymg-nhmllo_YQr60QRwMRFJ0/view?usp=sharing), [Ch 7-8](https://drive.google.com/file/d/1frwT4TMf-_hh369qiLX3QchGtRX-Q770/view?usp=sharing), [Ch 10-11 (there is no Ch 9)](https://drive.google.com/file/d/1KZ5VVd23-HRFLpYeFkIloL0xc58ANFmr/view?usp=sharing), [Ch 12-13](https://drive.google.com/file/d/1HhfOTb2kVKbeGwiJLon2-1qCuhRVRARK/view?usp=sharing), [Ch 14](https://drive.google.com/file/d/15ZNLBElSRP-U5RsxpixFykBcRcwrKyoQ/view?usp=sharing)
 - [Guidelines for Revision Videos](./fall2025/revision-guidelines.pdf)
 - [FAQ](./fall2025/faq.md)
 
