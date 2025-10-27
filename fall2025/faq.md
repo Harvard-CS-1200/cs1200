@@ -27,7 +27,7 @@ The Panopto recordings are a good option here! The text might be too small to ta
 <b> Where are the detailed lecture notes? What's the textbook? </b>
 </summary> <br>
 
-This year, the detailed lecture notes are being replaced with the course textbook being written by Salil Vadhan and Adam Hesterberg (the two original professors of the course!). The links to textbook chapters can be found on the course website or the course schedule spreadsheet -- we encourage using the Perusall link when possible because it offers a good way to ask questions about the textbook or point out errors.
+This year, the detailed lecture notes are being replaced with the course textbook being written by Adam Hesterberg and Salil Vadhan (the two original professors of the course!). The links to textbook chapters can be found on the course website or the course schedule spreadsheet -- we encourage using the Perusall link when possible because it offers a good way to ask questions about the textbook or point out errors.
 
 </details>
 
@@ -70,12 +70,13 @@ One possible "hack" arises where a student could take a look at the test cases a
 <b> Every proof of correctness is slightly different -- how do I know what to do? </b>
 </summary> <br>
 
-First, it's worth noting that for exams proofs of correctness will usually follow very fixed structures that we cover in lecture / problem sets -- for example pretty much all correctness proofs on the final will just be for an NP-completeness or unsolvability proof which we'll drill. However, problem sets can require a little more adaptation. <br>
+First, it's worth noting that for exams proofs of correctness will usually follow very fixed structures that we cover in lecture / problem sets -- for example some correctness proofs on the final will just be for an NP-completeness or unsolvability proof which we'll drill. However, problem sets can require a little more adaptation. <br>
 
-In general, this is a hard question to answer -- there's no formula for proving that an algorithm/reduction is correct, and I would say it's probably more accurate to say that correctness is a combination of pattern recognition (seeing when you can apply established techniques) and adaptation (recognizing when you need to adapt techniques to accommodate for edge cases / unique situations). Hopefully by doing the psets you've gained a little bit of both! <br>
+A good starting point is building some intuition for why a proof of correctness is sufficient -- I like thinking about it as examining whether an experiment successfully proves a claim, or whether a historical argument is correct. There's no formula for whether a proof of correctness is sufficient, but by trying to poke holes in the proof you can gain some intuition for what constitutes correctness.
+
+How do you come up with these proofs yourself? In general, this is a hard question to answer -- there's no formula for proving that an algorithm/reduction is correct, and I would say it's probably more accurate to say that correctness is a combination of pattern recognition (seeing when you can apply established techniques) and adaptation (recognizing when you need to adapt techniques to accommodate for edge cases / unique situations). Hopefully by doing the psets you've gained a little bit of both! <br>
 
 However, for this class we actually don't introduce that many new patterns. By outlining a few patterns + examples you'll probably be pretty well-equipped to tackle most things we throw at you. Here's a preliminary attempt at doing that: <br>
-
 
 
 - <b>Ad Hoc</b>: Sometimes (not often) you'll need to come up with a proof of correctness for an algorithm that doesn't follow a predetermined structure. Ad hoc means "created or done for a particular purpose as necessary" -- aka "you're kind of on your own" 
@@ -92,7 +93,7 @@ However, for this class we actually don't introduce that many new patterns. By o
 - <b>"Basic" vs "Advanced" Reductions</b>: I don't have a good definition of what a "basic" reduction is, but the main category we see in this class is reductions to Sorting. These are "basic" in the sense that the oracle is just a step that we abstract away for convenience, but the actual problem solving logic is contained in the reduction itself. For example, for AreaOfConvexPolygon we did all the complex area calculation in the reduction, whereas Sorting was just something convenient that we wanted as part of this routine. By contrast, an "advanced" reduction is more like an argument that the two computational problems are equivalent -- very soon after the midterm we'll see reductions to Single Source Shortest Paths which hint at this, and then we'll see the big NP-completeness and unsolvability reductions which really lean into this idea.
 - <b>Correctness for "Basic" Reductions</b>: A proof of correctness for a basic reduction is usually very similar to an ad-hoc proof of correctness. 
     - <b>AreaOfConvexPolygon</b>: This is the main reduction to Sorting that we did on problem set 2 -- remember that the bar for correctness was pretty low because you just needed to explain why sorting is relevant (so that adjacent points are connected by an edge) and why your triangulation of choice was valid (a convex polygon containing the origin can be deconstructed into triangles at the origin).
-- <b>Correctness for "Advanced" Reductions</b> (post-midterm): By contrast, a proof of correctness for an advanced reduction usually needs to argue for the equivalence of two problems. This pretty much always requires a bidirectional proof -- explaining that a solution for problem A corresponds to an equivalent solution to problem B and vice versa. You haven't seen any of these yet, so I'll give examples that will make more sense in the weeks after the midterm:
+- <b>Correctness for "Advanced" Reductions</b> (post-midterm): By contrast, a proof of correctness for an advanced reduction usually needs to argue for the equivalence of two sets of solutions (ie the instance that you construct and pass to the oracle has the same solution set as the original problem). This pretty much always requires a bidirectional proof -- explaining that a solution for problem A corresponds to an equivalent solution to problem B and vice versa. You haven't seen any of these yet, so I'll give examples that will make more sense in the weeks after the midterm:
     - <b>Reductions to Single Source Shortest Paths</b>: Usually this kind of reduction involves an assumption that the original problem is equivalent to a graph that you've constructed as the input to SSSP. Usually the bidirectional proof here involves establishing a mapping from a sequence of moves in the original problem to a path of the same length on the constructed graph, and vice versa. By proving this mapping you demonstrate that the length of the shortest path on the constructed graph is equal to the length of the optimal sequence of moves in the original problem.
     - <b>NP-completeness Reductions</b>: This is an entirely different rabbithole we'll dive into later in the semester -- however, the core idea of establishing mappings between solutions still holds. In this case we want to show that a solution $S$ for $\Pi$ corresponds to an equivalent solution $S'$ for $\Gamma$, and vice versa.
     - <b>Unsolvability Reduction</b>: Again, bidirectional -- this time since it's between problems where the answer is yes/no it'll look more like if the answer for $\Pi$ is yes then the answer to $\Gamma$ is also yes, and vice versa.
@@ -164,7 +165,7 @@ Reflection questions are graded on our letter grade scale, with the exception th
 <b> How are SREs graded? I don't see my grade on Gradescope? </b>
 </summary> <br>
 
-SREs are graded on completion! If you submitted the SRE reflection survey you will receive full credit for the SRE -- Gradescope is finicky about certain things so we can't actually get the 3/3 to show up on your end but you don't need to worry about that if you submitted the survey.
+SREs are graded on completion, as long as you submit a response that shows that you took the activity seriously. If you submitted the SRE reflection survey you will receive full credit for the SRE -- Gradescope is finicky about certain things so we can't actually get the 3/3 to show up on your end but you don't need to worry about that if you submitted the survey.
 
 </details>
 
@@ -191,7 +192,7 @@ Here's the attendance policy:
 <b> How do exams get curved? </b>
 </summary> <br>
 
-We determine curves by looking at exams and figuring out approximately which percentage thresholds should correspond to letter grade thresholds (i.e. the course heads will select exams that we believe are at the boundary between A-/B+, B-/C+, etc). Then, we set linear functions between the thresholds to determine your GPA based on your exam performance
+We determine curves by looking at exams and figuring out approximately which percentage thresholds should correspond to letter grade thresholds (i.e. the course heads will select exams that we believe are at the boundary between A-/B+, B-/C+, etc). Then, we set linear functions between the thresholds to determine your GPA based on your exam performance. Refer to the College description of letter grades [here](https://infoforfaculty.fas.harvard.edu/book/grading-system).
 
 </details>
 
@@ -209,6 +210,6 @@ Your exam GPA will count for 40% of your final grade, and that portion is split 
 <b> Do exams have revision videos? </b>
 </summary> <br>
 
-Unfortunately not -- the problem sets are meant to measure learning, which is why pset grading is kind of designed so anyone can reach the satisfactory (R) level. Exams, however, are meant to be our main factor in determining whether you've really internalized course content -- we'll have plenty of materials to help you prepare but no revision mechanism.
+Unfortunately not -- the problem sets are meant to facilitate learning, which is why pset grading is kind of designed so anyone can reach the satisfactory (R) level. Exams, however, are meant to be our main factor in determining whether you've really internalized course content -- we'll have plenty of materials to help you prepare but no revision mechanism.
 
 </details>
