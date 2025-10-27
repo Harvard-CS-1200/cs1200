@@ -38,12 +38,12 @@ This year, the detailed lecture notes are being replaced with the course textboo
 <b> What are the important pset policies to remember? </b>
 </summary> <br>
 
-<ul>
-<li>Problem sets are letter graded (N = not assessable, L = learning, R- = nearly ready to move on, R = ready to move on, R+ = beyond ready).</li>
-<li>College students have 10 late days and can spend at most 3 on a given pset (extension students have 40 and can spend at most 4 on a given pset).</li>
-<li>The lowest pset grade will get dropped.</li>
-<li>Students can raise up to five of their pset grades with a revision video (which will be due after the pset deadline), which will increase your pset grade by one letter grade (L to R-, or R- to R).</li>
-</ul>
+
+- Problem sets are letter graded (N = not assessable, L = learning, R- = nearly ready to move on, R = ready to move on, R+ = beyond ready).
+- College students have 10 late days and can spend at most 3 on a given pset (extension students have 40 and can spend at most 4 on a given pset).
+- The lowest pset grade will get dropped.
+- Students can raise up to five of their pset grades with a revision video (which will be due after the pset deadline), which will increase your pset grade by one letter grade (L to R-, or R- to R). <b>THIS IS IMPORTANT SUBMIT YOUR REVISION VIDEOS THEY WILL SAVE YOU</b>
+
 
 </details>
 
@@ -76,46 +76,26 @@ In general this is a hard question to answer -- there's no formula for proving t
 
 However, for this class we actually don't introduce that many new patterns. By outlining a few patterns + examples you'll probably be pretty well-equipped to tackle most things we throw at you. Here's a preliminary attempt at doing that: <br>
 
-<ul>
 
-<li> <b>Ad Hoc</b>: Sometimes (not often) you'll need to come up with a proof of correctness for an algorithm that doesn't follow a predetermined structure. Ad hoc means "created or done for a particular purpose as necessary" -- aka "you're kind of on your own" 
-    <ul>
-    <li> <b>Size-Augmented Rotation</b>: This was problem 3b on pset 2 -- there's no precedent in class for proving correctness of a procedure for maintaining size-augmentation. Part of the proof of correctness is explaining why every node you don't update doesn't need to be updated -- this is something that you just have to figure out. </li>
-    <li> <b>Singleton Bucket Sort</b>: I got a few questions during this SRE about what correctness looks like for this algorithm. Here the two properties of a correct Sorting are 1) the answer is a permutation of the input, and 2) $K_i \leq K_{i+1}$. In this case you have to recognize that both can be proved directly with not that much effort. </li>
-    <li> One thing to note is that even though you're left on your own, usually the proof of correctness is a little bit easier and comes down to finding the 1 or 2 "core claims" that you need to justify. </li>
-    </ul> 
-</li>
-<li> <b>Induction for Loops/Recursion</b>: 
-    <ul>
-    <li> <b>Recursion</b>: This is probably the one you're more used to (just remember to use strong induction)
-        <ul>
-        <li><b>Merge Sort</b>: If this algorithm correctly sorts arrays of size $\frac{n}{2}$, then it will sort the full array of size $n$.</li>
-        <li><b>Weighted QuickSelect</b>: If this algorithm can find the $t$'th element in the left or right subarray, then we'll get our answer for the entire array. </li>
-        </ul>
-    </li>
-    <li> <b>Loops</b>: When an algorithm involves doing something in a loop, and the body of the loop is sufficiently complicated that it warrants an explanation of what you're doing at each step, you can consider a loop invariant.
-        <ul>
-        <li><b>Insertion Sort</b>: we proved the claim that after $k$ iterations of the outer loop, the first $k$ elements of the array should be sorted (and this way the inductive step can focus on proving that the $k+1$-th iteration inserts the $k+1$-th element into the correct place)</li>
-        <li><b>Radix Sort</b>: we proved the claim that after $k$ iterations of the outer loop, the elements of the array were sorted by their $k$ least significant digits. The inductive step used the stability of Singleton Bucket Sort to justify why numbers with the same $k+1$-th digit would remain in sorted order.</li>
-        </ul>
-    </li>
-    </ul>
-</li>
-<li><b>"Basic" vs "Advanced" Reductions</b>: I don't have a good definition of what a "basic" reduction is, but the main category we see in this class is reductions to Sorting. These are "basic" in the sense that the oracle is just a step that we abstract away for convenience, but the actual problem solving logic is contained in the reduction itself. For example, for AreaOfConvexPolygon we did all the complex area calculation in the reduction, whereas Sorting was just something convenient that we wanted as part of this routine. By contrast, an "advanced" reduction is more like an argument that the two computational problems are equivalent -- very soon after the midterm we'll see reductions to Single Source Shortest Paths which hint at this, and then we'll see the big NP-completeness and unsolvability reductions which really lean into this idea.</li>
-<li><b>Correctness for "Basic" Reductions</b>: A proof of correctness for a basic reduction is usually very similar to an ad-hoc proof of correctness. 
-    <ul>
-    <li><b>AreaOfConvexPolygon</b>: This is the main reduction to Sorting that we did on problem set 2 -- remember that the bar for correctness was pretty low because you just needed to explain why sorting is relevant (so that adjacent points are connected by an edge) and why your triangulation of choice was valid (a convex polygon containing the origin can be deconstructed into triangles at the origin).</li>
-    </ul>
-</li>
-<li><b>Correctness for "Advanced" Reductions</b> (post-midterm): By contrast, a proof of correctness for an advanced reduction usually needs to argue for the equivalence of two problems. This pretty much always requires a bidirectional proof -- explaining that a solution for problem A corresponds to an equivalent solution to problem B and vice versa. You haven't seen any of these yet, so I'll give examples that will make more sense in the weeks after the midterm:
-    <ul>
-    <li><b>Reductions to Single Source Shortest Paths</b>: Usually this kind of reduction involves an assumption that the original problem is equivalent to a graph that you've constructed as the input to SSSP. Usually the bidirectional proof here involves establishing a mapping from a sequence of moves in the original problem to a path of the same length on the constructed graph, and vice versa. By proving this mapping you demonstrate that the length of the shortest path on the constructed graph is equal to the length of the optimal sequence of moves in the original problem.</li>
-    <li><b>NP-completeness Reductions</b>: This is an entirely different rabbithole we'll dive into later in the semester -- however, the core idea of establishing mappings between solutions still holds. In this case we want to show that a solution $S$ for $\Pi$ corresponds to an equivalent solution $S'$ for $\Gamma$, and vice versa.</li>
-    <li><b>Unsolvability Reduction</b>: Again, bidirectional -- this time since it's between problems where the answer is yes/no it'll look more like if the answer for $\Pi$ is yes then the answer to $\Gamma$ is also yes, and vice versa.</li>
-    </ul>
-</li>
-</ul>
 
+- <b>Ad Hoc</b>: Sometimes (not often) you'll need to come up with a proof of correctness for an algorithm that doesn't follow a predetermined structure. Ad hoc means "created or done for a particular purpose as necessary" -- aka "you're kind of on your own" 
+    - <b>Size-Augmented Rotation</b>: This was problem 3b on pset 2 -- there's no precedent in class for proving correctness of a procedure for maintaining size-augmentation. Part of the proof of correctness is explaining why every node you don't update doesn't need to be updated -- this is something that you just have to figure out. 
+    - <b>Singleton Bucket Sort</b>: I got a few questions during this SRE about what correctness looks like for this algorithm. Here the two properties of a correct Sorting are 1) the answer is a permutation of the input, and 2) $K_i \leq K_{i+1}$. In this case you have to recognize that both can be proved directly with not that much effort. 
+    - One thing to note is that even though you're left on your own, usually the proof of correctness is a little bit easier and comes down to finding the 1 or 2 "core claims" that you need to justify. 
+- <b>Induction for Loops/Recursion</b>: 
+    - <b>Recursion</b>: This is probably the one you're more used to (just remember to use strong induction)
+        - <b>Merge Sort</b>: If this algorithm correctly sorts arrays of size $\frac{n}{2}$, then it will sort the full array of size $n$.
+        - <b>Weighted QuickSelect</b>: If this algorithm can find the $t$'th element in the left or right subarray, then we'll get our answer for the entire array. 
+    -  <b>Loops</b>: When an algorithm involves doing something in a loop, and the body of the loop is sufficiently complicated that it warrants an explanation of what you're doing at each step, you can consider a loop invariant.
+        - <b>Insertion Sort</b>: we proved the claim that after $k$ iterations of the outer loop, the first $k$ elements of the array should be sorted (and this way the inductive step can focus on proving that the $k+1$-th iteration inserts the $k+1$-th element into the correct place)
+        - <b>Radix Sort</b>: we proved the claim that after $k$ iterations of the outer loop, the elements of the array were sorted by their $k$ least significant digits. The inductive step used the stability of Singleton Bucket Sort to justify why numbers with the same $k+1$-th digit would remain in sorted order.
+- <b>"Basic" vs "Advanced" Reductions</b>: I don't have a good definition of what a "basic" reduction is, but the main category we see in this class is reductions to Sorting. These are "basic" in the sense that the oracle is just a step that we abstract away for convenience, but the actual problem solving logic is contained in the reduction itself. For example, for AreaOfConvexPolygon we did all the complex area calculation in the reduction, whereas Sorting was just something convenient that we wanted as part of this routine. By contrast, an "advanced" reduction is more like an argument that the two computational problems are equivalent -- very soon after the midterm we'll see reductions to Single Source Shortest Paths which hint at this, and then we'll see the big NP-completeness and unsolvability reductions which really lean into this idea.
+- <b>Correctness for "Basic" Reductions</b>: A proof of correctness for a basic reduction is usually very similar to an ad-hoc proof of correctness. 
+    - <b>AreaOfConvexPolygon</b>: This is the main reduction to Sorting that we did on problem set 2 -- remember that the bar for correctness was pretty low because you just needed to explain why sorting is relevant (so that adjacent points are connected by an edge) and why your triangulation of choice was valid (a convex polygon containing the origin can be deconstructed into triangles at the origin).
+- <b>Correctness for "Advanced" Reductions</b> (post-midterm): By contrast, a proof of correctness for an advanced reduction usually needs to argue for the equivalence of two problems. This pretty much always requires a bidirectional proof -- explaining that a solution for problem A corresponds to an equivalent solution to problem B and vice versa. You haven't seen any of these yet, so I'll give examples that will make more sense in the weeks after the midterm:
+    - <b>Reductions to Single Source Shortest Paths</b>: Usually this kind of reduction involves an assumption that the original problem is equivalent to a graph that you've constructed as the input to SSSP. Usually the bidirectional proof here involves establishing a mapping from a sequence of moves in the original problem to a path of the same length on the constructed graph, and vice versa. By proving this mapping you demonstrate that the length of the shortest path on the constructed graph is equal to the length of the optimal sequence of moves in the original problem.
+    - <b>NP-completeness Reductions</b>: This is an entirely different rabbithole we'll dive into later in the semester -- however, the core idea of establishing mappings between solutions still holds. In this case we want to show that a solution $S$ for $\Pi$ corresponds to an equivalent solution $S'$ for $\Gamma$, and vice versa.
+    - <b>Unsolvability Reduction</b>: Again, bidirectional -- this time since it's between problems where the answer is yes/no it'll look more like if the answer for $\Pi$ is yes then the answer to $\Gamma$ is also yes, and vice versa.
 </details>
 
 
@@ -164,7 +144,7 @@ The important thing to note is that getting all R's should be the primary goal, 
 <b> What are the expectations for revision videos? </b>
 </summary> <br>
 
-Check out the [revision guidelines](./revision-guidelines.pdf) for a thorough description of what is expected from revision videos. Additionally, there are example revision videos from a few years back posted in Canvas files.
+Check out the [revision guidelines](https://harvard-cs-1200.github.io/cs1200/fall2025/revision-guidelines.pdf) for a thorough description of what is expected from revision videos. Additionally, there are example revision videos from a few years back posted in Canvas files.
 
 </details>
 
@@ -221,5 +201,14 @@ We determine curves by looking at exams and figuring out approximately which per
 </summary> <br>
 
 Your exam GPA will count for 40% of your final grade, and that portion is split between the midterm and final according to how long each takes (75 to 180 minutes). So the midterm ends up being about 11.75% of your grade, and the final is about 28.25% of your grade.
+
+</details>
+
+<details>
+<summary>
+<b> Do exams have revision videos? </b>
+</summary> <br>
+
+Unfortunately not -- the problem sets are meant to measure learning, which is why pset grading is kind of designed so anyone can reach the satisfactory (R) level. Exams, however, are meant to be our main factor in determining whether you've really internalized course content -- we'll have plenty of materials to help you prepare but no revision mechanism.
 
 </details>
