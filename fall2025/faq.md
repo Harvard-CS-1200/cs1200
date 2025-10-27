@@ -1,6 +1,6 @@
 # Fall 2025 Course FAQ
 
-We see a lot of the same questions popping up throughout the semester, and sometimes we make an Ed post answering these questions but people who don't read it at the time will usually come back with the same question a few weeks later. So instead we're going to start putting answers to these common questions on this webpage -- bookmark it and hopefully it'll be a useful resource for when you have questions!
+We see a lot of the same questions popping up throughout the semester, and sometimes we make an Ed post answering these questions but people who don't read it at the time will usually come back with the same question a few weeks later. So instead, we're going to start putting answers to these common questions on this webpage -- bookmark it and hopefully it'll be a useful resource for when you have questions!
 
 ## Lectures
 
@@ -9,7 +9,7 @@ We see a lot of the same questions popping up throughout the semester, and somet
 <b> The Panopto recordings are too zoomed out to see anything -- how do I see the board? </b>
 </summary> <br>
 
-Both the Panopto recordings and the DCE school recordings should both be available on the Canvas page under the "Panopto" and the "DCE Class Recordings" pages, respectively. In most cases the DCE Class Recordings will be strictly superior because they zoom in on the specific board that is being written on, but sometimes if you want to see the entire board checking out the Panopto recording might be a good idea.
+Both the Panopto recordings and the DCE school recordings should be available on the Canvas page under the "Panopto" and the "DCE Class Recordings" pages, respectively. In most cases the DCE Class Recordings will be strictly superior because they zoom in on the specific board that is being written on, but sometimes if you want to see the entire board checking out the Panopto recording might be a good idea.
 
 </details>
 
@@ -52,7 +52,7 @@ This year, the detailed lecture notes are being replaced with the course textboo
 <b> How should I be testing my code? </b>
 </summary> <br>
 
-For every problem set with code, there will also be some local testing functionality we provide for you to confirm that your code works as intended. We recommend using local test cases as a quick way of testing whether your code works -- if you upload your code to Gradescope it can take up to a minute to evaluate whether your code passes test cases, whereas if you run local tests it'll tell you within a second. Only after your code passes local tests cases should you upload it to Gradescope.
+For every problem set with code, there will also be some local testing functionality we provide for you to confirm that your code works as intended. We recommend using local test cases as a quick way of testing whether your code works -- if you upload your code to Gradescope it can take up to a minute to evaluate whether your code passes test cases, whereas if you run local tests it'll tell you within a second. Only after your code passes local test cases should you upload it to Gradescope.
 
 </details>
 
@@ -72,7 +72,7 @@ One possible "hack" arises where a student could take a look at the test cases a
 
 First, it's worth noting that for exams proofs of correctness will usually follow very fixed structures that we cover in lecture / problem sets -- for example pretty much all correctness proofs on the final will just be for an NP-completeness or unsolvability proof which we'll drill. However, problem sets can require a little more adaptation. <br>
 
-In general this is a hard question to answer -- there's no formula for proving that an algorithm/reduction is correct, and I would say it's probably more accurate to say that correctness is a combination of pattern recognition (seeing when you can apply established techniques) and adaptation (recognizing when you need to adapt techniques to accommodate for edge cases / unique situations). Hopefully by doing the psets you've gained a little bit of both! <br>
+In general, this is a hard question to answer -- there's no formula for proving that an algorithm/reduction is correct, and I would say it's probably more accurate to say that correctness is a combination of pattern recognition (seeing when you can apply established techniques) and adaptation (recognizing when you need to adapt techniques to accommodate for edge cases / unique situations). Hopefully by doing the psets you've gained a little bit of both! <br>
 
 However, for this class we actually don't introduce that many new patterns. By outlining a few patterns + examples you'll probably be pretty well-equipped to tackle most things we throw at you. Here's a preliminary attempt at doing that: <br>
 
@@ -126,7 +126,7 @@ Luckily the revision video system makes it really easy to bounce back even if yo
 <b> Where do I find my Gradescope feedback? How do I interpret it? </b>
 </summary> <br>
 
-If you navigate to the assignment on Gradescope you can click through each problem to see what feedback you got, as well as the letter grade you got for a particular problem. Reading through the rubrics is important -- it can help you get an idea of what we expected to see from you in the proof. This can be particuarly helpful for exams, where sometimes you include some justification on the problem set but forget to include it on the exam when it's actually something we take off points for missing. Looking at problems where you got below an R and reading rubric items that indicate what we were looking for in a full-credit solution is a great way to understand what you're missing and where you should add more justification.
+If you navigate to the assignment on Gradescope you can click through each problem to see what feedback you got, as well as the letter grade you got for a particular problem. Reading through the rubrics is important -- it can help you get an idea of what we expected to see from you in the proof. This can be particularly helpful for exams, where sometimes you include some justification on the problem set but forget to include it on the exam when it's actually something we take off points for missing. Looking at problems where you got below an R and reading rubric items that indicate what we were looking for in a full-credit solution is a great way to understand what you're missing and where you should add more justification.
 
 </details>
 
@@ -175,10 +175,10 @@ SREs are graded on completion! If you submitted the SRE reflection survey you wi
 
 Here's the attendance policy:
 
-- If you will be absent from a lecture which does not contain an SRE or an exam, you do not need us to excuse you - as long as you have a valid reason, you're good to go.
+- If you will be absent from a lecture which does not contain an SRE or an exam, you do not need us to excuse you -- as long as you have a valid reason, you're good to go.
 - If you will be absent for the midterm, reach out to us ASAP so we can help you with scheduling a makeup (worst case if the makeup doesn't work either we'll have the final exam count for your entire exam GPA)
 - If you will be absent from an SRE for something like sickness, mental health, personal issues, then please reach out to your Resident Dean and make sure that they are able to communicate that to the course heads (either they email us, or you email us with your resident dean cc'ed). In this case, a makeup isn't required, but we strongly recommend that you attempt to review the material on the SRE with a classmate.
-- If you have another valid excuse for missing an SRE, but one that doesn't warrant reaching out to your Resident Dean, please let us know by the lecture before so that we can help you organize a makeup. Most people have been doing this by emailing the staff - from here on out, we recommend notifying us through a private Ed post in the "Logistics" category. 
+- If you have another valid excuse for missing an SRE, but one that doesn't warrant reaching out to your Resident Dean, please let us know by the lecture before so that we can help you organize a makeup. We recommend notifying us either by emailing the course heads, or through a private Ed post in the "Logistics" category. 
     - A makeup will be required - you may either find another student in the class who will be missing the same SRE, or use this spreadsheet to find a partner from the extension school (the spreadsheet is normally used to pair up extension school students). Your SRE survey deadline on Gradescope will be the same as the one we assign to the extension school students (which is generally the rest of the week).
 - Finally, maybe you overslept or missed the shuttle - this is a real problem for an exam, but if you do this on an SRE we provide a participation grade drop! As long as you don't do it multiple times, your participation grade will be perfectly fine.
 
@@ -191,7 +191,7 @@ Here's the attendance policy:
 <b> How do exams get curved? </b>
 </summary> <br>
 
-We determine curves by looking at exams and figuring out approximately which percentage thresholds should correspond to letter grade thresholds (ie the course heads will select exams that we believe are at the boundary between A-/B+, B-/C+, etc). Then, we set linear functions between the thresholds to determine your GPA based on your exam performance
+We determine curves by looking at exams and figuring out approximately which percentage thresholds should correspond to letter grade thresholds (i.e. the course heads will select exams that we believe are at the boundary between A-/B+, B-/C+, etc). Then, we set linear functions between the thresholds to determine your GPA based on your exam performance
 
 </details>
 
