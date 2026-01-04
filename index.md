@@ -4,6 +4,18 @@
 
 An introductory course in theoretical computer science, aimed at giving students the power of using mathematical abstraction and rigorous proof to understand computation. Thus equipped, students will be able to design and use algorithms that apply to a wide variety of computational problems, with confidence about their correctness and efficiency, as well as recognize when a problem may have no algorithmic solution. At the same time, they will gain an appreciation for the beautiful mathematical theory of computation that is independent of (indeed, predates) the technology on which it is implemented.
 
+### Spring 2026
+
+- [Syllabus](./spring2026/Syllabus/pdf)
+- [Course Schedule and Lectures](https://docs.google.com/spreadsheets/d/1mnbqSTgJGc4nRCR9vSJrPSvmCyY8zVAWi88YkILdJEQ/edit?gid=1779133089#gid=1779133089)
+- [Ed](https://edstem.org/us/courses/89686/discussion)
+- [Canvas](https://canvas.harvard.edu/courses/163758)
+- [Github](https://github.com/Harvard-CS-1200/2026-Spring)
+- [Gradescope](https://www.gradescope.com/courses/1207811)
+- Textbook: [Ch 1-4](https://drive.google.com/file/d/1Ye4KuaEKeSJDhJQzizLByeShYVJCMDAt/view?usp=sharing), [Ch 5-6](https://drive.google.com/file/d/1ZE-BGuPFymg-nhmllo_YQr60QRwMRFJ0/view?usp=sharing), [Ch 7-8](https://drive.google.com/file/d/1frwT4TMf-_hh369qiLX3QchGtRX-Q770/view?usp=sharing), (no Ch 9), [Ch 10-11](https://drive.google.com/file/d/1KZ5VVd23-HRFLpYeFkIloL0xc58ANFmr/view?usp=sharing), [Ch 12-13](https://drive.google.com/file/d/1HhfOTb2kVKbeGwiJLon2-1qCuhRVRARK/view?usp=sharing), [Ch 14](https://drive.google.com/file/d/1FQVKvVExkU-0MxEfBGYDnFXBE4CZKDAJ/view?usp=sharing), [Ch 15](https://drive.google.com/file/d/1X62nV8vZuFsgmXaQlcLkJpxQXbXNc8lp/view?usp=sharing), [Ch 16](https://drive.google.com/file/d/1IDbKT38w_vT9s5HsHjVGSF-v1SFeefED/view?usp=sharing), [Ch 17-18](https://drive.google.com/file/d/1RqQgD5Nh0w8GHolWzJMizfm59WoXrPUj/view?usp=sharing), [Ch19](https://drive.google.com/file/d/1EMtycOzehRmwaN69Tbkp12877evdIG7s/view?usp=sharing), (no ch 20), [Ch 21](https://drive.google.com/file/d/19JkzRMwM1zs5qQ7ovvZ1byaUx2_6Eyb7/view?usp=sharing), (no ch 22), [Ch 23](https://drive.google.com/file/d/1qHRDXAY8ChcYRuHSn_1moQH6g1ps6E7b/view?usp=sharing), (no ch 24), [Ch 25-26](https://drive.google.com/file/d/1QroVetSn1nXQXe0YmDiW9RaMMMCD1ySq/view?usp=sharing), [Ch 27](https://drive.google.com/file/d/1ko3d9GhGTNGI3sLWUIDmZPWRM5NEStBa/view?usp=sharing), (no ch 28), [Ch 29](https://drive.google.com/file/d/1xj8rKOBFW_Fp9zInr7M0tSvrwR-OPRC9/view?usp=sharing)
+- [Guidelines for Revision videos](./spring2026/Revision_guidelines.pdf)
+- [FAQ](https://github.com/Harvard-CS-1200/cs1200/blob/gh-pages/spring2026/faq.md)
+
 ### Fall 2025
 
 - [Syllabus](./fall2025/2025_syllabus.pdf)
