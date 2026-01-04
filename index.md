@@ -6,7 +6,7 @@ An introductory course in theoretical computer science, aimed at giving students
 
 ### Spring 2026
 
-- [Syllabus](./spring2026/Syllabus.pdf)
+- [Syllabus](https://github.com/Harvard-CS-1200/cs1200/blob/gh-pages/spring2026/Syllabus.pdf)
 - [Course Schedule and Lectures](https://docs.google.com/spreadsheets/d/1mnbqSTgJGc4nRCR9vSJrPSvmCyY8zVAWi88YkILdJEQ/edit?gid=1779133089#gid=1779133089)
 - [Ed](https://edstem.org/us/courses/89686/discussion)
 - [Canvas](https://canvas.harvard.edu/courses/163758)
