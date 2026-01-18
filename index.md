@@ -12,7 +12,7 @@ An introductory course in theoretical computer science, aimed at giving students
 - [Canvas](https://canvas.harvard.edu/courses/163758)
 - [Github](https://github.com/Harvard-CS-1200/2026-Spring)
 - [Gradescope](https://www.gradescope.com/courses/1207811)
-- Textbook (Coming soon. See Fall 25 version below)
+- [Textbook](https://app.perusall.com/courses/compsci-1200-introduction-to-algorithms-and-their-limitations-274040074/_/library?documentId=wQn8cmru9geyJqoZi) 
 - [Guidelines for Revision videos](./spring2026/Revision_guidelines.pdf)
 - [FAQ](https://github.com/Harvard-CS-1200/cs1200/blob/gh-pages/spring2026/faq.md)
 
