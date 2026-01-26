@@ -9,7 +9,9 @@ We see a lot of the same questions popping up throughout the semester, and somet
 <b> Where are the detailed lecture notes? What's the textbook? </b>
 </summary> <br>
 
-The same as Fall 2025, the detailed lecture notes are being replaced with the course textbook being written by Adam Hesterberg and Salil Vadhan (the two original professors of the course!). The links to textbook chapters can be found on the course website or the course schedule spreadsheet -- we encourage using the Perusall link when possible because it offers a good way to ask questions about the textbook or point out errors.
+The same as Fall 2025, the detailed lecture notes (which were offered till Fall 2024) are now replaced with the course textbook written by Adam Hesterberg and Salil Vadhan (the two original professors of the course!). The textbook is available on [Perusall](https://app.perusall.com/courses/compsci-1200-introduction-to-algorithms-and-their-limitations-274040074/_/library?documentId=wQn8cmru9geyJqoZi), where you are encouraged to ask questions or leave comments. The specific chapters for each lecture are listed on the [Course Schedule](https://docs.google.com/spreadsheets/d/1mnbqSTgJGc4nRCR9vSJrPSvmCyY8zVAWi88YkILdJEQ/edit?gid=1779133089#gid=1779133089) spreadsheet. 
+
+We will still provide 'draft lecture notes' with partially filled class content for you to work through in the class.  
 
 </details>
 
