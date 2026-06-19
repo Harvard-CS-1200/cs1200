@@ -8,6 +8,8 @@ An introductory course in theoretical computer science, aimed at giving students
 
 Under construction
 
+- [FAQ](https://github.com/Harvard-CS-1200/cs1200/blob/gh-pages/fall%202026/faq.md)
+
 ### Spring 2026
 
 - [Syllabus](https://github.com/Harvard-CS-1200/cs1200/blob/gh-pages/spring2026/Syllabus.pdf)
