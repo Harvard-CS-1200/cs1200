@@ -13,6 +13,7 @@ Under construction
 - [Ed](https://edstem.org/us/courses/100951/discussion)
 - [Canvas](https://canvas.harvard.edu/courses/169766)
 - [Github](https://github.com/Harvard-CS-1200/Fall-2026)
+- [Gradescope](https://www.gradescope.com/courses/1365262)
 - Textbook (TBD)
 - [FAQ](https://github.com/Harvard-CS-1200/cs1200/blob/gh-pages/fall%202026/faq.md)
 
