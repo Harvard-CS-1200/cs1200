@@ -198,9 +198,6 @@ Extension students choose a 75-minute block for each midterm and a 180-minute bl
 - **College final exam:** Contact the Registrar about final-exam conflicts; your resident dean can assist with this process.
 - **Extension exams:** Follow the instructions supplied by the DCE Exam Manager and contact the Exam Manager and course heads promptly if a conflict or emergency affects your assigned exam window or proctor arrangements.
 
-</details>
-
-The important thing to note is that getting all R's should be the primary goal, and having an R+ is nice but not necessary. Notice that according to the "Letter grades" section of the syllabus, an R- is equivalent to a 3, an R is equivalent to a 4, and an R+ is equivalent to a 4.33 on the 4.0 scale. Taking into account the 8 pset grades and problem sets being 30% of the overall grade, that means that going from an R to an R+ will net you a 0.01 increase in your overall class GPA -- assuming a uniform GPA distribution, the probability of this bump taking you across a grade cutoff is a little under 4%. So it might be worth going for the R+ if you have extra time, but I wouldn't lose sleep over it. 
 
 </details>
 
