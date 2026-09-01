@@ -148,6 +148,7 @@ SRE surveys are part of the participation grade and use the N/L/R/R+ scale; R- i
 
 </details>
 
+
 <details>
 <summary><strong>What should I do if I must miss a lecture, SRE, or Problem Set Follow-Up?</strong></summary>
 <br>
@@ -202,59 +203,7 @@ Extension students choose a 75-minute block for each midterm and a 180-minute bl
 </details>
 
 
-<details>
-<summary>
-<b> Are reflection questions graded? How are they graded? </b>
-</summary> <br>
 
-Reflection questions are graded on our letter grade scale, with the exception that we do not assign the R- letter grade because we want to communicate that either a reflection question response was sufficient, or it was severely insufficient (and thus worth an L). Good responses are usually about a paragraph, with something like 7 or 8 sentences. Most importantly, please make sure your answer is specific to this class and your experiences in it. If your answer could have been edited lightly to apply to another class at Harvard, points will be taken off. Finally, remember that the lowest participation grade is dropped -- if you get an L on a reflection question it won't immediately affect your grade.
-
-</details>
-
-## SREs
-
-<details>
-<summary>
-<b> How are SREs graded? I don't see my grade on Gradescope? </b>
-</summary> <br>
-
-SREs are graded on completion, as long as you submit a response that shows that you took the activity seriously. If you submitted the SRE reflection survey you will receive full credit for the SRE -- Gradescope is finicky about certain things so we can't actually get the 3/3 to show up on your end but you don't need to worry about that if you submitted the survey.
-
-</details>
-
-<details>
-<summary>
-<b> What if I have to miss a class? </b>
-</summary> <br>
-
-Here's the attendance policy:
-
-- If you will be absent from a lecture which does not contain an SRE or an exam, you do not need us to excuse you -- as long as you have a valid reason, you're good to go.
-- If you will be absent for any of the midterms, reach out to us ASAP so we can help you with scheduling a makeup (worst case if the makeup doesn't work either we'll have the final exam count for your entire exam GPA)
-- If you will be absent from an SRE for something like sickness, mental health, personal issues, then please reach out to your Resident Dean or Faculty Dean and make sure that they are able to communicate that to the course heads (either they email us, or you email us with your resident or faculty dean cc'ed). In this case, a makeup isn't required, but we strongly recommend that you attempt to review the material on the SRE with a classmate.
-- If you have another valid excuse for missing an SRE, but one that doesn't warrant reaching out to your Resident or Faculty Dean, please let us know by the lecture before so that we can help you organize a makeup. We recommend notifying us either by emailing the course heads, or through a private Ed post in the "Logistics" category. 
-    - A makeup will be required - you will be finding a partner either by yourself or via a spreadsheet we will provide. Your SRE survey deadline on Gradescope will be extended by 3 days.
-- Finally, maybe you overslept or missed the shuttle - this is a real problem for an exam, but if you do this on an SRE we provide one participation grade drop! As long as you don't do it multiple times, your participation grade will be perfectly fine.
-
-</details>
-
-## Exams
-
-<details>
-<summary>
-<b> How do exams get curved? </b>
-</summary> <br>
-
-We determine curves by looking at exams and figuring out approximately which percentage thresholds should correspond to letter grade thresholds (i.e. the course heads will select exams that we believe are at the boundary between A-/B+, B-/C+, etc). Then, we set linear functions between the thresholds to determine your GPA based on your exam performance. Refer to the College description of letter grades [here](https://infoforfaculty.fas.harvard.edu/book/grading-system).
-
-</details>
-
-<details>
-<summary>
-<b> How much do exams count for? </b>
-</summary> <br>
-
-Your exam GPA will count for 50% of your final grade, and that portion is split between the midterms and final according to how long each takes (75 to 180 minutes). So each of midterms ends up being about 11.36% of your grade, and the final is about 27.27% of your grade.
 
 </details>
 
