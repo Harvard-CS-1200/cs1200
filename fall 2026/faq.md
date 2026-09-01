@@ -1,122 +1,204 @@
 # Fall 2026 Course FAQ
 
+Many questions recur throughout the semester, so this page collects answers to some of the most common ones. Please bookmark it and consult it when questions arise.
 
-We see a lot of the same questions popping up throughout the semester, and sometimes we make an Ed post answering these questions but people who don't read it at the time will usually come back with the same question a few weeks later. So instead, we're going to start putting answers to these common questions on this webpage -- bookmark it and hopefully it'll be a useful resource for when you have questions!
+This FAQ applies to both **CS1200 (Harvard College)** and **CSCI E-120 (Harvard Extension School)** unless an answer says otherwise. When the two courses have different procedures, they are described separately. The course syllabus remains the authoritative source for course policies; if anything here seems unclear, please ask the course staff on Ed.
 
 ## Lectures
 
 <details>
-<summary>
-<b> Where are the detailed lecture notes? What's the textbook? </b>
-</summary> <br>
+<summary><strong>Where are the detailed lecture notes? What is the textbook?</strong></summary>
+<br>
 
-The same as Spring 26, the detailed lecture notes (which were offered till Fall 2024) are now replaced with the course textbook written by Adam Hesterberg and Salil Vadhan (the two original professors of the course!). The textbook is available on [Perusall](https://app.perusall.com/courses/compsci-1200-introduction-to-algorithms-and-their-limitations-251871317/fall_26_cs1200_textbook?filter=all), where you are encouraged to ask questions or leave comments. The specific chapters for each lecture are listed on the [Course Schedule](https://docs.google.com/spreadsheets/u/1/d/1P9DFhJ2pa4CRkKgFCBmTlU3fiKknR1KLHDgiMxTG1ps/edit?gid=0#gid=0) spreadsheet. 
+The detailed lecture notes used through Fall 2024 have been replaced by the course textbook written by Adam Hesterberg and Salil Vadhan, the original instructors of the course. The textbook is available on [Perusall](https://app.perusall.com/courses/compsci-1200-introduction-to-algorithms-and-their-limitations-251871317/fall_26_cs1200_textbook?filter=all), where you are encouraged to ask questions and leave comments. The chapters associated with each lecture are listed in the [Course Schedule](https://docs.google.com/spreadsheets/u/1/d/1P9DFhJ2pa4CRkKgFCBmTlU3fiKknR1KLHDgiMxTG1ps/edit?gid=0#gid=0).
 
-We will still provide 'draft lecture notes' with partially filled class content for you to work through in the class.  
+We will also provide draft lecture notes with portions for you to complete while attending or watching each lecture.
 
 </details>
 
 ## Problem Sets
 
 <details>
-<summary>
-<b> What are the important pset policies to remember? </b>
-</summary> <br>
+<summary><strong>What are the most important problem-set policies?</strong></summary>
+<br>
 
-
-- Problem sets are letter graded (N = not assessable, L = learning, R- = nearly ready to move on, R = ready to move on, R+ = beyond ready).
-- Students have 8 late days and can spend at most 3 on a given pset.
-- The lowest pset grade will get dropped.
-
-
-</details>
-
-<details>
-<summary>
-<b> How should I be testing my code? </b>
-</summary> <br>
-
-For every problem set with code, there will also be some local testing functionality we provide for you to confirm that your code works as intended. We recommend using local test cases as a quick way of testing whether your code works -- if you upload your code to Gradescope it can take up to a minute to evaluate whether your code passes test cases, whereas if you run local tests it'll tell you within a second. Only after your code passes local test cases should you upload it to Gradescope.
+- Problem sets are graded using the course letter-grade scale: N = not assessable, L = learning, R- = nearly ready to move on, R = ready to move on, and R+ = beyond ready.
+- College students have 8 total late days; Extension students have 25. At most 3 late days may be used on any one problem set, and partial late days count as full days.
+- A problem set submitted more than 3 late days after its deadline automatically receives an N. Each late day beyond a student's total budget reduces the problem-set GPA by 0.0333.
+- Late days used on the problem set whose content grade is ultimately dropped do not count toward the total late-day budget.
+- Any adjustment resulting from a Problem Set Follow-Up is applied first. We then drop the lowest problem-set content grade.
+- Separately, we drop the lowest qualitative reflection-question grade from the participation calculation. We also drop the lowest SRE survey grade.
 
 </details>
 
 <details>
-<summary>
-<b> Why do I pass local tests but not Gradescope tests? </b>
-</summary> <br>
+<summary><strong>How should I test my code?</strong></summary>
+<br>
 
-One possible "hack" arises where a student could take a look at the test cases and hardcode some if statements to return the correct answer for those test cases (even if the code in general is incorrect). The solution here is that we include additional test cases on Gradescope so that even if the local tests get hardcoded Gradescope tests will expose errors. Therefore, even if your code passes local tests, it might not pass Gradescope tests. The ideal scenario is that local test cases should be thorough enough that any code which passes local test cases will pass Gradescope test cases as well, but sometimes due to oversight this won't be the case.
-
-</details>
-
-<details>
-<summary>
-<b> Every proof of correctness is slightly different -- how do I know what to do? </b>
-</summary> <br>
-
-First, it's worth noting that for exams proofs of correctness will usually follow very fixed structures that we cover in lecture / problem sets -- for example some correctness proofs on the final will just be for an NP-completeness or unsolvability proof which we'll drill. However, problem sets can require a little more adaptation. <br>
-
-A good starting point is building some intuition for why a proof of correctness is sufficient -- I like thinking about it as examining whether an experiment successfully proves a claim, or whether a historical argument is correct. There's no formula for whether a proof of correctness is sufficient, but by trying to poke holes in the proof you can gain some intuition for what constitutes correctness.
-
-How do you come up with these proofs yourself? In general, this is a hard question to answer -- there's no formula for proving that an algorithm/reduction is correct, and I would say it's probably more accurate to say that correctness is a combination of pattern recognition (seeing when you can apply established techniques) and adaptation (recognizing when you need to adapt techniques to accommodate for edge cases / unique situations). Hopefully by doing the psets you've gained a little bit of both! <br>
-
-However, for this class we actually don't introduce that many new patterns. By outlining a few patterns + examples you'll probably be pretty well-equipped to tackle most things we throw at you. Here's a preliminary attempt at doing that: <br>
-
-
-- <b>Ad Hoc</b>: Sometimes (not often) you'll need to come up with a proof of correctness for an algorithm that doesn't follow a predetermined structure. Ad hoc means "created or done for a particular purpose as necessary" -- aka "you're kind of on your own" 
-    - <b>Size-Augmented Rotation</b>: This was problem 3b on pset 2 in Fall 25 -- there's no precedent in class for proving correctness of a procedure for maintaining size-augmentation. Part of the proof of correctness is explaining why every node you don't update doesn't need to be updated -- this is something that you just have to figure out. 
-    - <b>Singleton Bucket Sort</b>: I (Anurag's note: the `I' here and below refers to Maxwell, the original creator of this FAQ) got a few questions during this SRE about what correctness looks like for this algorithm. Here the two properties of a correct Sorting are 1) the answer is a permutation of the input, and 2) $K_i \leq K_{i+1}$. In this case you have to recognize that both can be proved directly with not that much effort. 
-    - One thing to note is that even though you're left on your own, usually the proof of correctness is a little bit easier and comes down to finding the 1 or 2 "core claims" that you need to justify. 
-- <b>Induction for Loops/Recursion</b>: 
-    - <b>Recursion</b>: This is probably the one you're more used to (just remember to use strong induction)
-        - <b>Merge Sort</b>: If this algorithm correctly sorts arrays of size $\frac{n}{2}$, then it will sort the full array of size $n$.
-        - <b>Weighted QuickSelect</b>: If this algorithm can find the $t$'th element in the left or right subarray, then we'll get our answer for the entire array. 
-    -  <b>Loops</b>: When an algorithm involves doing something in a loop, and the body of the loop is sufficiently complicated that it warrants an explanation of what you're doing at each step, you can consider a loop invariant.
-        - <b>Insertion Sort</b>: we proved the claim that after $k$ iterations of the outer loop, the first $k$ elements of the array should be sorted (and this way the inductive step can focus on proving that the $k+1$-th iteration inserts the $k+1$-th element into the correct place)
-        - <b>Radix Sort</b>: we proved the claim that after $k$ iterations of the outer loop, the elements of the array were sorted by their $k$ least significant digits. The inductive step used the stability of Singleton Bucket Sort to justify why numbers with the same $k+1$-th digit would remain in sorted order.
-- <b>"Basic" vs "Advanced" Reductions</b>: I don't have a good definition of what a "basic" reduction is, but the main category we see in this class is reductions to Sorting. These are "basic" in the sense that the oracle is just a step that we abstract away for convenience, but the actual problem solving logic is contained in the reduction itself. For example, for AreaOfConvexPolygon we did all the complex area calculation in the reduction, whereas Sorting was just something convenient that we wanted as part of this routine. By contrast, an "advanced" reduction is more like an argument that the two computational problems are equivalent -- very soon after the midterm we'll see reductions to Single Source Shortest Paths which hint at this, and then we'll see the big NP-completeness and unsolvability reductions which really lean into this idea.
-- <b>Correctness for "Basic" Reductions</b>: A proof of correctness for a basic reduction is usually very similar to an ad-hoc proof of correctness. 
-    - <b>AreaOfConvexPolygon</b>: This is the main reduction to Sorting that we did on a problem set -- remember that the bar for correctness was pretty low because you just needed to explain why sorting is relevant (so that adjacent points are connected by an edge) and why your triangulation of choice was valid (a convex polygon containing the origin can be deconstructed into triangles at the origin).
-- <b>Correctness for "Advanced" Reductions</b> (post-midterm): By contrast, a proof of correctness for an advanced reduction usually needs to argue for the equivalence of two sets of solutions (ie the instance that you construct and pass to the oracle has the same solution set as the original problem). This pretty much always requires a bidirectional proof -- explaining that a solution for problem A corresponds to an equivalent solution to problem B and vice versa. You haven't seen any of these yet, so I'll give examples that will make more sense in the weeks after the midterm:
-    - <b>Reductions to Single Source Shortest Paths</b>: Usually this kind of reduction involves an assumption that the original problem is equivalent to a graph that you've constructed as the input to SSSP. Usually the bidirectional proof here involves establishing a mapping from a sequence of moves in the original problem to a path of the same length on the constructed graph, and vice versa. By proving this mapping you demonstrate that the length of the shortest path on the constructed graph is equal to the length of the optimal sequence of moves in the original problem.
-    - <b>NP-completeness Reductions</b>: This is an entirely different rabbithole we'll dive into later in the semester -- however, the core idea of establishing mappings between solutions still holds. In this case we want to show that a solution $S$ for $\Pi$ corresponds to an equivalent solution $S'$ for $\Gamma$, and vice versa.
-    - <b>Unsolvability Reduction</b>: Again, bidirectional -- this time since it's between problems where the answer is yes/no it'll look more like if the answer for $\Pi$ is yes then the answer to $\Gamma$ is also yes, and vice versa.
-</details>
-
-
-<details>
-<summary>
-<b> What's the level of formalism expected? </b>
-</summary> <br>
-
-There's a difference between <b>rigor</b> and <b>detail</b> in a proof. Rigor refers to the extent to which important statements are justified, whereas detail refers to the level of explanation given to each justification. For problem sets, we ask for rigor -- part of your task is to identify what justifications are necessary to prove the given statements. However, you don't need as much detail -- the TFs grading the problems sets are familiar with these justifications so as long as you identify the right claims and write down the correct justifications you don't need to write pages and pages explaining your justifications.
-
-If you need a reference for how much detail in a proof is appropriate, looking at staff solutions for problem sets is a good idea. Keep in mind that sometimes the staff solutions will go into extra detail in order to provide extra context for students who were unable to solve the original problem -- sometimes you might not even need to match that level of detail.
+For each problem set containing code, we will provide local tests that give quick feedback while you work. You should run these tests before submitting to Gradescope. The local tests are useful but are not exhaustive: passing them does not guarantee that your code is correct or that it will pass all Gradescope tests.
 
 </details>
 
 <details>
-<summary>
-<b> I can't tell whether my proofs are complete and always get marked down for missing something -- what do I do? </b>
-</summary> <br>
+<summary><strong>Why does my code pass the local tests but fail Gradescope tests?</strong></summary>
+<br>
 
-We don't expect perfect thorough proofs in every problem set, but we do hope that by submitting your best effort and comparing it with the Staff provided solution/Feedback on your pset, you get better over time at writing proofs!
-
-</details>
-
-<details>
-<summary>
-<b> Where do I find my Gradescope feedback? How do I interpret it? </b>
-</summary> <br>
-
-If you navigate to the assignment on Gradescope you can click through each problem to see what feedback you got, as well as the letter grade you got for a particular problem. Reading through the rubrics is important -- it can help you get an idea of what we expected to see from you in the proof. This can be particularly helpful for exams, where sometimes you include some justification on the problem set but forget to include it on the exam when it's actually something we take off points for missing. Looking at problems where you got below an R and reading rubric items that indicate what we were looking for in a full-credit solution is a great way to understand what you're missing and where you should add more justification.
+Gradescope includes additional tests that are not part of the local test suite. These hidden tests check inputs and edge cases that the local tests may not cover and help ensure that a program solves the general problem rather than only the provided examples. Use the problem specification, not just the local tests, as the definition of correct behavior.
 
 </details>
 
 <details>
-<summary>
-<b> How important is getting an R+? </b>
-</summary> <br>
+<summary><strong>Every proof of correctness is different. How do I know what to prove?</strong></summary>
+<br>
+
+Proofs on exams will generally use structures that have been taught and practiced in lectures, sections, and problem sets. Problem-set proofs may require more adaptation. A useful first step is to identify the central claim that makes the algorithm correct and then try to find an input or edge case that would invalidate your argument. If you cannot rule out such a counterexample, the proof is incomplete.
+
+There is no single formula for discovering a proof. In this course, most proofs combine **pattern recognition**—recognizing a familiar proof structure—with **adaptation**—modifying that structure to handle the details and edge cases of the problem at hand. Common patterns include the following.
+
+- **Ad hoc arguments.** Some algorithms do not fit a standard template. Identify the one or two essential properties that imply correctness and justify each directly.
+  - In the Size-Augmented Rotation problem from a previous offering, one must explain both why the updated nodes receive the correct sizes and why every node not updated retains the correct size.
+  - For Singleton Bucket Sort, one can prove separately that the output is a permutation of the input and that adjacent output keys satisfy $K_i \leq K_{i+1}$.
+- **Induction for recursion.** Assume that recursive calls are correct on smaller inputs, and then prove that the current call combines their outputs correctly.
+  - For Merge Sort, assuming that the recursive calls correctly sort the two smaller arrays, prove that merging them produces a sorted permutation of the original array.
+  - For Weighted QuickSelect, use the correctness of the recursive call on the appropriate subarray to establish correctness on the full array.
+- **Loop invariants.** State a property that is true before the loop begins, remains true after every iteration, and implies correctness when the loop ends.
+  - For Insertion Sort, the relevant invariant is that the processed prefix is sorted.
+  - For Radix Sort, the invariant is that after $k$ iterations, the elements are sorted by their $k$ least significant digits.
+- **Reductions.** When an algorithm uses another problem as a subroutine, explain why the transformation preserves the information needed to solve the original problem.
+  - In a routine reduction, such as using Sorting inside an area-computation algorithm, identify why sorting is useful and why the remaining computation is correct.
+  - In reductions intended to show that two computational questions are equivalent, one typically proves both directions: a solution to the original instance yields a solution to the constructed instance, and a solution to the constructed instance yields a solution to the original one.
+  - For reductions to Single Source Shortest Paths, this often means relating feasible solutions in the original problem to paths of the same cost in the constructed graph.
+  - For NP-completeness and unsolvability reductions, this generally means proving the required correspondence between yes-instances of the two problems.
+
+These are templates, not substitutes for reasoning. Your proof must still explain why the template applies to the particular algorithm and input under consideration.
+
+</details>
+
+<details>
+<summary><strong>What level of formality is expected?</strong></summary>
+<br>
+
+There is a difference between **rigor** and **detail**. Rigor means that every important claim is justified; detail refers to how much explanation accompanies each justification. We expect rigorous problem-set solutions, but they do not need to be unnecessarily long. Identify the claims on which correctness depends and justify them clearly enough that a knowledgeable reader can verify the argument.
+
+Staff solutions are a useful reference. They sometimes contain more explanation than a submitted solution requires because they are also intended to teach students who did not solve the problem.
+
+</details>
+
+<details>
+<summary><strong>I often miss a step in my proofs. How can I improve?</strong></summary>
+<br>
+
+We do not expect every first attempt to be perfect. After a problem set is graded, compare your solution carefully with the staff solution and feedback. For every omitted step, ask what possible failure that step was needed to rule out. Over time, this practice should help you recognize the claims that require explicit justification.
+
+Students who receive an L or N may also discuss the feedback or a revision with the instructional staff during office hours or through the support process described in the syllabus. These meetings support learning but do not change the original problem-set grade.
+
+</details>
+
+<details>
+<summary><strong>Where can I find my Gradescope feedback, and how should I use it?</strong></summary>
+<br>
+
+Open the assignment on Gradescope and select each problem to see its letter grade, rubric items, and written feedback. The rubric indicates what a complete solution was expected to establish. Pay particular attention to problems graded below R and compare them with the staff solutions. This is also useful exam preparation: it helps identify justifications that may feel implicit but must be stated in a complete proof.
+
+</details>
+
+<details>
+<summary><strong>How important is earning an R+?</strong></summary>
+<br>
+
+Your primary goal should be to earn R grades consistently, showing that you have met the learning objectives. An R+ recognizes work that is nearly perfect or goes beyond expectations in clarity, insight, or exploration. It makes a modest positive contribution to the problem-set GPA, but it is not necessary for strong performance in the course. Focus first on mastering the material rather than trying to turn every R into an R+.
+
+</details>
+
+<details>
+<summary><strong>How are the qualitative reflection questions included in problem sets graded?</strong></summary>
+<br>
+
+These questions form part of the participation grade. They use the N/L/R/R+ scale; R- is not used for participation. An R response demonstrates specific and thoughtful engagement with your experience in this course. A superficial or generic response may receive an L, and a missing response receives an N. A paragraph is often sufficient, but specificity and thoughtfulness matter more than sentence count. The lowest qualitative reflection-question grade is dropped.
+
+These questions are different from the short Problem Set Follow-Ups described below.
+
+</details>
+
+<details>
+<summary><strong>What is a Problem Set Follow-Up, and how does it affect my grade?</strong></summary>
+<br>
+
+After each problem set's late deadline, you will complete a short written question asking you to reflect on or extend a concept from that problem set. It is designed to require no more than about five minutes and can ordinarily be answered in one or two sentences. College students complete it in class; Extension students complete it online using Proctorio.
+
+A satisfactory answer leaves the corresponding problem-set content grade unchanged. An unsatisfactory answer changes R+, R, or R- to L, or changes L to N. This is an adjustment to the problem-set grade, not part of the participation grade. The adjustment is applied before the lowest problem-set content grade is dropped.
+
+</details>
+
+## Sender-Receiver Exercises (SREs)
+
+<details>
+<summary><strong>When and how do I complete the SREs?</strong></summary>
+<br>
+
+There are four SREs. College students complete them with a partner during the designated class meetings. Extension students complete them with a partner over Zoom during the weekend before the corresponding lecture; the course staff will provide a spreadsheet to facilitate pairing and scheduling. Senders should spend at least an hour preparing the assigned proof. Each student submits a short reflection survey after the exercise.
+
+</details>
+
+<details>
+<summary><strong>How are SREs graded? Why do I not see an SRE grade on Gradescope?</strong></summary>
+<br>
+
+SRE surveys are part of the participation grade and use the N/L/R/R+ scale; R- is not used. A completed survey showing serious engagement will ordinarily receive an R. A superficial submission may receive an L, a missing submission receives an N, and an unusually thoughtful contribution may receive an R+. SRE grades are not released during the semester, but the course staff records them and automatically drops the lowest of the four SRE survey grades.
+
+</details>
+
+<details>
+<summary><strong>What should I do if I must miss a lecture, SRE, or Problem Set Follow-Up?</strong></summary>
+<br>
+
+- **Ordinary lecture:** College students who miss a lecture that does not contain an SRE, Problem Set Follow-Up, or exam do not need to request an excused absence, but they are responsible for reviewing the missed material. Extension students ordinarily watch the recorded lectures asynchronously.
+- **Planned SRE or Problem Set Follow-Up absence:** Email the course staff at least four days before the missed activity and copy your resident or faculty dean, or your advisor if you are a graduate student. For a missed SRE, you are responsible for arranging a makeup with another student, using the spreadsheet supplied by the course staff. The SRE survey deadline will be extended by three days.
+- **Illness, injury, or personal emergency:** The missed SRE or Problem Set Follow-Up will be excused if the course staff receives a note from HUHS for an illness or injury, or an email from your resident dean, faculty dean, or graduate advisor for a personal emergency. An SRE makeup is not required, although we strongly recommend reviewing the material with a classmate when you are able.
+- **Other missed SRE:** There is no makeup for an unexcused absence such as oversleeping or missing the shuttle. Because the lowest SRE survey grade is dropped, one such absence need not lower the SRE component of the participation grade.
+- **Other missed Problem Set Follow-Up:** An unexcused missed Follow-Up changes the corresponding problem-set grade from R+, R, or R- to L, or from L to N.
+
+Extension students who cannot complete a scheduled Zoom SRE or online Problem Set Follow-Up within its assigned window should contact the course staff as early as possible. The documentation and makeup rules above apply to the corresponding remote activity.
+
+Exam conflicts and absences are governed by the separate policies below.
+
+</details>
+
+## Exams
+
+<details>
+<summary><strong>How are numerical exam scores translated into grades? Are exams curved?</strong></summary>
+<br>
+
+There is no predetermined percentage-to-GPA conversion. After grading an exam, the instructors identify score levels that represent the boundaries between Harvard letter grades, using the [Harvard College grading descriptions](https://infoforfaculty.fas.harvard.edu/book/grading-system), and use linear functions between those thresholds to determine exam GPAs. Thus, the conversion reflects the level of proficiency demonstrated on that particular exam rather than a fixed rule such as “90% always equals an A.”
+
+</details>
+
+<details>
+<summary><strong>How much do the exams count toward my final grade?</strong></summary>
+<br>
+
+The two 75-minute midterms and the 180-minute final together constitute 50% of the course grade. Within that category, the exams are weighted in proportion to their lengths, in the ratio 75:75:180. Consequently, each midterm constitutes approximately 11.36% of the overall course grade, and the final constitutes approximately 27.27%.
+
+</details>
+
+<details>
+<summary><strong>When and where do Extension students take the exams?</strong></summary>
+<br>
+
+Extension students choose a 75-minute block for each midterm and a 180-minute block for the final within 24 hours after the corresponding College exam begins. The exams are paper-based. An Extension student who does not take an exam in person must arrange a qualified local proctor. A DCE Exam Manager will provide instructions and confirm proctor information closer to the exam date. See the [Extension School exam policies](https://extension.harvard.edu/enrolled-students/exam-types-and-policies/) for additional information.
+
+</details>
+
+<details>
+<summary><strong>What should I do if I have an exam conflict or must miss an exam?</strong></summary>
+<br>
+
+- **College midterms:** Email the course heads as soon as possible. We cannot guarantee a makeup time, but we will try to accommodate valid, unavoidable conflicts. If no makeup can be arranged for a valid conflict, the missed exam's weight will be transferred to the exams you do take.
+- **College final exam:** Contact the Registrar about final-exam conflicts; your resident dean can assist with this process.
+- **Extension exams:** Follow the instructions supplied by the DCE Exam Manager and contact the Exam Manager and course heads promptly if a conflict or emergency affects your assigned exam window or proctor arrangements.
+
+</details>
 
 The important thing to note is that getting all R's should be the primary goal, and having an R+ is nice but not necessary. Notice that according to the "Letter grades" section of the syllabus, an R- is equivalent to a 3, an R is equivalent to a 4, and an R+ is equivalent to a 4.33 on the 4.0 scale. Taking into account the 8 pset grades and problem sets being 30% of the overall grade, that means that going from an R to an R+ will net you a 0.01 increase in your overall class GPA -- assuming a uniform GPA distribution, the probability of this bump taking you across a grade cutoff is a little under 4%. So it might be worth going for the R+ if you have extra time, but I wouldn't lose sleep over it. 
 
