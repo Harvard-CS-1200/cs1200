@@ -14,7 +14,7 @@ Under construction
 - [Canvas](https://canvas.harvard.edu/courses/169766)
 - [Github](https://github.com/Harvard-CS-1200/Fall-2026)
 - [Gradescope](https://www.gradescope.com/courses/1365262)
-- Textbook (TBD)
+- [Textbook](https://app.perusall.com/courses/compsci-1200-introduction-to-algorithms-and-their-limitations-251871317/fall_26_cs1200_textbook?filter=all)
 - [FAQ](https://github.com/Harvard-CS-1200/cs1200/blob/gh-pages/fall%202026/faq.md)
 
 
