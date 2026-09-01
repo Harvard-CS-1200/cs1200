@@ -1,6 +1,5 @@
 # Fall 2026 Course FAQ
 
-[Under construction]
 
 We see a lot of the same questions popping up throughout the semester, and sometimes we make an Ed post answering these questions but people who don't read it at the time will usually come back with the same question a few weeks later. So instead, we're going to start putting answers to these common questions on this webpage -- bookmark it and hopefully it'll be a useful resource for when you have questions!
 
