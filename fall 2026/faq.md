@@ -65,7 +65,7 @@ There is no single formula for discovering a proof. In this course, most proofs 
   - For Insertion Sort, the relevant invariant is that the processed prefix is sorted.
   - For Radix Sort, the invariant is that after $k$ iterations, the elements are sorted by their $k$ least significant digits.
 - **Reductions.** When an algorithm uses another problem as a subroutine, explain why the transformation preserves the information needed to solve the original problem.
-  - In a routine reduction, such as using Sorting inside an area-computation algorithm, identify why sorting is useful and why the remaining computation is correct.
+  - Some reductions are fairly clear, such as reducing Area-of-convex-polygon to Sorting. Here, you need to remember why sorting is relevant and whether your proof is reflecting this.
   - In reductions intended to show that two computational questions are equivalent, one typically proves both directions: a solution to the original instance yields a solution to the constructed instance, and a solution to the constructed instance yields a solution to the original one.
   - For reductions to Single Source Shortest Paths, this often means relating feasible solutions in the original problem to paths of the same cost in the constructed graph.
   - For NP-completeness and unsolvability reductions, this generally means proving the required correspondence between yes-instances of the two problems.
