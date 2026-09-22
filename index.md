@@ -6,15 +6,13 @@ An introductory course in theoretical computer science, aimed at giving students
 
 ### Fall 2026
 
-Under construction
-
 - [Syllabus](https://github.com/Harvard-CS-1200/cs1200/blob/gh-pages/fall%202026/Fall%202026%20CS%201200%20Syllabus.pdf)
 - [Course Schedule and Lectures](https://docs.google.com/spreadsheets/d/1P9DFhJ2pa4CRkKgFCBmTlU3fiKknR1KLHDgiMxTG1ps/edit?usp=sharing)
 - [Ed](https://edstem.org/us/courses/100951/discussion)
 - [Canvas](https://canvas.harvard.edu/courses/169766)
 - [Github](https://github.com/Harvard-CS-1200/Fall-2026)
 - [Gradescope](https://www.gradescope.com/courses/1365262)
-- [Textbook](https://app.perusall.com/courses/compsci-1200-introduction-to-algorithms-and-their-limitations-251871317/fall_26_cs1200_textbook?filter=all)
+- Textbook : Canvas -> Perusall -> Library
 - [FAQ](https://github.com/Harvard-CS-1200/cs1200/blob/gh-pages/fall%202026/faq.md)
 
 
